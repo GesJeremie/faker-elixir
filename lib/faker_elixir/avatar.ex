@@ -14,10 +14,7 @@ defmodule FakerElixir.Avatar do
     "https://robohash.org/fceuxke.png?size=300x300"
   """
   def image do
-    slug_length = pick(7..25)
-    slug_pattern = String.duplicate("#", slug_length)
-    slug = letterify(slug_pattern)
-
+    slug = word()
     "https://robohash.org/#{slug}.png?size=300x300"
   end
 
