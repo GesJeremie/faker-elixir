@@ -28,14 +28,36 @@ defmodule FakerElixir.Helpers.App do
   def numerify(pattern) do
     pattern
       |> String.split("")
-      |> Enum.map_join(&(replace_hash(&1)))
+      |> Enum.map_join(&(replace_hash(&1, :number)))
   end
 
-  defp replace_hash("#") do
+  @doc """
+  Fill a pattern with random letters
+
+  ## Examples
+
+    iex > FakerElixir.Helpers.App.letterify("###")
+    "ahh"
+
+    iex > FakerElixir.Helpers.App.letterify("#.#.#.#")
+    "k.e.n.u"
+  """
+  def letterify(pattern) do
+    pattern
+      |> String.split("")
+      |> Enum.map_join(&(replace_hash(&1, :letter)))
+  end
+
+
+  defp replace_hash("#", :number) do
     pick(0..9)
   end
 
-  defp replace_hash(value) do
+  defp replace_hash("#", :letter) do
+    pick(~w(a b c d e f g h i j k l m n o p q r s t u v w x y z))
+  end
+
+  defp replace_hash(value, _) do
     value
   end
 
