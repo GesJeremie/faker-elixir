@@ -16,6 +16,11 @@ defmodule FakerElixir.Helpers.App do
 
   @doc """
   Generate a random word
+
+  ## Examples
+
+    iex > FakerElixir.Helpers.App.word
+    "ivnorgxa"
   """
   def word do
     word(5..20)
@@ -23,6 +28,11 @@ defmodule FakerElixir.Helpers.App do
 
   @doc """
   Generate a random word with a length in the range given
+
+  ## Examples
+
+    iex > FakerElixir.Helpers.App.word(5..10)
+    "lzirxh"
   """
   def word(range) do
     length = range

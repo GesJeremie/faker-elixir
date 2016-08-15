@@ -4,11 +4,11 @@ defmodule FakerElixir.Locales.Fr do
 
   @building_patterns ["#", "##", "###"]
   @zip_code_patterns ["#####"]
-  @secondary_addresses ["Apt. ###", "Suite ###"]
+  @secondary_addresses ["Apt. ###", "Immeuble. ###"]
 
   def cities, do: @cities
   def building_patterns, do: @building_patterns
   def zip_code_patterns, do: @zip_code_patterns
-  def secondary_addresses ["Apt. ###", "Immeuble. ##"]
+  def secondary_addresses, do: @secondary_addresses
 
 end
