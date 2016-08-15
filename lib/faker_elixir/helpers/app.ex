@@ -1,5 +1,26 @@
 defmodule FakerElixir.Helpers.App do
 
+  @moduledocset false
+
+  def rand do
+    :random.seed(:erlang.now)
+    :random.uniform
+  end
+
+  def numerify(pattern) do
+    pattern
+      |> String.split("")
+      |> Enum.map_join(&(replace_hash(&1)))
+  end
+
+  defp replace_hash("#") do
+    pick(0..9)
+  end
+
+  defp replace_hash(value) do
+    value
+  end
+
   def pick(enumerable) do
     enumerable
       |> Enum.shuffle
@@ -28,11 +49,6 @@ defmodule FakerElixir.Helpers.App do
         apply(module, method, [])
     end
 
-  end
-
-  def rand do
-    :random.seed(:erlang.now)
-    :random.uniform
   end
 
   defp get_locale do
