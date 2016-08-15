@@ -14,35 +14,7 @@ defmodule FakerElixir.Helpers.App do
     :random.uniform
   end
 
-  @doc """
-  Generate a random word
-
-  ## Examples
-
-    iex > FakerElixir.Helpers.App.word
-    "ivnorgxa"
-  """
-  def word do
-    word(5..20)
-  end
-
-  @doc """
-  Generate a random word with a length in the range given
-
-  ## Examples
-
-    iex > FakerElixir.Helpers.App.word(5..10)
-    "lzirxh"
-  """
-  def word(range) do
-    length = range
-      |> pick
-
-    "#"
-      |> String.duplicate(length)
-      |> letterify
-  end
-
+  
   @doc """
   Fill a pattern with random number
 

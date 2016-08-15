@@ -2,7 +2,7 @@ defmodule FakerElixir.Address do
   @moduledoc """
   Generate fake data for the domain address
   """
-  
+
   import FakerElixir.Helpers.App
 
   @doc """
@@ -21,17 +21,30 @@ defmodule FakerElixir.Address do
   end
 
   @doc """
-  Return country name
+  Return country struct with code & name.
+  Really helpful when you want to generate "true-fake" data.
 
   ## Examples
 
     iex > FakerElixir.Address.country
-    "Croatia"
+    %{code: "MY", name: "Malaysia"}
   """
   def country do
     :countries
       |> fetch
       |> pick
+  end
+
+  @doc """
+  Return country name
+
+  ## Examples
+
+    iex > FakerElixir.Address.country_name
+    "Iceland"
+  """
+  def country_name do
+    country().name
   end
 
   @doc """
@@ -43,9 +56,7 @@ defmodule FakerElixir.Address do
     "NY"
   """
   def country_code do
-    :countries_code
-      |> fetch
-      |> pick
+    country().code
   end
 
   @doc """

@@ -4,6 +4,7 @@ defmodule FakerElixir.Avatar do
   """
 
   import FakerElixir.Helpers.App
+  alias FakerElixir.Lorem
 
   @doc """
   Return an avatar of a robot with a size of 300x300
@@ -14,7 +15,7 @@ defmodule FakerElixir.Avatar do
     "https://robohash.org/fceuxke.png?size=300x300"
   """
   def image do
-    slug = word()
+    slug = Lorem.word()
     "https://robohash.org/#{slug}.png?size=300x300"
   end
 

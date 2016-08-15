@@ -6,18 +6,34 @@ defmodule FakerElixir.Boolean do
   import FakerElixir.Helpers.App
 
   @doc """
-  Return a boolean with 50% chances to be false or true
+  Return a boolean with equal chance to be true or false
 
-  ## Example
+  ## Examples
+
+    iex > FakerElixir.Boolean.boolean
+    true
+
   """
   def boolean do
     boolean(0.5)
   end
 
   @doc """
-  Return a boolean
+  Return a boolean with a ratio chance to be true
+
+  ## Examples
+
+    It will be always true:
+
+    iex > FakerElixir.Boolean.boolean(1)
+    true
+
+    It will be always false:
+    iex > FakerElixir.Boolean.boolean(0)
+    false
+
   """
-  def boolean(ratio) do
+  def boolean(ratio) when ratio >= 0 and ratio <= 1 do
 
     # We will fill a list with 10 boolean values
     #

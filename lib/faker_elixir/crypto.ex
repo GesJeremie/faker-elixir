@@ -4,6 +4,7 @@ defmodule FakerElixir.Crypto do
   """
 
   import FakerElixir.Helpers.App
+  alias FakerElixir.Lorem
 
   @doc """
   Return a md5 hash
@@ -81,8 +82,10 @@ defmodule FakerElixir.Crypto do
 
 
   defp crypt_with(algo) do
+    word = Lorem.characters()
+
     algo
-      |> :crypto.hash(word())
+      |> :crypto.hash(word)
       |> Base.encode16
   end
 
