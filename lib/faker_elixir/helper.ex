@@ -1,9 +1,50 @@
 defmodule FakerElixir.Helper do
+  @moduledoc """
+  Provide useful helpers
+  """
 
   alias FakerElixir.Helpers.{App, Store}
 
+  @doc """
+  Pick randomly a value in an enumerable
+
+  ## Examples
+
+    iex > FakerElixir.Helper.pick(["paris", "athens", "london"])
+    "london"
+
+    iex > FakerElixir.Helper.pick(0..100)
+    51
+  """
   def pick(enumerable), do: App.pick(enumerable)
 
+  @doc """
+  Will iterate through the enumerable as a constant cycle.
+
+  Warning: The id (first param given) should be unique for each different cycle.
+
+  ## Examples
+
+    iex(1)> FakerElixir.Helper.cycle(:zombies, ["Peter", "Audrey", "Laurent", "Frank"])
+    "Peter"
+    iex(2)> FakerElixir.Helper.cycle(:zombies, ["Peter", "Audrey", "Laurent", "Frank"])
+    "Audrey"
+    iex(3)> FakerElixir.Helper.cycle(:zombies, ["Peter", "Audrey", "Laurent", "Frank"])
+    "Laurent"
+    iex(4)> FakerElixir.Helper.cycle(:zombies, ["Peter", "Audrey", "Laurent", "Frank"])
+    "Frank"
+    iex(5)> FakerElixir.Helper.cycle(:zombies, ["Peter", "Audrey", "Laurent", "Frank"])
+    "Peter"
+    iex(6)> FakerElixir.Helper.cycle(:zombies, ["Peter", "Audrey", "Laurent", "Frank"])
+    "Audrey"
+    iex(7)> FakerElixir.Helper.cycle(:zombies, ["Peter", "Audrey", "Laurent", "Frank"])
+    "Laurent"
+    iex(8)> FakerElixir.Helper.cycle(:zombies, ["Peter", "Audrey", "Laurent", "Frank"])
+    "Frank"
+
+    ... and so on.
+
+  """
   def cycle(id, enumerable) do
 
     Store.has?(id)
@@ -11,7 +52,6 @@ defmodule FakerElixir.Helper do
 
   end
 
-  # Private
 
   defp do_cycle(false, id, enumerable) do
     # Fetch first value

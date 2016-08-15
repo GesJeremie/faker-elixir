@@ -43,7 +43,7 @@ defmodule FakerElixir.Helpers.App do
   @doc """
   Pick randomly a value in an enumerable
 
-  ## Eamples
+  ## Examples
 
     iex > FakerElixir.Helpers.App.pick(["paris", "athens", "london"])
     "london"
