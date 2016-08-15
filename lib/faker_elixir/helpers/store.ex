@@ -1,7 +1,6 @@
 defmodule FakerElixir.Helpers.Store do
+  @moduledoc false
 
-  @moduledocset false
-  
   def start_link do
     Agent.start_link(fn -> %{:locale => :en} end, name: __MODULE__)
   end

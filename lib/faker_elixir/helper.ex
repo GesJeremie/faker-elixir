@@ -19,9 +19,10 @@ defmodule FakerElixir.Helper do
   def pick(enumerable), do: App.pick(enumerable)
 
   @doc """
-  Will iterate through the enumerable as a constant cycle.
+  Will iterate through the enumerable as a constant cycle
+  Really useful when you want to seed your database with a pre-defined cycle
 
-  Warning: The id (first param given) should be unique for each different cycle.
+  Warning: The id (first param given) should be unique for each different cycle
 
   ## Examples
 

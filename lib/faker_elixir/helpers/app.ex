@@ -1,5 +1,4 @@
 defmodule FakerElixir.Helpers.App do
-
   @moduledoc false
 
   @doc """
