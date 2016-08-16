@@ -38,6 +38,20 @@ defmodule FakerElixir.Boolean do
   false
   ```
 
+  10% chance to be ```true```:
+
+  ```
+  iex> FakerElixir.Boolean.boolean(0.1)
+  false
+  ```
+
+  90% chance to be ```true```:
+
+  ```
+  iex> FakerElixir.Boolean.boolean(0.9)
+  true
+  ```
+
   """
   def boolean(ratio) when ratio >= 0 and ratio <= 1 do
 
