@@ -10,7 +10,7 @@ defmodule FakerElixir.Address do
 
   ## Examples
 
-    iex > FakerElixir.Address.city
+    iex> FakerElixir.Address.city
     "Portland"
 
   """
@@ -22,14 +22,14 @@ defmodule FakerElixir.Address do
 
   @doc """
   Return country struct with code & name.
-  Really helpful when you want to generate "true-fake" data.
+  Helpful when you want to generate "true-fake" data.
 
   ## Examples
 
-    iex > FakerElixir.Address.country
+    iex> FakerElixir.Address.make_country
     %{code: "MY", name: "Malaysia"}
   """
-  def country do
+  def make_country do
     :countries
       |> fetch
       |> pick
@@ -40,11 +40,11 @@ defmodule FakerElixir.Address do
 
   ## Examples
 
-    iex > FakerElixir.Address.country_name
+    iex > FakerElixir.Address.country
     "Iceland"
   """
-  def country_name do
-    country().name
+  def country do
+    make_country().name
   end
 
   @doc """
@@ -56,7 +56,7 @@ defmodule FakerElixir.Address do
     "NY"
   """
   def country_code do
-    country().code
+    make_country().code
   end
 
   @doc """
@@ -189,15 +189,15 @@ defmodule FakerElixir.Address do
   end
 
   @doc """
-  Return a state abbrevation
+  Return a state code
 
   ## Examples
 
-    iex > FakerElixir.Address.state_abbr
+    iex > FakerElixir.Address.state_code
     "TX"
   """
-  def state_abbr do
-    :states_abbr
+  def state_code do
+    :state_codes
       |> fetch
       |> pick
   end

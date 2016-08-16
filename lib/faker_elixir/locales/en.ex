@@ -17,7 +17,7 @@ defmodule FakerElixir.Locales.En do
   @secondary_addresses ["Apt. ###", "Suite ###"]
 
   @states ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
-  @states_abbr ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"]
+  @state_codes ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"]
 
   @apps ["Lemonid", "Licemand", "Dohmer", "Increasure", "Nothers", "Coalify", "Koala-app", "Jaming", "Sharehouse", "Everal", "Westory", "Flation", "Browniee", "Summerica", "Prote", "Mackerill", "Chatic", "Seriods", "Chocolada", "Solidays", "Elcome", "Trakerit", "Gastroyo", "Pizzadeli", "Arties", "Factoric", "Univer", "Ukuku", "Britley", "High-poney", "Coffeecup", "Peeer", "Aliasmixo"]
 
@@ -32,7 +32,7 @@ defmodule FakerElixir.Locales.En do
   def building_patterns, do: @building_patterns
   def zip_code_patterns, do: @zip_code_patterns
   def states, do: @states
-  def states_abbr, do: @states_abbr
+  def state_codes, do: @state_codes
   def secondary_addresses, do: @secondary_addresses
   def apps, do: @apps
   def version_patterns, do: @version_patterns
