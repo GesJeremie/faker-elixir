@@ -6,11 +6,15 @@ defmodule FakerElixir.Helpers.Store do
   end
 
   def get(key) do
-    Agent.get(__MODULE__, fn(map) -> Map.fetch!(map, key) end)
+    if has?(key) do
+      Agent.get(__MODULE__, fn(map) -> Map.fetch!(map, key) end)
+    else
+      nil
+    end
   end
 
   def drop(key) do
-    Agent.get(__MODULE__, fn(map) -> Map.delete(map, key) end)
+    Agent.update(__MODULE__, &Map.delete(&1, key))
   end
 
   def set(key, value) do
