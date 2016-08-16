@@ -1,8 +1,14 @@
 defmodule FakerElixir do
+
+  @moduledoc """
+  **TODO: Copy Paste readme**
+  """
+
   use Application
 
   @allowed_locales [:en, :fr]
 
+  @doc false
   def start(_type, _args) do
     import Supervisor.Spec, warn: false
 
@@ -17,18 +23,28 @@ defmodule FakerElixir do
   @doc """
   You can set your favorite locale at the run time !
 
-  Note: Right now you can only pick between :fr and :en
+  The default locale is: ```:en```
+
+  ```Note:``` Right now you can only pick between ```:fr``` and ```:en```
 
   ## Examples
 
-    iex> FakerElixir.set_locale(:fr)
-    :ok
+  ```
+  iex> FakerElixir.set_locale(:en)
+  :ok
+  iex> FakerElixir.Address.city
+  Baltimore"
 
-    iex> FakerElixir.set_locale(:en)
-    :ok
 
-    iex> FakerElixir.set_locale(:es)
-    :error
+  iex> FakerElixir.set_locale(:fr)
+  :ok
+  iex> FakerElixir.Address.city
+  "Issy-les-Moulineaux"
+
+
+  iex> FakerElixir.set_locale(:es)
+  :error
+  ```
   """
   def set_locale(locale) do
     if allowed_locale?(locale) do
@@ -40,6 +56,10 @@ defmodule FakerElixir do
 
   @doc """
   Return the current locale set
+
+  ```
+  iex> FakerElixir.get_locale
+  :en
   """
   def get_locale() do
     FakerElixir.Helpers.Store.get(:locale)
