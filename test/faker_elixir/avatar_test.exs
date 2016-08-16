@@ -4,40 +4,40 @@ defmodule FakerElixir.AvatarTest do
   alias FakerElixir.Avatar
 
 
-  test "image/0" do
-    url = Avatar.image
+  test "robohash/0" do
+    url = Avatar.robohash
     assert is_binary(url)
     assert Regex.match?(~r/https:\/\/robohash\.org\/[a-z]*\.png\?size=300x300/, url)
   end
 
-  test "image/1" do
-    url = Avatar.image("awesome-slug")
+  test "robohash/1" do
+    url = Avatar.robohash("awesome-slug")
     assert is_binary(url)
-    assert Regex.match?(~r/https:\/\/robohash\.org\/awesome-slug\.png\?size=300x300/, url)
+    assert url == "https://robohash.org/awesome-slug.png?size=300x300"
   end
 
-  test "image/2" do
-    url = Avatar.image("zombie-slug", "400x500")
+  test "robohash/2" do
+    url = Avatar.robohash("zombie-slug", "400x500")
     assert is_binary(url)
-    assert Regex.match?(~r/https:\/\/robohash\.org\/zombie-slug\.png\?size=400x500/, url)
+    assert url == "https://robohash.org/zombie-slug.png?size=400x500"
   end
 
-  test "image/3" do
-    url = Avatar.image("my-slug-my-way", "220x200", "jpg")
+  test "robohash/3" do
+    url = Avatar.robohash("my-slug-my-way", "220x200", "jpg")
     assert is_binary(url)
-    assert Regex.match?(~r/https:\/\/robohash\.org\/my-slug-my-way\.jpg\?size=220x200/, url)
+    assert url == "https://robohash.org/my-slug-my-way.jpg?size=220x200"
   end
 
-  test "image/4" do
-    url = Avatar.image("my-slug-my-way", "220x200", "jpg", "set1")
+  test "robohash/4" do
+    url = Avatar.robohash("my-slug-my-way", "220x200", "jpg", "set1")
     assert is_binary(url)
-    assert Regex.match?(~r/https:\/\/robohash\.org\/my-slug-my-way\.jpg\?size=220x200&set=set1/, url)
+    assert url == "https://robohash.org/my-slug-my-way.jpg?size=220x200&set=set1"
   end
 
-  test "image/5" do
-    url = Avatar.image("my-slug-my-way", "220x200", "jpg", "set1", "bg1")
+  test "robohash/5" do
+    url = Avatar.robohash("my-slug-my-way", "220x200", "jpg", "set1", "bg1")
     assert is_binary(url)
-    assert Regex.match?(~r/https:\/\/robohash\.org\/my-slug-my-way\.jpg\?size=220x200&set=set1&bgset=bg1/, url)
+    assert url == "https://robohash.org/my-slug-my-way.jpg?size=220x200&set=set1&bgset=bg1"
   end
 
 end
