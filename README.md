@@ -1,10 +1,11 @@
-# FakerElixir
+# :octopus: FakerElixir
 
-**WORK IN PROGRESS**
+FakerElixir is an Elixir package that **generates fake data** for you. Whether you need to **seed** your database, create **factories** for your project, FakerElixir is for you :punch:.
+
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
+Can't wait to generate some fake data ? Follow the steps:
 
   1. Add `faker_elixir` to your list of dependencies in `mix.exs`:
 
@@ -21,3 +22,11 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
       [applications: [:faker_elixir]]
     end
     ```
+    
+  3. Run in the root of your project: 
+  
+    ```
+    $ mix deps.get
+    ```
+    
+  4. Faker Elixir is now a part of your application and ready to use!
