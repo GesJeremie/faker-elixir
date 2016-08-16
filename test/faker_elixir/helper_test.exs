@@ -17,8 +17,6 @@ defmodule FakerElixir.HelperTest do
     warriors = Stream.repeatedly(fn() -> fixture(:warrior) end)
       |> Enum.take(5)
 
-    IO.inspect warriors
-
     assert warriors |> Enum.at(0) == %{name: "anubis", lvl: 10}
     assert warriors |> Enum.at(1) == %{name: "zeus", lvl: 25}
     assert warriors |> Enum.at(2) == %{name: "behamut", lvl: 90}
