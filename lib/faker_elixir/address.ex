@@ -10,8 +10,10 @@ defmodule FakerElixir.Address do
 
   ## Examples
 
-    iex> FakerElixir.Address.city
-    "Portland"
+  ```
+  iex> FakerElixir.Address.city
+  "Portland"
+  ```
 
   """
   def city do
@@ -22,12 +24,13 @@ defmodule FakerElixir.Address do
 
   @doc """
   Return country struct with code & name.
-  Helpful when you want to generate "true-fake" data.
 
   ## Examples
 
-    iex> FakerElixir.Address.make_country
-    %{code: "MY", name: "Malaysia"}
+  ```
+  iex> FakerElixir.Address.make_country
+  %{code: "MY", name: "Malaysia"}
+  ```
   """
   def make_country do
     :countries
@@ -40,8 +43,10 @@ defmodule FakerElixir.Address do
 
   ## Examples
 
-    iex > FakerElixir.Address.country
-    "Iceland"
+  ```
+  iex> FakerElixir.Address.country
+  "Iceland"
+  ```
   """
   def country do
     make_country().name
@@ -52,8 +57,10 @@ defmodule FakerElixir.Address do
 
   ## Examples
 
-    iex > FakerElixir.Address.country_code
-    "NY"
+  ```
+  iex> FakerElixir.Address.country_code
+  "NY"
+  ```
   """
   def country_code do
     make_country().code
@@ -64,8 +71,10 @@ defmodule FakerElixir.Address do
 
   ## Examples
 
-    iex > FakerElixir.Address.street_suffix
-    "Lodge"
+  ```
+  iex> FakerElixir.Address.street_suffix
+  "Lodge"
+  ```
   """
   def street_suffix do
     :street_suffixes
@@ -78,8 +87,10 @@ defmodule FakerElixir.Address do
 
   ## Examples
 
-    iex > FakerElixir.Address.street_name
-    "McLaughlin Mills"
+  ```
+  iex> FakerElixir.Address.street_name
+  "McLaughlin Mills"
+  ```
   """
   def street_name do
     0..1
@@ -108,8 +119,10 @@ defmodule FakerElixir.Address do
 
   ## Examples
 
-    iex > FakerElixir.Address.street_address
-    "786 Willow Parkways"
+  ```
+  iex> FakerElixir.Address.street_address
+  "786 Willow Parkways"
+  ```
   """
   def street_address do
     "#{building_number()} #{street_name()}"
@@ -120,8 +133,10 @@ defmodule FakerElixir.Address do
 
   ## Examples
 
-    iex > FakerElixir.Address.secondary_address
-    "Apt. 752"
+  ```
+  iex> FakerElixir.Address.secondary_address
+  "Apt. 752"
+  ```
   """
   def secondary_address do
     :secondary_addresses
@@ -135,8 +150,10 @@ defmodule FakerElixir.Address do
 
   ## Examples
 
-    iex > FakerElixir.Address.building_number
-    "542"
+  ```
+  iex> FakerElixir.Address.building_number
+  "542"
+  ```
   """
   def building_number do
     :building_patterns
@@ -150,8 +167,10 @@ defmodule FakerElixir.Address do
 
   ## Examples
 
-    iex > FakerElixir.Address.zip_code
-    "59146-7626"
+  ```
+  iex> FakerElixir.Address.zip_code
+  "59146-7626"
+  ```
   """
   def zip_code do
     :zip_code_patterns
@@ -165,8 +184,10 @@ defmodule FakerElixir.Address do
 
   ## Examples
 
-    iex > FakerElixir.Address.time_zone
-    "Europe/Sarajevo"
+  ```
+  iex> FakerElixir.Address.time_zone
+  "Europe/Sarajevo"
+  ```
   """
   def time_zone do
     :time_zones
@@ -179,8 +200,10 @@ defmodule FakerElixir.Address do
 
   ## Examples
 
-    iex > FakerElixir.Address.state
-    "New Jersey"
+  ```
+  iex> FakerElixir.Address.state
+  "New Jersey"
+  ```
   """
   def state do
     :states
@@ -193,8 +216,10 @@ defmodule FakerElixir.Address do
 
   ## Examples
 
-    iex > FakerElixir.Address.state_code
-    "TX"
+  ```
+  iex> FakerElixir.Address.state_code
+  "TX"
+  ```
   """
   def state_code do
     :state_codes
@@ -207,8 +232,10 @@ defmodule FakerElixir.Address do
 
   ## Examples
 
-    iex > FakerElixir.Address.latitude
-    -71.67369045432866
+  ```
+  iex> FakerElixir.Address.latitude
+  -71.67369045432866
+  ```
   """
   def latitude do
     ((rand * 180) - 90)
@@ -219,8 +246,10 @@ defmodule FakerElixir.Address do
 
   ## Examples
 
-    iex > FakerElixir.Address.longitude
-    -114.67722189422487
+  ```
+  iex> FakerElixir.Address.longitude
+  -114.67722189422487
+  ```
   """
   def longitude do
     ((rand * 360) - 180)
