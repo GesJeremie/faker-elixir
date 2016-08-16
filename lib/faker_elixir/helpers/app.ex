@@ -14,7 +14,7 @@ defmodule FakerElixir.Helpers.App do
     :random.uniform
   end
 
-  
+
   @doc """
   Fill a pattern with random number
 
