@@ -6,13 +6,14 @@ defmodule FakerElixir.App do
   import FakerElixir.Helpers.App
 
   @doc """
-  Return a name
+  Return an application name
 
   ## Examples
 
-    iex > FakerElixir.App.name
-    "Chocolada"
-
+  ```
+  iex> FakerElixir.App.name
+  "Chocolada"
+  ```
   """
   def name do
     :apps
@@ -25,8 +26,10 @@ defmodule FakerElixir.App do
 
   ## Examples
 
-    iex > FakerElixir.App.version
-    "8.1.7"
+  ```
+  iex> FakerElixir.App.version
+  "8.1.7"
+  ```
   """
   def version do
     :version_patterns
@@ -40,8 +43,10 @@ defmodule FakerElixir.App do
 
   ## Examples
 
-    iex > FakerElixir.App.author
-    "Antonio Konopelski"
+  ```
+  iex> FakerElixir.App.author
+  "Antonio Konopelski"
+  ```
 
   """
   def author do
