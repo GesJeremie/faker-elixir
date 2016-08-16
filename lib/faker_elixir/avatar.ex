@@ -3,7 +3,6 @@ defmodule FakerElixir.Avatar do
   Generate fake data for the domain avatar
   """
 
-  import FakerElixir.Helpers.App
   alias FakerElixir.Lorem
 
   @doc """

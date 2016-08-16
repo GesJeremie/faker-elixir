@@ -3,7 +3,6 @@ defmodule FakerElixir.Crypto do
   Generate fake data for the domain crypto
   """
 
-  import FakerElixir.Helpers.App
   alias FakerElixir.Lorem
 
   @doc """
