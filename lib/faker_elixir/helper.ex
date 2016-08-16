@@ -26,6 +26,8 @@ defmodule FakerElixir.Helper do
 
   ## Examples
 
+    ### Basic
+
     iex(1)> FakerElixir.Helper.cycle(:zombies, ["Peter", "Audrey", "Laurent", "Frank"])
     "Peter"
     iex(2)> FakerElixir.Helper.cycle(:zombies, ["Peter", "Audrey", "Laurent", "Frank"])
@@ -44,6 +46,32 @@ defmodule FakerElixir.Helper do
     "Frank"
 
     ... and so on.
+
+    ### Seed example
+
+    defmodule Seed do
+
+      alias FakerElixir.Helper
+
+      def make do
+        warriors = Stream.repeatedly(fn() -> fixture(:warrior) end)
+          |> Enum.take(5)
+      end
+
+
+      defp fixture(:warrior) do
+        %{
+          name: Helper.cycle(:name, ["anubis", "zeus", "behamut"]),
+          lvl: Helper.cycle(:lvl, [10, 25, 90])
+        }
+      end
+
+    end
+
+    iex> Seed.make
+    [%{lvl: 10, name: "anubis"}, %{lvl: 25, name: "zeus"},
+    %{lvl: 90, name: "behamut"}, %{lvl: 10, name: "anubis"},
+    %{lvl: 25, name: "zeus"}]
 
   """
   def cycle(id, enumerable) do
