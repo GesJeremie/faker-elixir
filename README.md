@@ -80,7 +80,7 @@ I guess you have an error similar to  ```something .... Store.has?() ..... somet
 
 ## Cheatsheet
 
-Each functions of FakerElixir are well documented here: [documentation](http://www.example.com/).
+Each functions of FakerElixir are well documented here: [documentation](https://hexdocs.pm/faker_elixir_octopus/0.1.0/FakerElixir.html).
 
 But I know you, you will forget the syntax to generate a city and so on ... Don't waste your time in the documentation, just use this simple cheatsheet:
 
@@ -157,7 +157,8 @@ FakerElixir.Crypto.sha512 # "06C1CC54DC49E53B1274D9A0DD951B76DD45731E0AB319D9857
 ### FakerElixir.Helper
 ---
 ```elixir
-# Check out the documentation for this helper: URL:::::faker_elixir/doc/FakerElixir.Helper.html
+# Check out the documentation for this helper:
+# https://hexdocs.pm/faker_elixir_octopus/0.1.0/FakerElixir.Helper.html#cycle/2
 FakerElixir.Helper.cycle(:zombies, ["Peter", "Audrey"]) # Peter
 FakerElixir.Helper.cycle(:zombies, ["Peter", "Audrey"]) # Audrey
 FakerElixir.Helper.cycle(:zombies, ["Peter", "Audrey"]) # Peter
