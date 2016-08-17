@@ -55,10 +55,10 @@ You are right, you could use ```alias``` of elixir:
 defmodule Zombie.AwesomeController do
   use Zombie.Web, :controller
 
-  alias FakerElixir, as: F
+  alias FakerElixir, as: Faker
 
   def index(conn, _params) do
-    text conn, F.Helper.pick(["zombie", "human"])
+    text conn, Faker.Helper.pick(["zombie", "human"])
   end
 end
 ```
@@ -213,17 +213,15 @@ FakerElixir.get_locale # :es
 ```elixir
 defmodule Zombie.AwesomeController do
   use Zombie.Web, :controller
-  alias FakerElixir, as: F
+  alias FakerElixir, as: Faker
 
   def index(conn, _params) do
 
-    F.set_locale(:en)
+    Faker.set_locale(:en)
+    city_en = Faker.Address.city
 
-    city_en = F.Address.city
-
-    F.set_locale(:fr)
-
-    city_fr = F.Address.city
+    Faker.set_locale(:fr)
+    city_fr = Faker.Address.city
 
     text conn, "#{city_en} / #{city_fr}"
   end
