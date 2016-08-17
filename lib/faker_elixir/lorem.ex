@@ -152,7 +152,7 @@ defmodule FakerElixir.Lorem do
   def sentence do
     sentence = words(8..20)
       |> String.capitalize
-
+    
     "#{sentence}."
   end
 

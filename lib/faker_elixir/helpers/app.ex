@@ -75,7 +75,7 @@ defmodule FakerElixir.Helpers.App do
   """
   def pick(enumerable) do
     enumerable
-      |> Enum.shuffle
+      |> Enum.take_random(1)
       |> Enum.at(0)
   end
 
