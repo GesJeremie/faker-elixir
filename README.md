@@ -300,7 +300,7 @@ defmodule Test do
 end
 ```
 
-## Skeleton 
+#### Skeleton 
 ---
 The default skeleton for a locale is available here: [Skeleton](https://github.com/GesJeremie/faker-elixir/blob/master/lib/faker_elixir/locales/en.ex) 
 
