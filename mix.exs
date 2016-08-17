@@ -40,10 +40,10 @@ defmodule FakerElixir.Mixfile do
   end
 
   defp package do
-    [
+    %{
       maintainers: ["Ges Jeremie"],
       licenses: ["MIT"],
       links: %{"Github" => "https://github.com/GesJeremie/faker-elixir"}
-    ]
+    }
   end
 end
