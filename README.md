@@ -77,3 +77,48 @@ I guess you have an error similar to  ```something .... Store.has?() ..... somet
   end
 
 ```
+
+## Cheatsheet
+
+Each functions of FakerElixir are well documented here: [documentation](http://www.example.com/).
+
+But I know you, you will forget the syntax to generate a city and so on ... Don't waste your time in the documentation, just use this simple cheatsheet:
+
+- [Faker.Address](#fakeraddress)
+- [Faker.App](#fakerapp)
+- [Faker.Avatar](#fakeravatar)
+- [Faker.Boolean](#fakerboolean)
+- [Faker.Crypto](#fakercrypto)
+- [Faker.Helper](#fakerhelper)
+- [Faker.Lorem](#fakercommerce)
+
+### FakerElixir.Address
+```elixir
+FakerElixir.Address.building_number # "542"
+FakerElixir.Address.city # "Portland"
+FakerElixir.Address.country # "Iceland"
+FakerElixir.Address.country_code # "NY"
+FakerElixir.Address.latitude # -71.67369045432866
+FakerElixir.Address.longitude # -114.67722189422487
+FakerElixir.Address.make_country # %{code: "MY", name: "Malaysia"}
+FakerElixir.Address.secondary_address # "Apt. 752"
+FakerElixir.Address.state # "New Jersey"
+FakerElixir.Address.state_code # "TX"
+FakerElixir.Address.street_address # "786 Willow Parkways"
+FakerElixir.Address.street_name # "McLaughlin Mills"
+FakerElixir.Address.street_suffix # "Lodge"
+FakerElixir.Address.time_zone # "Europe/Sarajevo"
+FakerElixir.Address.zip_code # "59146-7626"
+```
+
+### FakerElixir.App
+### FakerElixir.Avatar
+### FakerElixir.Boolean
+### FakerElixir.Crypto
+### FakerElixir.Helper
+### FakerElixir.Lorem
+
+
+## Locales
+
+## Customisation
