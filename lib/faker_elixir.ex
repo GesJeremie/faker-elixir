@@ -6,8 +6,6 @@ defmodule FakerElixir do
 
   use Application
 
-  @allowed_locales [:en, :fr]
-
   @doc false
   def start(_type, _args) do
     import Supervisor.Spec, warn: false
@@ -47,11 +45,7 @@ defmodule FakerElixir do
   ```
   """
   def set_locale(locale) do
-    if allowed_locale?(locale) do
-      FakerElixir.Helpers.Store.set(:locale, locale)
-    else
-      :error
-    end
+    FakerElixir.Helpers.Store.set(:locale, locale)
   end
 
   @doc """
@@ -65,8 +59,5 @@ defmodule FakerElixir do
     FakerElixir.Helpers.Store.get(:locale)
   end
 
-  defp allowed_locale?(locale) do
-    Enum.member?(@allowed_locales, locale)
-  end
 
 end

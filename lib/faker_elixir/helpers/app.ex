@@ -10,7 +10,7 @@ defmodule FakerElixir.Helpers.App do
     0.34560389559786353
   """
   def rand do
-    :random.seed(:erlang.now)
+    :random.seed(:os.timestamp())
     :random.uniform
   end
 
@@ -114,12 +114,37 @@ defmodule FakerElixir.Helpers.App do
     # Fetch the current locale
     locale = get_locale()
 
+    fetch_custom(method, locale)
+
+  end
+
+  defp fetch_custom(method, locale) do
+
+    # The developper has the possibility
+    # to hook any methods of a locale.
+    #
+    # We will check if he created a module
+    # and the method to hook it.
+    module = FakerElixir.LocalesCustom
+      |> Module.concat(locale)
+
+    case can_exec?(module, method) do
+      true ->
+        apply(module, method, [])
+
+      false ->
+        fetch_normal(method, locale)
+    end
+
+  end
+
+  defp fetch_normal(method, locale) do
     # Build the locale module to call
     module = FakerElixir.Locales
       |> Module.concat(locale)
 
     # Check if the locale module defines the method wanted
-    case module |> has_method?(method) do
+    case can_exec?(module, method) do
       false ->
 
         # Fallback to the default locale
@@ -130,7 +155,6 @@ defmodule FakerElixir.Helpers.App do
         # Call the method for the current locale
         apply(module, method, [])
     end
-
   end
 
   defp get_locale do
@@ -139,10 +163,31 @@ defmodule FakerElixir.Helpers.App do
      |> String.capitalize
   end
 
+  defp can_exec?(module, method) do
+    with true <- has_module?(module),
+         true <- has_method?(module, method) do
+      true
+    else
+      false -> false
+    end
+  end
+
   defp has_method?(module, method) do
     methods = module.module_info(:exports)
-
     Keyword.has_key?(methods, method)
+  end
+
+  defp has_module?(module) do
+    cache = FakerElixir.Helpers.Store.get(module)
+
+    case cache do
+      nil ->
+        loaded = Code.ensure_loaded?(module)
+        FakerElixir.Helpers.Store.set(module, loaded)
+        loaded
+      _ ->
+        cache
+    end
   end
 
 end
