@@ -209,7 +209,7 @@ FakerElixir.set_locale(:es) # :ok
 FakerElixir.get_locale # :es
 ```
 
-#### In phoenix
+#### Phoenix Example
 ```elixir
 defmodule Zombie.AwesomeController do
   use Zombie.Web, :controller
@@ -232,4 +232,77 @@ end
 
 ### Custom locale
 
-In progress.
+Since this package is quite new we don't have enough locales out of the box. It could be possible you don't like the data provided too. That's why we let you the possibility to define / update the data !
+
+#### Add a new locale
+
+Let's say you are spanish and you want to create the ``:es`` locale, you just need to define a new module in your elixir / mix project:
+
+```
+# locales/faker_elixir/es.ex
+# It doesn't matter where you define your module tho.
+
+defmodule FakerElixir.LocalesCustom.Es do
+  
+  # Let's "localize" the cities
+  @cities ["Barcelona", "Madrid", "La Jonquera"]
+  
+  def cities, do: cities
+  
+end
+```
+
+Now when you will set the locale ```:es```, FakerElixir will pick your data:
+
+```
+defmodule Test do
+  
+  alias FakerElixir, as: Faker
+  
+  def try do
+    Faker.set_locale(:es)
+    Faker.Address.city # Barcelona
+  end
+  
+end
+```
+
+
+#### Edit a locale
+
+Let's say you want to update the locale ```:fr``` for the method ```FakerElixir.Address.secondary_address````:
+
+```
+# locales/faker_elixir/fr.ex
+# It doesn't matter where you define your module tho.
+
+defmodule FakerElixir.LocalesCustom.Fr do
+  
+  @secondary_addresses ["Sonnette. ##"]
+  
+  def secondary_addresses, do: @secondary_addresses
+  
+end
+```
+
+Now when you will set the locale ```:fr```, FakerElixir will pick your data:
+
+```
+defmodule Test do
+  
+  alias FakerElixir, as: Faker
+  
+  def try do
+    Faker.set_locale(:fr)
+    Faker.Address.secondary_address # Sonnette. 12
+  end
+  
+end
+```
+
+## Skeleton 
+
+The default skeleton for a locale is available here: https://github.com/GesJeremie/faker-elixir/blob/master/lib/faker_elixir/locales/en.ex
+
+
+
