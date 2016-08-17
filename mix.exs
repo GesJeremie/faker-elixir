@@ -2,12 +2,12 @@ defmodule FakerElixir.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :faker_elixir,
+    [app: :faker_elixir_octopus,
      version: "0.1.0",
      elixir: "~> 1.3",
      description: description(),
      package: package(),
-     name: "FakerElixir",
+     name: "Faker Elixir (octopus)",
      source_url: "https://github.com/GesJeremie/faker-elixir",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
