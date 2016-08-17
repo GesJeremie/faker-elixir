@@ -1,6 +1,6 @@
 # :octopus: FakerElixir
 
-FakerElixir is an Elixir package that **generates fake data** for you. Whether you need to **seed** your database, create **factories** for your project, FakerElixir is for you :punch:.
+FakerElixir is an Elixir package that **generates fake data** for you. Whether you need to **seed** your database, create **factories** for your project, FakerElixir is here for you :punch:.
 
 
 ## Installation
