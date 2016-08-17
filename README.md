@@ -90,7 +90,8 @@ But I know you, you will forget the syntax to generate a city and so on ... Don'
 - [Faker.Boolean](#fakerelixirboolean)
 - [Faker.Crypto](#fakerelixircrypto)
 - [Faker.Helper](#fakerelixirhelper)
-- [Faker.Lorem](#fakerelixircommerce)
+- [Faker.Lorem](#fakerelixirlorem)
+- [Faker.Name](#fakerelixirname)
 
 ### FakerElixir.Address
 ---
@@ -185,6 +186,18 @@ FakerElixir.Lorem.word # "et"
 FakerElixir.Lorem.words # "pariatur ea eos quibusdam velit debitis et"
 FakerElixir.Lorem.words(3) # "sapiente optio dolor"
 FakerElixir.Lorem.words(2..4) # "laudantium rem saepe qui"
+```
+
+### FakerElixir.Name
+---
+```elixir
+FakerElixir.Name.first_name # "Ari"
+FakerElixir.Name.last_name # "Miller"
+FakerElixir.Name.name # "Louie Corkery"
+FakerElixir.Name.name_with_middle # "Annalise Francesco Schowalter"
+FakerElixir.Name.prefix # "Mr."
+FakerElixir.Name.suffix # "PhD"
+FakerElixir.Name.title # "Principal Branding Orchestrator"
 ```
 
 ## Locales
