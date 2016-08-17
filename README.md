@@ -22,13 +22,13 @@ Can't wait to generate some fake data ? Follow the steps:
       [applications: [:faker_elixir]]
     end
     ```
-    
-  3. Run in the root of your project: 
-  
+
+  3. Run in the root of your project:
+
     ```
     $ mix deps.get
     ```
-    
+
   4. Faker Elixir is now a part of your application and ready to use!
 
 ## Usage
@@ -189,7 +189,11 @@ FakerElixir.Lorem.words(2..4) # "laudantium rem saepe qui"
 
 ## Locales
 
-The default locale used by FakerElixir is ```:en```. Right now __only__ 2 locales are supported: ```:fr```, ```:en```.
+### General
+
+The default locale used by FakerElixir is ```:en```. Right now only 2 locales are available: ```:fr```, ```:en```.
+
+If you set a different locale, FakerElixir will just fallback to ```:en``` (If you didn't provide a custom locale)
 
 **Note:** Keep in mind you can set the locale at the runtime, the locale set will keep his state until you set another locale.
 
@@ -201,8 +205,8 @@ FakerElixir.Address.city # "Baltimore"
 FakerElixir.set_locale(:fr) # :ok
 FakerElixir.Address.city # "Issy-les-Moulineaux"
 
-FakerElixir.set_locale(:es) # :error
-FakerElixir.get_locale # :fr
+FakerElixir.set_locale(:es) # :ok
+FakerElixir.get_locale # :es
 ```
 
 #### In phoenix
@@ -214,7 +218,7 @@ defmodule Zombie.AwesomeController do
   def index(conn, _params) do
 
     F.set_locale(:en)
-    
+
     city_en = F.Address.city
 
     F.set_locale(:fr)
@@ -228,5 +232,6 @@ end
 # Will produce something like: Charlotte / Courbevoie
 ```
 
+### Custom locale
 
-## Customisation
+In progress.
