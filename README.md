@@ -84,13 +84,13 @@ Each functions of FakerElixir are well documented here: [documentation](http://w
 
 But I know you, you will forget the syntax to generate a city and so on ... Don't waste your time in the documentation, just use this simple cheatsheet:
 
-- [Faker.Address](#fakeraddress)
-- [Faker.App](#fakerapp)
-- [Faker.Avatar](#fakeravatar)
-- [Faker.Boolean](#fakerboolean)
-- [Faker.Crypto](#fakercrypto)
-- [Faker.Helper](#fakerhelper)
-- [Faker.Lorem](#fakercommerce)
+- [Faker.Address](#fakerelixiraddress)
+- [Faker.App](#fakerelixirapp)
+- [Faker.Avatar](#fakerelixiravatar)
+- [Faker.Boolean](#fakerelixirboolean)
+- [Faker.Crypto](#fakerelixircrypto)
+- [Faker.Helper](#fakerelixirhelper)
+- [Faker.Lorem](#fakerelixircommerce)
 
 ### FakerElixir.Address
 ---
