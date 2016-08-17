@@ -41,7 +41,7 @@ defmodule FakerElixir.Mixfile do
 
   defp package do
     [
-      mainteners: ["Ges Jeremie"],
+      maintainers: ["Ges Jeremie"],
       licenses: ["MIT"],
       links: %{"Github" => "https://github.com/GesJeremie/faker-elixir"}
     ]
