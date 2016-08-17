@@ -7,6 +7,8 @@ defmodule FakerElixir.Mixfile do
      elixir: "~> 1.3",
      description: description(),
      package: package(),
+     name: "FakerElixir",
+     source_url: "https://github.com/GesJeremie/faker-elixir",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      deps: deps()]
@@ -30,7 +32,7 @@ defmodule FakerElixir.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    [{:ex_doc, "~> 0.10", only: :dev}]
+    [{:ex_doc, "~> 0.10", only: :docs}]
   end
 
   defp description do
