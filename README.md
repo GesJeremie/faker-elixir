@@ -15,7 +15,7 @@ Can't wait to generate some fake data ? Follow the steps:
     end
     ```
 
-  2. Ensure `faker_elixir` is started before your application:
+  2. Ensure `faker_elixir_octopus` is started before your application:
 
     ```elixir
     def application do
