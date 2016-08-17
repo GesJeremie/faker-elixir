@@ -205,7 +205,7 @@ FakerElixir.set_locale(:es) # :error
 FakerElixir.get_locale # :fr
 ```
 
-### In phoenix
+#### In phoenix
 ```elixir
 defmodule Zombie.AwesomeController do
   use Zombie.Web, :controller
