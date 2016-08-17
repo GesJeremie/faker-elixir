@@ -5,6 +5,8 @@ defmodule FakerElixir.Mixfile do
     [app: :faker_elixir,
      version: "0.1.0",
      elixir: "~> 1.3",
+     description: description(),
+     package: package(),
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      deps: deps()]
@@ -29,5 +31,19 @@ defmodule FakerElixir.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [{:ex_doc, "~> 0.10", only: :dev}]
+  end
+
+  defp description do
+    """
+    FakerElixir is an Elixir package that generates fake data for you. Whether you need to seed your database, create factories for your project, FakerElixir is here for you.
+    """
+  end
+
+  defp package do
+    [
+      mainteners: ["Ges Jeremie"],
+      licenses: ["MIT"],
+      links: %{"Github" => "https://github.com/GesJeremie/faker-elixir"}
+    ]
   end
 end

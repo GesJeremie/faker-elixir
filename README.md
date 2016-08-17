@@ -11,7 +11,7 @@ Can't wait to generate some fake data ? Follow the steps:
 
     ```elixir
     def deps do
-      [{:faker_elixir, "~> 0.1.0"}]
+      [{:faker_elixir, "~> 0.1.0", only: :dev}]
     end
     ```
 
@@ -243,12 +243,12 @@ Let's say you are spanish and you want to create the ``:es`` locale, you just ne
 # It doesn't matter where you define your module tho.
 
 defmodule FakerElixir.LocalesCustom.Es do
-  
+
   # Let's "localize" the cities
   @cities ["Barcelona", "Madrid", "La Jonquera"]
-  
+
   def cities, do: cities
-  
+
 end
 ```
 
@@ -256,14 +256,14 @@ Now when you will set the locale ```:es```, FakerElixir will pick your data:
 
 ```elixir
 defmodule Test do
-  
+
   alias FakerElixir, as: Faker
-  
+
   def try do
     Faker.set_locale(:es)
     Faker.Address.city # Barcelona
   end
-  
+
 end
 ```
 
@@ -277,11 +277,11 @@ Let's say you want to update the locale ```:fr``` for the method ```FakerElixir.
 # It doesn't matter where you define your module tho.
 
 defmodule FakerElixir.LocalesCustom.Fr do
-  
+
   @secondary_addresses ["Sonnette. ##"]
-  
+
   def secondary_addresses, do: @secondary_addresses
-  
+
 end
 ```
 
@@ -289,20 +289,17 @@ Now when you will set the locale ```:fr```, FakerElixir will pick your data:
 
 ```elixir
 defmodule Test do
-  
+
   alias FakerElixir, as: Faker
-  
+
   def try do
     Faker.set_locale(:fr)
     Faker.Address.secondary_address # Sonnette. 12
   end
-  
+
 end
 ```
 
-#### Skeleton 
+#### Skeleton
 ---
-The default skeleton for a locale is available here: [Skeleton](https://github.com/GesJeremie/faker-elixir/blob/master/lib/faker_elixir/locales/en.ex) 
-
-
-
+The default skeleton for a locale is available here: [Skeleton](https://github.com/GesJeremie/faker-elixir/blob/master/lib/faker_elixir/locales/en.ex)
