@@ -164,7 +164,7 @@ defmodule FakerElixir.Helpers.App do
   end
 
   defp can_exec?(module, method) do
-    with true <- has_module?(module),
+    with true <- module_exists?(module),
          true <- has_method?(module, method) do
       true
     else
@@ -177,7 +177,20 @@ defmodule FakerElixir.Helpers.App do
     Keyword.has_key?(methods, method)
   end
 
-  defp has_module?(module) do
+
+  ##
+  # Check if a module exists.
+  #
+  # I spent few hours on this one. Sounds like Erlang lazy load the modules.
+  # The only way to know if a module really exists is to try ... to load it.
+  #
+  # That's a problem, if a module really doesn't exist, you don't want to try to
+  # load it X times. That's why I use the Store Helper, like that we will try to
+  # load it only one time.
+  #
+  # I guess it's not the best implementation and we should find a better way in a
+  # near future.
+  defp module_exists?(module) do
     cache = FakerElixir.Helpers.Store.get(module)
 
     case cache do
