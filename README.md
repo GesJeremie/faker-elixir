@@ -191,8 +191,9 @@ FakerElixir.Lorem.words(2..4) # "laudantium rem saepe qui"
 
 The default locale used by FakerElixir is ```:en```. Right now __only__ 2 locales are supported: ```:fr```, ```:en```.
 
-**Note:** Keep in mind you can set the locale at the runtime!
+**Note:** Keep in mind you can set the locale at the runtime, the locale set will keep his state until you set another locale.
 
+#### Basic example
 ```elixir
 FakerElixir.set_locale(:en) # :ok
 FakerElixir.Address.city # "Baltimore"
@@ -202,7 +203,29 @@ FakerElixir.Address.city # "Issy-les-Moulineaux"
 
 FakerElixir.set_locale(:es) # :error
 FakerElixir.get_locale # :fr
+```
 
+### In phoenix
+```elixir
+defmodule Zombie.AwesomeController do
+  use Zombie.Web, :controller
+  alias FakerElixir, as: F
+
+  def index(conn, _params) do
+
+    F.set_locale(:en)
+    
+    city_en = F.Address.city
+
+    F.set_locale(:fr)
+
+    city_fr = F.Address.city
+
+    text conn, "#{city_en} / #{city_fr}"
+  end
+end
+
+# Will produce something like: Charlotte / Courbevoie
 ```
 
 
