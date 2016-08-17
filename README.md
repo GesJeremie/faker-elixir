@@ -65,7 +65,7 @@ end
 
 #### :speech_balloon: "I followed the steps to install the package, but it doesn't work :angry: !!"
 
-I guess you have an error similar to  ```something .... Store.has?() ..... something```. Well you just forgot to add ```:faker_elixir```:
+I guess you have an error similar to  ```something .... Store.has?() ..... something```. Well you just forgot to add ```:faker_elixir_octopus```:
 
 ```elixir
 # mix.exs file
@@ -73,7 +73,7 @@ I guess you have an error similar to  ```something .... Store.has?() ..... somet
   def application do
     [mod: {Test, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :faker_elixir]] # <---- here
+                    :phoenix_ecto, :postgrex, :faker_elixir_octopus]] # <---- here
   end
 
 ```
