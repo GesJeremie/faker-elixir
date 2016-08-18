@@ -90,7 +90,7 @@ But I know you, you will forget the syntax to generate a city and so on ... Don'
 - [Faker.Boolean](#fakerelixirboolean)
 - [Faker.Crypto](#fakerelixircrypto)
 - [Faker.Helper](#fakerelixirhelper)
-- [Faker.Internet](#fakerinternet)
+- [Faker.Internet](#fakerelixirinternet)
 - [Faker.Lorem](#fakerelixirlorem)
 - [Faker.Name](#fakerelixirname)
 
