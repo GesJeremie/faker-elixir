@@ -65,5 +65,19 @@ defmodule FakerElixir.Helpers.AppTest do
     assert (apps |> Enum.at(0)) == "Lemonid"
   end
 
+  test "keep_strict_alpha_numeric/1" do
+    assert App.keep_strict_alpha_numeric("Jérémie Ges") == "Jrmie Ges"
+    assert App.keep_strict_alpha_numeric("I love o'relly") == "I love orelly"
+  end
+
+  test "slug/1" do
+    assert App.slug("Jérémie ges is awesome dude!") == "jrmie.ges.is.awesome.dude"
+    assert App.slug(" w ") == "w"
+    assert App.slug(" what's up") == "whats.up"
+  end
+
+  test "slug/2" do
+    assert App.slug("Awesome slug dude", "*") == "awesome*slug*dude"
+  end
 
 end

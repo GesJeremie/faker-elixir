@@ -20,7 +20,7 @@ defmodule FakerElixir.Helpers.App do
     allowed = ~w(a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z)
     allowed = allowed ++ [" "]
 
-    string = string
+    string
       |> String.split("")
       |> Enum.filter(fn(x) ->
         Enum.member?(allowed, x)
@@ -57,6 +57,7 @@ defmodule FakerElixir.Helpers.App do
   def slug(string, glue) do
     string
       |> keep_strict_alpha_numeric
+      |> String.trim
       |> String.downcase
       |> String.replace(" ", glue)
   end
