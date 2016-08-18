@@ -2,6 +2,68 @@ defmodule FakerElixir.Helpers.App do
   @moduledoc false
 
   @doc """
+  Keep only [0-9a-zA-Z] characters and spaces.
+
+  The best would be to translate each accents of the string
+  than remove them completly.
+
+  We could use the Slugger package, but I don't want to add dependencies yet.
+
+  ## Examples
+
+  ```
+  iex> FakerElixir.Helpers.App.keep_strict_alpha_numeric("Jérémie just killed a zombie!!")
+  "Jrmie just killed a zombie"
+  ```
+  """
+  def keep_strict_alpha_numeric(string) do
+    allowed = ~w(a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z)
+    allowed = allowed ++ [" "]
+
+    string
+      |> String.split("")
+      |> Enum.filter(fn(x) ->
+        Enum.member?(allowed, x)
+      end)
+      |> Enum.join("")
+  end
+
+  @doc """
+  Sluggify a string
+
+  It's a naive implementation of a real slugger, but it's enough yet.
+
+  ### Examples
+
+  ```
+  iex> FakerElixir.Helpers.App.slug("Jérémie just killed a zombie!!")
+  "jrmie.just.killed.a.zombie"
+  ```
+  """
+  def slug(string) do
+    slug(string, ".")
+  end
+
+  @doc """
+  Sluggify a string with the glue given
+
+  ### Examples
+
+  ```
+  iex> FakerElixir.Helpers.App.slug("Jérémie just killed a zombie!!", "-")
+  "jrmie-just-killed-a-zombie"
+  ```
+  """
+  def slug(string, glue) do
+    string
+      |> keep_strict_alpha_numeric
+      |> String.trim
+      |> String.downcase
+      |> String.replace(" ", glue)
+  end
+
+
+  @doc """
   Generate a random number
 
   ## Examples
@@ -75,7 +137,7 @@ defmodule FakerElixir.Helpers.App do
   """
   def pick(enumerable) do
     enumerable
-      |> Enum.shuffle
+      |> Enum.take_random(1)
       |> Enum.at(0)
   end
 

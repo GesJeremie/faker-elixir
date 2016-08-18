@@ -90,7 +90,9 @@ But I know you, you will forget the syntax to generate a city and so on ... Don'
 - [Faker.Boolean](#fakerelixirboolean)
 - [Faker.Crypto](#fakerelixircrypto)
 - [Faker.Helper](#fakerelixirhelper)
-- [Faker.Lorem](#fakerelixircommerce)
+- [Faker.Internet](#fakerelixirinternet)
+- [Faker.Lorem](#fakerelixirlorem)
+- [Faker.Name](#fakerelixirname)
 
 ### FakerElixir.Address
 ---
@@ -158,13 +160,29 @@ FakerElixir.Crypto.sha512 # "06C1CC54DC49E53B1274D9A0DD951B76DD45731E0AB319D9857
 ---
 ```elixir
 # Check out the documentation for this helper:
-# https://hexdocs.pm/faker_elixir_octopus/0.1.0/FakerElixir.Helper.html#cycle/2
+# https://hexdocs.pm/faker_elixir_octopus/FakerElixir.Helper.html#cycle/2
 FakerElixir.Helper.cycle(:zombies, ["Peter", "Audrey"]) # Peter
 FakerElixir.Helper.cycle(:zombies, ["Peter", "Audrey"]) # Audrey
 FakerElixir.Helper.cycle(:zombies, ["Peter", "Audrey"]) # Peter
 
 FakerElixir.Helper.pick(["paris", "athens", "london"]) # "london"
 FakerElixir.Helper.pick(0..100) # 51
+```
+
+### FakerElixir.Internet
+---
+```elixir
+FakerElixir.Internet.email # "demarcus@ezra.io"
+FakerElixir.Internet.email("Peter Moleski") # "peter.moleski@ethel.net"
+
+FakerElixir.Internet.email(:popular) # "candelario@gmail.com"
+FakerElixir.Internet.email(:popular, "Peter Sobieska") # "peter.sobieska@hotmail.com"
+
+FakerElixir.Internet.url # "http://www.alejandra-connelly.com/"
+FakerElixir.Internet.url(:safe) # "https://www.stefan-little.org/"
+
+FakerElixir.Internet.user_name # "chadrick"
+FakerElixir.Internet.user_name("Jeremie GES") # "jeremie.ges"
 ```
 
 ### FakerElixir.Lorem
@@ -186,6 +204,18 @@ FakerElixir.Lorem.word # "et"
 FakerElixir.Lorem.words # "pariatur ea eos quibusdam velit debitis et"
 FakerElixir.Lorem.words(3) # "sapiente optio dolor"
 FakerElixir.Lorem.words(2..4) # "laudantium rem saepe qui"
+```
+
+### FakerElixir.Name
+---
+```elixir
+FakerElixir.Name.first_name # "Ari"
+FakerElixir.Name.last_name # "Miller"
+FakerElixir.Name.name # "Louie Corkery"
+FakerElixir.Name.name_with_middle # "Annalise Francesco Schowalter"
+FakerElixir.Name.prefix # "Mr."
+FakerElixir.Name.suffix # "PhD"
+FakerElixir.Name.title # "Principal Branding Orchestrator"
 ```
 
 ## Locales
