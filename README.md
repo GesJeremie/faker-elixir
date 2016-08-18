@@ -90,6 +90,7 @@ But I know you, you will forget the syntax to generate a city and so on ... Don'
 - [Faker.Boolean](#fakerelixirboolean)
 - [Faker.Crypto](#fakerelixircrypto)
 - [Faker.Helper](#fakerelixirhelper)
+- [Faker.Internet](#fakerinternet)
 - [Faker.Lorem](#fakerelixirlorem)
 - [Faker.Name](#fakerelixirname)
 
@@ -165,6 +166,22 @@ FakerElixir.Helper.cycle(:zombies, ["Peter", "Audrey"]) # Peter
 
 FakerElixir.Helper.pick(["paris", "athens", "london"]) # "london"
 FakerElixir.Helper.pick(0..100) # 51
+```
+
+### FakerElixir.Internet
+---
+```elixir
+FakerElixir.Internet.email # "demarcus@ezra.io"
+FakerElixir.Internet.email("Peter Moleski") # "peter.moleski@ethel.net"
+
+FakerElixir.Internet.email(:popular) # "candelario@gmail.com"
+FakerElixir.Internet.email(:popular, "Peter Sobieska") # "peter.sobieska@hotmail.com"
+
+FakerElixir.Internet.url # "http://www.alejandra-connelly.com/"
+FakerElixir.Internet.url(:safe) # "https://www.stefan-little.org/"
+
+FakerElixir.Internet.user_name # "chadrick"
+FakerElixir.Internet.user_name("Jeremie GES") # "jeremie.ges"
 ```
 
 ### FakerElixir.Lorem

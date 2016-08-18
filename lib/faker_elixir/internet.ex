@@ -117,13 +117,6 @@ defmodule FakerElixir.Internet do
   iex> FakerElixir.Internet.url
   "http://www.alejandra-connelly.com/"
   ```
-
-  You can set ``:safe`` to return an url with https://
-
-  ```
-  iex> FakerElixir.Internet.url(:safe)
-  "https://www.stefan-little.org/"
-  ```
   """
   def url do
     domain = do_url()
