@@ -350,3 +350,38 @@ end
 #### Skeleton
 ---
 The default skeleton for a locale is available here: [Skeleton](https://github.com/GesJeremie/faker-elixir/blob/master/lib/faker_elixir/locales/en.ex)
+
+### Customisation 
+---
+
+#### :speech_balloon: "Hey dude, your package is "great" but you forgot that, that and ... that, whaddup ? :sunglasses:"
+
+Well, depending the domain of your application, sure you will need some other fake data. That's why ```FakerElixir``` provides some useful things such as: ```FakerElixir.get_locale/0``` and the ```FakerElixir.Helper``` module.
+
+You could create your own module inside your application:
+
+```elixir
+defmodule FakerElixir.Custom do
+
+  @pokemons_en ["Charizard", "Bulbasaur", "Charmander"]
+  @pokemons_fr ["Dracaufeu", "Bulbizarre", "Salameche"]
+
+  def pokemon do
+    locale = FakerElixir.get_locale
+    
+    case locale do
+      :fr ->
+        FakerElixir.Helper.pick(@pokemons_fr)
+
+      _ ->
+        FakerElixir.Helper.pick(@pokemons_en)
+    end
+  end
+
+end
+```
+
+... and just call your module! ```iex> FakerElixir.Custom.pokemon```
+
+Hope it helps :yum:
+
