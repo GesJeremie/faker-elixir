@@ -12,7 +12,7 @@ defmodule FakerElixir do
 
     ```
     def deps do
-      [{:faker_elixir_octopus, "~> 0.1.0"}]
+      [{:faker_elixir_octopus, "> 0.0.0"}]
     end
     ```
 
