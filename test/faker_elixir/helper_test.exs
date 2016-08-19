@@ -3,6 +3,14 @@ defmodule FakerElixir.HelperTest do
   use ExUnit.Case
   alias FakerElixir.Helper
 
+  test "letterify/1" do
+    assert is_binary(Helper.letterify("###"))
+  end
+
+  test "numerify/1" do
+    assert is_binary(Helper.numerify("###"))
+  end
+
   test "cycle/2" do
 
     # Basic cycle
