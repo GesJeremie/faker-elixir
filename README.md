@@ -89,6 +89,7 @@ But I know you, you will forget the syntax to generate a city and so on ... Don'
 - [Faker.Avatar](#fakerelixiravatar)
 - [Faker.Boolean](#fakerelixirboolean)
 - [Faker.Crypto](#fakerelixircrypto)
+- [Faker.Date](#fakerelixirdate)
 - [Faker.Helper](#fakerelixirhelper)
 - [Faker.Internet](#fakerelixirinternet)
 - [Faker.Lorem](#fakerelixirlorem)
@@ -154,8 +155,23 @@ FakerElixir.Crypto.sha224 # "824B34965B6A3E48BE71E09A54F63BC216845D794EB378E756E
 FakerElixir.Crypto.sha256 # "4762E04FB860A8A7C4D58B495DE133355D069CF618A55BBACA98583DF105818C"
 FakerElixir.Crypto.sha384 # "9C01EBA98F4A52F76948D48A0FB3C63C26DE451667F8957C6420B6D26183F93C28A3A344406C77FF74C877EE5AA3AD10"
 FakerElixir.Crypto.sha512 # "06C1CC54DC49E53B1274D9A0DD951B76DD45731E0AB319D98575DEA1955F6A0B20D5B70548190119AED52A5254127A60511257673C332F759F9510B8F32AAC26"
-
 ```
+
+### FakerElixir.Date
+---
+```elixir
+# Generate a random date time for yesterday
+FakerElixir.Date.backward(1) # "2016-08-18 05:58:04Z"
+
+# Generate a random date time between yesterday and the day before yesterday
+FakerElixir.Date.backward(1..2) # "2016-08-17 03:48:32Z"
+
+FakerElixir.Date.birthday # "1988-03-07 16:28:37Z"
+
+FakerElixir.Date.forward(1) # "2016-08-20 19:29:28Z"
+FakerElixir.Date.forward(1..2) # "2016-08-20 11:18:18Z"
+```
+
 ### FakerElixir.Helper
 ---
 ```elixir
