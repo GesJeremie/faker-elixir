@@ -10,25 +10,25 @@ defmodule FakerElixir do
 
     1. Add `faker_elixir_octopus` to your list of dependencies in `mix.exs`:
 
-      ```elixir
-      def deps do
-        [{:faker_elixir_octopus, "~> 0.1.0"}]
-      end
-      ```
+    ```
+    def deps do
+      [{:faker_elixir_octopus, "~> 0.1.0"}]
+    end
+    ```
 
     2. Ensure `faker_elixir` is started before your application:
 
-      ```elixir
-      def application do
-        [applications: [:faker_elixir_octopus]]
-      end
-      ```
+    ```elixir
+    def application do
+      [applications: [:faker_elixir_octopus]]
+    end
+    ```
 
     3. Run in the root of your project:
 
-      ```
-      $ mix deps.get
-      ```
+    ```
+    $ mix deps.get
+    ```
 
     4. Faker Elixir is now a part of your application and ready to use!
 
@@ -36,7 +36,7 @@ defmodule FakerElixir do
 
   Since I'm quite sure you are using Phoenix, I will show you a basic example:
 
-  ```elixir
+  ```
   defmodule Zombie.AwesomeController do
     use Zombie.Web, :controller
 

@@ -6,6 +6,35 @@ defmodule FakerElixir.Helper do
   alias FakerElixir.Helpers.{App, Store}
 
   @doc """
+  Fill a pattern with random number
+
+  ## Examples
+
+  ```
+  iex > FakerElixir.Helper.numerify("Apt. ###")
+  "Apt. 902"
+
+  iex > FakerElixir.Helper.numerify("06.##.##.##.##")
+  "06.67.18.21.27"
+  """
+  def numerify(pattern), do: App.numerify(pattern)
+
+  @doc """
+  Fill a pattern with random letters
+
+  ## Examples
+
+  ```
+  iex > FakerElixir.Helper.letterify("###")
+  "ahh"
+
+  iex > FakerElixir.Helper.letterify("#.#.#.#")
+  "k.e.n.u"
+  ```
+  """
+  def letterify(pattern), do: App.letterify(pattern)
+
+  @doc """
   Pick randomly a value in an enumerable
 
   ## Examples
