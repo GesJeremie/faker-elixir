@@ -3,7 +3,7 @@ defmodule FakerElixir.Mixfile do
 
   def project do
     [app: :faker_elixir_octopus,
-     version: "0.2.0",
+     version: "0.3.0",
      elixir: "~> 1.3",
      description: description(),
      package: package(),
@@ -39,7 +39,7 @@ defmodule FakerElixir.Mixfile do
 
   defp description do
     """
-    FakerElixir is an Elixir package that generates fake data for you. Whether you need to seed your database, create factories for your project, FakerElixir is here for you.
+    FakerElixir generates fake data for you.
     """
   end
 
