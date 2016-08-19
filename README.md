@@ -181,6 +181,9 @@ FakerElixir.Helper.cycle(:zombies, ["Peter", "Audrey"]) # Peter
 FakerElixir.Helper.cycle(:zombies, ["Peter", "Audrey"]) # Audrey
 FakerElixir.Helper.cycle(:zombies, ["Peter", "Audrey"]) # Peter
 
+FakerElixir.Helper.letterify("#.#.#.#") # "k.e.n.u"
+FakerElixir.Helper.numerify("Apt. ###") # "Apt. 902"
+
 FakerElixir.Helper.pick(["paris", "athens", "london"]) # "london"
 FakerElixir.Helper.pick(0..100) # 51
 ```
@@ -351,7 +354,7 @@ end
 ---
 The default skeleton for a locale is available here: [Skeleton](https://github.com/GesJeremie/faker-elixir/blob/master/lib/faker_elixir/locales/en.ex)
 
-### Customisation 
+### Customisation
 ---
 
 #### :speech_balloon: "Hey dude, your package is "great" but you forgot that, that and ... that, whaddup ? :sunglasses:"
@@ -368,7 +371,7 @@ defmodule FakerElixir.Custom do
 
   def pokemon do
     locale = FakerElixir.get_locale
-    
+
     case locale do
       :fr ->
         FakerElixir.Helper.pick(@pokemons_fr)
@@ -384,4 +387,3 @@ end
 ... and just call your module! ```iex> FakerElixir.Custom.pokemon```
 
 Hope it helps :yum:
-
