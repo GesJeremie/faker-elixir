@@ -73,7 +73,7 @@ defmodule FakerElixir.Boolean do
     chances = List.duplicate(true, number_of_true) ++ List.duplicate(false, number_of_false)
 
     chances
-      |> pick
+    |> pick
   end
 
 end

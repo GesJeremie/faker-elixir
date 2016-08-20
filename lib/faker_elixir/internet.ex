@@ -22,12 +22,14 @@ defmodule FakerElixir.Internet do
   ```
   """
   def email do
-    first_name = (:first_names |> fetch |> pick |> slug)
+    first_name = :first_names |> fetch |> pick |> slug
+
     email(first_name)
   end
 
   def email(:popular) do
-    first_name = (:first_names |> fetch |> pick |> slug)
+    first_name = :first_names |> fetch |> pick |> slug
+
     email(:popular, first_name)
   end
 
@@ -42,9 +44,9 @@ defmodule FakerElixir.Internet do
   ```
   """
   def email(name) do
-    name = (name |> slug)
-    domain = (:first_names |> fetch |> pick |> slug)
-    extension = (:domain_extensions |> fetch |> pick)
+    name = name |> slug
+    domain = :first_names |> fetch |> pick |> slug
+    extension = :domain_extensions |> fetch |> pick
 
     "#{name}@#{domain}.#{extension}"
   end
@@ -60,8 +62,8 @@ defmodule FakerElixir.Internet do
   ```
   """
   def email(:popular, name) do
-    name = (name |> slug)
-    domain_popular = (:domain_popular_emails |> fetch |> pick)
+    name = name |> slug
+    domain_popular = :domain_popular_emails |> fetch |> pick
 
     "#{name}@#{domain_popular}"
   end
@@ -77,18 +79,18 @@ defmodule FakerElixir.Internet do
   ```
   """
   def user_name do
-    choice = (0..1 |> pick)
+    choice = pick(0..1)
     do_user_name(choice)
   end
 
   defp do_user_name(0) do
-    first_name = (:first_names |> fetch |> pick)
+    first_name = :first_names |> fetch |> pick
     user_name(first_name)
   end
 
   defp do_user_name(1) do
-    first_name = (:first_names |> fetch |> pick)
-    last_name = (:last_names |> fetch |> pick)
+    first_name = :first_names |> fetch |> pick
+    last_name = :last_names |> fetch |> pick
     name = "#{first_name} #{last_name}"
 
     user_name(name)
@@ -141,22 +143,22 @@ defmodule FakerElixir.Internet do
   end
 
   defp do_url do
-    choice = (0..1) |> pick
+    choice = pick(0..1)
 
     do_url(choice)
   end
 
   defp do_url(0) do
-    domain = (:first_names |> fetch |> pick |> slug)
-    extension = (:domain_extensions |> fetch |> pick)
+    domain = :first_names |> fetch |> pick |> slug
+    extension = :domain_extensions |> fetch |> pick
 
     "www.#{domain}.#{extension}"
   end
 
   defp do_url(1) do
-    first_name = (:first_names |> fetch |> pick |> slug)
-    last_name = (:last_names |> fetch |> pick |> slug)
-    extension = (:domain_extensions |> fetch |> pick)
+    first_name = :first_names |> fetch |> pick |> slug
+    last_name = :last_names |> fetch |> pick |> slug
+    extension = :domain_extensions |> fetch |> pick
 
     "www.#{first_name}-#{last_name}.#{extension}"
   end
@@ -164,14 +166,14 @@ defmodule FakerElixir.Internet do
 
   def password(:weak) do
     0..1
-      |> pick
-      |> do_password_weak
+    |> pick
+    |> do_password_weak
   end
 
   def password(:normal) do
     0..1
-      |> pick
-      |> do_password_normal
+    |> pick
+    |> do_password_normal
   end
 
   def password(:strong) do
@@ -188,16 +190,16 @@ defmodule FakerElixir.Internet do
   ##
   defp do_password_weak(0) do
     :weak_passwords
-      |> fetch
-      |> pick
+    |> fetch
+    |> pick
   end
 
   defp do_password_weak(1) do
     :first_names
-      |> fetch
-      |> pick
-      |> keep_strict_alpha_numeric
-      |> String.downcase
+    |> fetch
+    |> pick
+    |> keep_strict_alpha_numeric
+    |> String.downcase
   end
 
   ##
@@ -212,8 +214,8 @@ defmodule FakerElixir.Internet do
   defp do_password_normal(0) do
     number_patterns = ["#", "##", "###"]
 
-    first_name = (:first_names |> fetch |> pick |> normalize_name)
-    number = (number_patterns |> pick |> numerify)
+    first_name = :first_names |> fetch |> pick |> normalize_name
+    number = number_patterns |> pick |> numerify
 
     password = "#{first_name}#{number}"
 
@@ -239,7 +241,7 @@ defmodule FakerElixir.Internet do
   end
 
   defp normal_complexifier(password) do
-    (password |> String.capitalize)
+    password |> String.capitalize
   end
 
   ##
@@ -257,13 +259,13 @@ defmodule FakerElixir.Internet do
   end
 
   defp should_complexify? do
-    ([true, false] |> pick)
+    [true, false] |> pick
   end
 
   defp normalize_name(name) do
     name
-      |> keep_strict_alpha_numeric
-      |> String.downcase
+    |> keep_strict_alpha_numeric
+    |> String.downcase
   end
 
 end
