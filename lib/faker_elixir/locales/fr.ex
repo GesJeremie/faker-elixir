@@ -13,7 +13,7 @@ defmodule FakerElixir.Locales.Fr do
 
   @prefixes ["M.", "Mme", "Mlle", "Dr", "Prof"]
 
-  @weak_passwords ["motdepass", "motdepasse" "abcedef", "invite", "administrateur", "azerty", "1234", "0987", "12345", "123456", "monmotdepasse", "lol", "systeme", "facebook", "google", "twitter", "1111", "zzzz", "client", "superadministrateur"]
+  @weak_passwords ["motdepass", "motdepasse", "abcedef", "invite", "administrateur", "azerty", "1234", "0987", "12345", "123456", "monmotdepasse", "lol", "systeme", "facebook", "google", "twitter", "1111", "zzzz", "client", "superadministrateur"]
 
   def cities, do: @cities
   def first_names, do: @first_names
