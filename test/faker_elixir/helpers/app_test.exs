@@ -3,30 +3,27 @@ defmodule FakerElixir.Helpers.AppTest do
   use ExUnit.Case
   alias FakerElixir.Helpers.App
 
-  test "rand/0" do
-    rand1 = App.rand
-    rand2 = App.rand
-    rand3 = App.rand
+  describe "rand/0" do
 
-    assert is_float(rand1)
-    assert is_float(rand2)
-    assert is_float(rand3)
+    test "return float" do
+      assert is_float(App.rand)
+    end
 
-    assert rand1 != rand2 && rand2 != rand3
+    test "return different values" do
+      assert App.rand != App.rand
+    end
+
   end
 
-  test "numerify/0" do
-    numerify = App.numerify("###")
-    assert String.length(numerify) == 3
-    assert Regex.match?(~r/[0-9]{3}/, numerify)
+  describe "numerify/0" do
 
-    numerify = App.numerify("###.")
-    assert String.length(numerify) == 4
-    assert Regex.match?(~r/[0-9]{3}./, numerify)
+    test "format correctly pattern" do
+      result = App.numerify("#.#.#.#")
 
-    numerify = App.numerify("#.#.#.#")
-    assert String.length(numerify) == 7
-    assert Regex.match?(~r/[0-9].[0-9].[0-9].[0-9]/, numerify)
+      assert result |> String.length == 7
+      assert Regex.match?(~r/[0-9].[0-9].[0-9].[0-9]/, result)
+    end
+
   end
 
   test "letterify/0" do
