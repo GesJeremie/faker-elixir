@@ -1,4 +1,4 @@
-# :octopus: FakerElixir [![Build Status](https://travis-ci.org/GesJeremie/faker-elixir.svg?branch=master)](https://travis-ci.org/GesJeremie/faker-elixir) ![Downloads](https://img.shields.io/hexpm/dt/faker_elixir_octopus.svg?style=flat-square)
+# :octopus: FakerElixir [![Build Status](https://travis-ci.org/GesJeremie/faker-elixir.svg?branch=master)](https://travis-ci.org/GesJeremie/faker-elixir) ![Downloads](https://img.shields.io/hexpm/dt/faker_elixir_octopus.svg?style=flat-square) [![Inline docs](http://inch-ci.org/github/GesJeremie/faker-elixir.svg?branch=master)](http://inch-ci.org/github/GesJeremie/faker-elixir)
 
 FakerElixir is an Elixir package that **generates fake data** for you. Whether you need to **seed** your database, create **factories** for your project, FakerElixir is here for you :punch:.
 
