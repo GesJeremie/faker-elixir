@@ -22,7 +22,8 @@ defmodule FakerElixir.HelperTest do
     assert Helper.cycle(:fake, ["peter", "paris", "london"]) == "london"
 
     # Cycle in a struct (basic seed)
-    warriors = Stream.repeatedly(fn() -> fixture(:warrior) end)
+    warriors =
+      Stream.repeatedly(fn() -> fixture(:warrior) end)
       |> Enum.take(5)
 
     assert warriors |> Enum.at(0) == %{name: "anubis", lvl: 10}

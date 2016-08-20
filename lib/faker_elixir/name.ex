@@ -45,8 +45,8 @@ defmodule FakerElixir.Name do
   """
   def first_name do
     :first_names
-      |> fetch
-      |> pick
+    |> fetch
+    |> pick
   end
 
   @doc """
@@ -61,8 +61,8 @@ defmodule FakerElixir.Name do
   """
   def last_name do
     :last_names
-      |> fetch
-      |> pick
+    |> fetch
+    |> pick
   end
 
   @doc """
@@ -77,8 +77,8 @@ defmodule FakerElixir.Name do
   """
   def prefix do
     :prefixes
-      |> fetch
-      |> pick
+    |> fetch
+    |> pick
   end
 
   @doc """
@@ -93,8 +93,8 @@ defmodule FakerElixir.Name do
   """
   def suffix do
     :suffixes
-      |> fetch
-      |> pick
+    |> fetch
+    |> pick
   end
 
   @doc """
@@ -108,9 +108,9 @@ defmodule FakerElixir.Name do
   ```
   """
   def title do
-    descriptor = (:title_descriptors |> fetch |> pick)
-    level = (:title_levels |> fetch |> pick)
-    job = (:title_jobs |> fetch |> pick)
+    descriptor = :title_descriptors |> fetch |> pick
+    level = :title_levels |> fetch |> pick
+    job = :title_jobs |> fetch |> pick
 
     "#{descriptor} #{level} #{job}"
   end

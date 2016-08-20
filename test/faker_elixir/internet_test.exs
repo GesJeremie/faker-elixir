@@ -33,10 +33,11 @@ defmodule FakerElixir.InternetTest do
   end
 
   test "url/0" do
-    cases = Stream.repeatedly(fn ->
-      url = Internet.url
-      assert Regex.match?(~r/http:\/\/www.[a-z]*.[a-z]*/, url)
-    end)
+    cases =
+      Stream.repeatedly(fn ->
+        url = Internet.url
+        assert Regex.match?(~r/http:\/\/www.[a-z]*.[a-z]*/, url)
+      end)
 
     cases
       |> Enum.take(50)

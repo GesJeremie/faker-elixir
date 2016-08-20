@@ -21,11 +21,11 @@ defmodule FakerElixir.Helpers.App do
     allowed = allowed ++ [" "]
 
     string
-      |> String.split("")
-      |> Enum.filter(fn(x) ->
+    |> String.split("")
+    |> Enum.filter(fn x ->
         Enum.member?(allowed, x)
       end)
-      |> Enum.join("")
+    |> Enum.join("")
   end
 
   @doc """
@@ -56,10 +56,10 @@ defmodule FakerElixir.Helpers.App do
   """
   def slug(string, glue) do
     string
-      |> keep_strict_alpha_numeric
-      |> String.trim
-      |> String.downcase
-      |> String.replace(" ", glue)
+    |> keep_strict_alpha_numeric
+    |> String.trim
+    |> String.downcase
+    |> String.replace(" ", glue)
   end
 
 
@@ -90,8 +90,8 @@ defmodule FakerElixir.Helpers.App do
   """
   def numerify(pattern) do
     pattern
-      |> String.split("")
-      |> Enum.map_join(&(replace_hash(&1, :number)))
+    |> String.split("")
+    |> Enum.map_join(&(replace_hash(&1, :number)))
   end
 
   @doc """
@@ -107,8 +107,8 @@ defmodule FakerElixir.Helpers.App do
   """
   def letterify(pattern) do
     pattern
-      |> String.split("")
-      |> Enum.map_join(&(replace_hash(&1, :letter)))
+    |> String.split("")
+    |> Enum.map_join(&(replace_hash(&1, :letter)))
   end
 
 
@@ -137,8 +137,8 @@ defmodule FakerElixir.Helpers.App do
   """
   def pick(enumerable) do
     enumerable
-      |> Enum.take_random(1)
-      |> Enum.at(0)
+    |> Enum.take_random(1)
+    |> Enum.at(0)
   end
 
   @doc """
@@ -187,23 +187,21 @@ defmodule FakerElixir.Helpers.App do
     #
     # We will check if he created a module
     # and the method to hook it.
-    module = FakerElixir.LocalesCustom
-      |> Module.concat(locale)
+    module = FakerElixir.LocalesCustom |> Module.concat(locale)
 
     case can_exec?(module, method) do
-      true ->
-        apply(module, method, [])
-
       false ->
         fetch_normal(method, locale)
+      true ->
+        apply(module, method, [])
     end
 
   end
 
   defp fetch_normal(method, locale) do
+
     # Build the locale module to call
-    module = FakerElixir.Locales
-      |> Module.concat(locale)
+    module = FakerElixir.Locales |> Module.concat(locale)
 
     # Check if the locale module defines the method wanted
     case can_exec?(module, method) do
@@ -221,8 +219,8 @@ defmodule FakerElixir.Helpers.App do
 
   defp get_locale do
     FakerElixir.get_locale
-     |> Atom.to_string
-     |> String.capitalize
+    |> Atom.to_string
+    |> String.capitalize
   end
 
   defp can_exec?(module, method) do
@@ -236,7 +234,8 @@ defmodule FakerElixir.Helpers.App do
 
   defp has_method?(module, method) do
     methods = module.module_info(:exports)
-    Keyword.has_key?(methods, method)
+
+    methods |> Keyword.has_key?(method)
   end
 
 
