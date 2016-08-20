@@ -8,3 +8,6 @@ cache:
   directories:
     - _build
     - deps
+after_script:
+  - mix deps.get
+  - mix inch.report

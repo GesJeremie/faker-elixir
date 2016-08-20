@@ -33,6 +33,7 @@ defmodule FakerElixir.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
+      {:inch_ex, "~> 0.4", only: [:dev, :test]},
       {:ex_doc, "~> 0.10", only: :dev}
     ]
   end
