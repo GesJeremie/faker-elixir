@@ -13,6 +13,8 @@ defmodule FakerElixir.Locales.Fr do
 
   @prefixes ["M.", "Mme", "Mlle", "Dr", "Prof"]
 
+  @weak_passwords ["motdepass", "motdepasse" "abcedef", "invite", "administrateur", "azerty", "1234", "0987", "12345", "123456", "monmotdepasse", "lol", "systeme", "facebook", "google", "twitter", "1111", "zzzz", "client", "superadministrateur"]
+
   def cities, do: @cities
   def first_names, do: @first_names
   def last_names, do: @last_names
@@ -20,5 +22,6 @@ defmodule FakerElixir.Locales.Fr do
   def zip_code_patterns, do: @zip_code_patterns
   def secondary_addresses, do: @secondary_addresses
   def prefixes, do: @prefixes
+  def weak_passwords, do: @weak_passwords
 
 end
