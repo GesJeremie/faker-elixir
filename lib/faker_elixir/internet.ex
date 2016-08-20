@@ -163,18 +163,48 @@ defmodule FakerElixir.Internet do
   end
 
 
+  @doc """
+  Return a weak password
+
+  ## Examples
+
+  ```
+  iex> FakerElixir.Internet.password(:weak)
+  "robbie"
+  ```
+  """
   def password(:weak) do
     0..1
     |> pick
     |> do_password_weak
   end
 
+  @doc """
+  Return a normal password
+
+  ## Examples
+
+  ```
+  iex> FakerElixir.Internet.password(:normal)
+  "francesco6"
+  ```
+  """
   def password(:normal) do
     0..1
     |> pick
     |> do_password_normal
   end
 
+  @doc """
+  Return a strong password
+
+  ## Examples
+
+  ```
+  iex> FakerElixir.Internet.password(:strong)
+  "tOu%Mt*B16ueLs!0uA3rDA"
+  ```
+  """
   def password(:strong) do
     do_password_strong
   end
