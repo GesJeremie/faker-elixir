@@ -2,69 +2,128 @@ defmodule FakerElixir.AddressTest do
 
   use ExUnit.Case
 
-  test "city/0" do
-    assert is_binary(FakerElixir.Address.city)
+  describe "city/0" do
+
+    test "return binary" do
+      assert is_binary(FakerElixir.Address.city)
+    end
+
   end
 
-  test "make_country/0" do
-    country = FakerElixir.Address.make_country
-    assert is_map(country)
-    assert Map.has_key?(country, :name)
-    assert Map.has_key?(country, :code)
+  describe "make_country/0" do
+
+    test "return map" do
+      country = FakerElixir.Address.make_country
+      assert is_map(country)
+      assert Map.has_key?(country, :name)
+      assert Map.has_key?(country, :code)
+    end
+
   end
 
-  test "country/0" do
-    assert is_binary(FakerElixir.Address.country)
+  describe "country/0" do
+
+    test "return binary" do
+      assert is_binary(FakerElixir.Address.country)
+    end
+
   end
 
-  test "country_code/0" do
-    assert is_binary(FakerElixir.Address.country_code)
+  describe "country_code/0" do
+
+    test "return binary" do
+      assert is_binary(FakerElixir.Address.country_code)
+    end
+
   end
 
-  test "street_suffix/0" do
-    assert is_binary(FakerElixir.Address.street_suffix)
+  describe "street_suffix/0" do
+
+    test "return binary" do
+      assert is_binary(FakerElixir.Address.street_suffix)
+    end
+
   end
 
-  test "street_name/0" do
-    assert is_binary(FakerElixir.Address.street_name)
+  describe "street_name/0" do
+
+    test "return binary" do
+      assert is_binary(FakerElixir.Address.street_name)
+    end
+
   end
 
-  test "street_address/0" do
-    assert is_binary(FakerElixir.Address.street_address)
+  describe "street_address/0" do
+
+    test "return binary" do
+      assert is_binary(FakerElixir.Address.street_address)
+    end
+
   end
 
-  test "building_number/0" do
-    assert is_binary(FakerElixir.Address.building_number)
+
+  describe "building_number/0" do
+
+    test "return binary" do
+      assert is_binary(FakerElixir.Address.building_number)
+    end
+
   end
 
-  test "zip_code/0" do
-    assert is_binary(FakerElixir.Address.zip_code)
+  describe "zip_code/0" do
+
+    test "return binary" do
+      assert is_binary(FakerElixir.Address.zip_code)
+    end
+
   end
 
-  test "time_zone/0" do
-    assert is_binary(FakerElixir.Address.time_zone)
+  describe "time_zone/0" do
+
+    test "return binary" do
+      assert is_binary(FakerElixir.Address.time_zone)
+    end
+
   end
 
-  test "state/0" do
-    assert is_binary(FakerElixir.Address.state)
+  describe "state/0" do
+
+    test "return binary" do
+      assert is_binary(FakerElixir.Address.state)
+    end
+
   end
 
-  test "state_code/0" do
-    code = FakerElixir.Address.state_code
-    assert is_binary(code)
-    assert String.length(code) == 2
+  describe "state_code/0" do
+
+    test "return binary" do
+      assert is_binary(FakerElixir.Address.state_code)
+    end
+
   end
 
-  test "latitude/0" do
-    latitude = FakerElixir.Address.latitude
-    assert is_float(latitude)
-    assert latitude |> between?(-90, 90)
+  describe "latitude/0" do
+
+    test "return float" do
+      assert is_float(FakerElixir.Address.latitude)
+    end
+
+    test "correct latitude" do
+      assert FakerElixir.Address.latitude |> between?(-90, 90)
+    end
+
   end
 
-  test "longitude/0" do
-    longitude = FakerElixir.Address.longitude
-    assert is_float(longitude)
-    assert longitude |> between?(-180, 180)
+  describe "longitude/0" do
+
+    test "return float" do
+      assert is_float(FakerElixir.Address.longitude)
+    end
+
+    test "correct longitude" do
+      assert FakerElixir.Address.longitude |> between?(-180, 180)
+    end
+
   end
 
   defp between?(value, left, right) do
