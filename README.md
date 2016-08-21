@@ -197,6 +197,10 @@ FakerElixir.Internet.email("Peter Moleski") # "peter.moleski@ethel.net"
 FakerElixir.Internet.email(:popular) # "candelario@gmail.com"
 FakerElixir.Internet.email(:popular, "Peter Sobieska") # "peter.sobieska@hotmail.com"
 
+FakerElixir.Internet.password(:weak) # "robbie"
+FakerElixir.Internet.password(:normal) # "francesco6"
+FakerElixir.Internet.password(:strong) # "tOu%Mt*B16ueLs!0uA3rDA"
+
 FakerElixir.Internet.url # "http://www.alejandra-connelly.com/"
 FakerElixir.Internet.url(:safe) # "https://www.stefan-little.org/"
 
