@@ -63,4 +63,22 @@ defmodule FakerElixir.InternetTest do
 
   end
 
+  describe "password/1" do
+
+    test "return binary :weak" do
+      assert is_binary(Internet.password(:weak))
+    end
+
+    test "return binary :normal" do
+      assert is_binary(Internet.password(:normal))
+    end
+
+    test "return binary :strong" do
+      assert is_binary(Internet.password(:strong))
+    end
+
+  end
+
+
+
 end
