@@ -37,6 +37,32 @@ defmodule FakerElixir.Locales.En do
 
   @weak_passwords ["password", "asdfgh", "guest", "admin", "qwerty", "1234", "0987", "12345", "123456", "default", "mypassword", "lol", "system", "facebook", "google", "twitter", "1111", "zzzz", "customer", "superadmin"]
 
+  @credit_card_vendors ["Visa", "MasterCard"]
+  @credit_card_cvv_patterns ["###"]
+
+  @credit_cards [
+    %{
+      type: "Visa",
+      number_patterns: ["4539########", "4539###########", "4556########", "4556###########", "4916########", "4916###########", "4532########", "4532###########", "4929########", "4929###########", "40240071####", "40240071#######", "4485########", "4485###########", "4716########", "4716###########", "4###########", "4##############"],
+      cvv_patterns: ["###"]
+    },
+    %{
+      type: "MasterCard",
+      number_patterns: ["51#############", "52#############", "53#############", "54#############", "55#############"],
+      cvv_patterns: ["###"]
+    },
+    %{
+      type: "American Express",
+      number_patterns: ["34############", "37############"],
+      cvv_patterns: ["####"]
+    },
+    %{
+      type: "Discover Card",
+      number_patterns: ["6011###########"],
+      cvv_patterns: ["###"]
+    }
+  ]
+
 
   def cities, do: @cities
   def countries, do: @countries
@@ -60,5 +86,6 @@ defmodule FakerElixir.Locales.En do
   def domain_popular_emails, do: @domain_popular_emails
   def domain_extensions, do: @domain_extensions
   def weak_passwords, do: @weak_passwords
+  def credit_cards, do: @credit_cards
 
 end
