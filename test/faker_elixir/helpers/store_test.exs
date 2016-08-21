@@ -3,6 +3,7 @@ defmodule FakerElixir.Helpers.StoreTest do
   use ExUnit.Case
   alias FakerElixir.Helpers.Store
 
+
   test "store a value and retrieve it" do
     list = ["Peter", "John", "Hercules"]
 

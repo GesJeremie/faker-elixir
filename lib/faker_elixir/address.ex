@@ -18,8 +18,8 @@ defmodule FakerElixir.Address do
   """
   def city do
     :cities
-      |> fetch
-      |> pick
+    |> fetch
+    |> pick
   end
 
   @doc """
@@ -34,8 +34,8 @@ defmodule FakerElixir.Address do
   """
   def make_country do
     :countries
-      |> fetch
-      |> pick
+    |> fetch
+    |> pick
   end
 
   @doc """
@@ -78,8 +78,8 @@ defmodule FakerElixir.Address do
   """
   def street_suffix do
     :street_suffixes
-      |> fetch
-      |> pick
+    |> fetch
+    |> pick
   end
 
   @doc """
@@ -94,12 +94,13 @@ defmodule FakerElixir.Address do
   """
   def street_name do
     0..1
-      |> pick
-      |> do_street_name
+    |> pick
+    |> do_street_name
   end
 
   defp do_street_name(0) do
-    first_name = :first_names
+    first_name =
+      :first_names
       |> fetch
       |> pick
 
@@ -107,7 +108,8 @@ defmodule FakerElixir.Address do
   end
 
   defp do_street_name(1) do
-    last_name = :last_names
+    last_name =
+      :last_names
       |> fetch
       |> pick
 
@@ -140,9 +142,9 @@ defmodule FakerElixir.Address do
   """
   def secondary_address do
     :secondary_addresses
-      |> fetch
-      |> pick
-      |> numerify
+    |> fetch
+    |> pick
+    |> numerify
   end
 
   @doc """
@@ -157,9 +159,9 @@ defmodule FakerElixir.Address do
   """
   def building_number do
     :building_patterns
-      |> fetch
-      |> pick
-      |> numerify
+    |> fetch
+    |> pick
+    |> numerify
   end
 
   @doc """
@@ -174,9 +176,9 @@ defmodule FakerElixir.Address do
   """
   def zip_code do
     :zip_code_patterns
-      |> fetch
-      |> pick
-      |> numerify
+    |> fetch
+    |> pick
+    |> numerify
   end
 
   @doc """
@@ -191,8 +193,8 @@ defmodule FakerElixir.Address do
   """
   def time_zone do
     :time_zones
-      |> fetch
-      |> pick
+    |> fetch
+    |> pick
   end
 
   @doc """
@@ -207,8 +209,8 @@ defmodule FakerElixir.Address do
   """
   def state do
     :states
-      |> fetch
-      |> pick
+    |> fetch
+    |> pick
   end
 
   @doc """
@@ -223,8 +225,8 @@ defmodule FakerElixir.Address do
   """
   def state_code do
     :state_codes
-      |> fetch
-      |> pick
+    |> fetch
+    |> pick
   end
 
   @doc """

@@ -96,8 +96,8 @@ defmodule FakerElixir.Crypto do
     word = Lorem.characters()
 
     algo
-      |> :crypto.hash(word)
-      |> Base.encode16
+    |> :crypto.hash(word)
+    |> Base.encode16
   end
 
 

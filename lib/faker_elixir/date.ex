@@ -19,8 +19,8 @@ defmodule FakerElixir.Date do
   ```
   """
   def birthday do
-      between_16_to_80_years = 5840..29200
-      backward(between_16_to_80_years)
+    between_16_to_80_years = 5840..29200
+    backward(between_16_to_80_years)
   end
 
 
@@ -47,8 +47,8 @@ defmodule FakerElixir.Date do
   """
   def forward(range) when is_map(range) do
     range
-      |> pick
-      |> forward
+    |> pick
+    |> forward
   end
 
   def forward(days) when days >= 1 do
@@ -78,8 +78,8 @@ defmodule FakerElixir.Date do
   """
   def backward(range) when is_map(range) do
     range
-      |> pick
-      |> backward
+    |> pick
+    |> backward
   end
 
   def backward(days) when days >= 1 do
@@ -88,9 +88,9 @@ defmodule FakerElixir.Date do
 
   defp do_create_date(days, type) do
     now_in_seconds
-      |> shift(days, type)
-      |> convert_seconds_to_date
-      |> create_date
+    |> shift(days, type)
+    |> convert_seconds_to_date
+    |> create_date
   end
 
   defp shift(seconds, days, :forward) do
@@ -119,17 +119,17 @@ defmodule FakerElixir.Date do
     }
 
     date
-      |> DateTime.to_string
+    |> DateTime.to_string
   end
 
   defp convert_seconds_to_date(seconds) do
     :calendar.gregorian_seconds_to_datetime(seconds)
-      |> Tuple.to_list
-      |> Enum.at(0)
+    |> Tuple.to_list
+    |> Enum.at(0)
   end
 
   defp now_in_seconds do
-    (:calendar.local_time |> :calendar.datetime_to_gregorian_seconds)
+    :calendar.local_time |> :calendar.datetime_to_gregorian_seconds
   end
 
 

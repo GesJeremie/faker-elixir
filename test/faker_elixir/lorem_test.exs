@@ -4,61 +4,105 @@ defmodule FakerElixir.LoremTest do
   use ExUnit.Case
   alias FakerElixir.Lorem
 
-  test "word/0" do
-    assert is_binary(Lorem.word)
+  describe "word/0" do
+
+    test "return binary" do
+      assert is_binary(Lorem.word)
+    end
+
   end
 
-  test "words/0" do
+  describe "words/0" do
+
+    test "return binary" do
       assert is_binary(Lorem.words)
-  end
-
-  test "words/1" do
-    assert is_nil(Lorem.words(0))
-    assert (Lorem.words(5) |> String.split(" ") |> length) == 5
-  end
-
-  test "character/0" do
-    assert Lorem.character |> String.length == 1
-  end
-
-  test "characters/1 with number" do
-    assert is_nil(Lorem.characters(0))
-    assert (Lorem.characters(10) |> String.length) == 10
-  end
-
-  test "characters/1 with range" do
-    stream = Stream.repeatedly(fn() ->
-
-      length = Lorem.characters(1..20) |> String.length
-      assert length |> between?(1, 20)
-
-    end)
-
-    stream |> Enum.take(50)
+    end
 
   end
 
-  test "sentence/0" do
+  describe "words/1" do
 
-    assert Lorem.sentence |> String.ends_with?(".")
+    test "return nil for param 0" do
+      assert is_nil(Lorem.words(0))
+    end
 
-    # Start with Case
-    assert Lorem.sentence |> String.first |> String.match?(~r/[A-Z]{1}/)
+    test "return binary" do
+      assert is_binary(Lorem.words(2))
+    end
+
+    test "return right number of words" do
+      assert (Lorem.words(5) |> String.split(" ") |> length) == 5
+    end
+
   end
 
-  test "sentences/1" do
-    assert is_nil(Lorem.sentences(0))
+  describe "character/0" do
 
-    assert (Lorem.sentences(10) |> String.split(". ") |> length) == 10
+    test "return one character" do
+      assert Lorem.character |> String.length == 1
+    end
 
-    stream = Stream.repeatedly(fn() ->
+  end
 
-      length = (Lorem.sentences(1..30) |> String.split(". ") |> length)
-      assert length |> between?(1, 30)
+  describe "characters/1" do
 
-    end)
+    test "return nil for param 0" do
+      assert is_nil(Lorem.characters(0))
+    end
 
-    stream |> Enum.take(50)
+    test "return right number of characters" do
+      assert (Lorem.characters(10) |> String.length) == 10
+    end
+
+    test "return right range number of characters" do
+      cases = Stream.repeatedly(fn() ->
+
+        length = Lorem.characters(1..20) |> String.length
+
+        assert length |> between?(1, 20)
+
+      end)
+
+      cases
+      |> Enum.take(50)
+    end
+
+  end
+
+  describe "sentence/0" do
+
+    test "return correct sentence" do
+      assert Lorem.sentence |> String.ends_with?(".")
+
+      # Start with UpCase
+      assert Lorem.sentence |> String.first |> String.match?(~r/[A-Z]{1}/)
+    end
+
+  end
+
+  describe "sentences/1" do
+
+    test "return nil for param 0" do
+      assert is_nil(Lorem.sentences(0))
+    end
+
+    test "return correct number of sentence" do
+      assert (Lorem.sentences(10) |> String.split(". ") |> length) == 10
+    end
+
+    test "return in the range the number of sentence" do
+      cases = Stream.repeatedly(fn() ->
+
+        length = (Lorem.sentences(1..30) |> String.split(". ") |> length)
+
+        assert length |> between?(1, 30)
+
+      end)
+
+      cases
+      |> Enum.take(50)
+    end
+
   end
 
   defp between?(value, left, right) do

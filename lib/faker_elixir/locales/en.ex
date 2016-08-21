@@ -35,6 +35,8 @@ defmodule FakerElixir.Locales.En do
   @domain_popular_emails ["gmail.com", "yahoo.com", "hotmail.com", "outlook.com"]
   @domain_extensions ["com", "biz", "info", "name", "net", "org", "io", "com"]
 
+  @weak_passwords ["password", "asdfgh", "guest", "admin", "qwerty", "1234", "0987", "12345", "123456", "default", "mypassword", "lol", "system", "facebook", "google", "twitter", "1111", "zzzz", "customer", "superadmin"]
+
 
   def cities, do: @cities
   def countries, do: @countries
@@ -57,5 +59,6 @@ defmodule FakerElixir.Locales.En do
   def title_jobs, do: @title_jobs
   def domain_popular_emails, do: @domain_popular_emails
   def domain_extensions, do: @domain_extensions
+  def weak_passwords, do: @weak_passwords
 
 end

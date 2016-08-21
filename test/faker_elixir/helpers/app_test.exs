@@ -3,81 +3,97 @@ defmodule FakerElixir.Helpers.AppTest do
   use ExUnit.Case
   alias FakerElixir.Helpers.App
 
-  test "rand/0" do
-    rand1 = App.rand
-    rand2 = App.rand
-    rand3 = App.rand
+  describe "rand/0" do
 
-    assert is_float(rand1)
-    assert is_float(rand2)
-    assert is_float(rand3)
+    test "return float" do
+      assert is_float(App.rand)
+    end
 
-    assert rand1 != rand2 && rand2 != rand3
+    test "return different values" do
+      assert App.rand != App.rand
+    end
+
   end
 
-  test "numerify/0" do
-    numerify = App.numerify("###")
-    assert String.length(numerify) == 3
-    assert Regex.match?(~r/[0-9]{3}/, numerify)
+  describe "numerify/0" do
 
-    numerify = App.numerify("###.")
-    assert String.length(numerify) == 4
-    assert Regex.match?(~r/[0-9]{3}./, numerify)
+    test "format correctly pattern" do
+      result = App.numerify("#.#.#.#")
 
-    numerify = App.numerify("#.#.#.#")
-    assert String.length(numerify) == 7
-    assert Regex.match?(~r/[0-9].[0-9].[0-9].[0-9]/, numerify)
+      assert result |> String.length == 7
+      assert Regex.match?(~r/[0-9].[0-9].[0-9].[0-9]/, result)
+    end
+
   end
 
-  test "letterify/0" do
-    letterify = App.letterify("Apt. ###")
+  describe "letterify/0" do
 
-    assert String.length(letterify) == 8
-    assert Regex.match?(~r/Apt. [a-z]{3}/, letterify)
+    test "format correctly pattern" do
+      result = App.letterify("Your id is ###")
+
+      assert result |> String.length == 14
+      assert Regex.match?(~r/Your id is [a-z]{3}/, result)
+    end
+
   end
 
-  test "pick/1" do
-    cities = ["Paris", "London", "New York"]
-    picked = App.pick(cities)
+  describe "pick/1" do
 
-    assert is_binary(picked)
-    assert Enum.member?(cities, picked)
+    test "pick from the enumerable" do
+      cities = ["Paris", "London", "New York"]
+      result = App.pick(cities)
+
+      assert Enum.member?(cities, result)
+    end
+
   end
 
-  test "fetch/1" do
-    FakerElixir.set_locale(:en)
-    cities = App.fetch(:cities)
+  describe "fetch/1" do
 
-    assert is_list(cities)
-    assert (cities |> Enum.at(0)) == "New York City"
+    test "Fetch data from the right locale (:en)" do
+      FakerElixir.set_locale(:en)
 
-    FakerElixir.set_locale(:fr)
-    cities = App.fetch(:cities)
+      assert App.fetch(:cities) == FakerElixir.Locales.En.cities
+    end
 
-    assert is_list(cities)
-    assert (cities |> Enum.at(0)) == "Paris"
+    test "Fetch data from the right locale (:fr)" do
+      FakerElixir.set_locale(:fr)
 
-    # Since that method doesn't exist in the locale :fr
-    # it should fallback to the method :en
-    apps = App.fetch(:apps)
+      assert App.fetch(:cities) == FakerElixir.Locales.Fr.cities
+    end
 
-    assert is_list(apps)
-    assert (apps |> Enum.at(0)) == "Lemonid"
+    test "Fallback to default locale" do
+      FakerElixir.set_locale(:fakelocale)
+
+      assert App.fetch(:cities) == FakerElixir.Locales.En.cities
+    end
+
   end
 
-  test "keep_strict_alpha_numeric/1" do
-    assert App.keep_strict_alpha_numeric("Jérémie Ges") == "Jrmie Ges"
-    assert App.keep_strict_alpha_numeric("I love o'relly") == "I love orelly"
+  describe "keep_strict_alpha_numeric/1" do
+
+    test "format correctly" do
+      assert App.keep_strict_alpha_numeric("Jérémie Ges") == "Jrmie Ges"
+      assert App.keep_strict_alpha_numeric("I love o'relly") == "I love orelly"
+    end
+
   end
 
-  test "slug/1" do
-    assert App.slug("Jérémie ges is awesome dude!") == "jrmie.ges.is.awesome.dude"
-    assert App.slug(" w ") == "w"
-    assert App.slug(" what's up") == "whats.up"
+  describe "slug/1" do
+
+    test "format correctly" do
+      assert App.slug("Jérémie ges is awesome dude!") == "jrmie.ges.is.awesome.dude"
+      assert App.slug(" w ") == "w"
+      assert App.slug(" what's up") == "whats.up"
+    end
+
   end
 
-  test "slug/2" do
-    assert App.slug("Awesome slug dude", "*") == "awesome*slug*dude"
+  describe "slug/2" do
+
+    test "format correctly" do
+      assert App.slug("Awesome slug dude", "*") == "awesome*slug*dude"
+    end
   end
 
 end

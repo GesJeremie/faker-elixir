@@ -3,51 +3,82 @@ defmodule FakerElixir.InternetTest do
   use ExUnit.Case
   alias FakerElixir.Internet
 
-  test "email/0" do
-    cases = Stream.repeatedly(fn ->
-      email = Internet.email
-      assert Regex.match?(~r/[A-Za-z.]*@[a-z]*.[a-z]*/, email)
-    end)
+  describe "email/0" do
 
-    cases
-      |> Enum.take(50)
-  end
-
-  test "email/1" do
-    email = Internet.email("Jeremie ges")
-    assert Regex.match?(~r/jeremie.ges@[a-z]*.[a-z]*/, email)
-
-    assert is_binary(Internet.email(:popular))
-  end
-
-  test "email/2" do
-    assert is_binary(Internet.email(:popular, "jeremie ges"))
-  end
-
-  test "user_name/0" do
-    assert is_binary(Internet.user_name)
-  end
-
-  test "user_name/1" do
-    assert Internet.user_name("Jérémie GEES The awesome GUY!") == "jrmie.gees.the.awesome.guy"
-  end
-
-  test "url/0" do
-    cases = Stream.repeatedly(fn ->
-      url = Internet.url
-      assert Regex.match?(~r/http:\/\/www.[a-z]*.[a-z]*/, url)
-    end)
-
-    cases
-      |> Enum.take(50)
-  end
-
-  test "url/1" do
-    url_safe = Internet.url(:safe)
-
-    assert url_safe |> String.slice(0, 8) == "https://"
+    test "valid email" do
+      assert Regex.match?(~r/[A-Za-z.]*@[a-z]*.[a-z]*/,  Internet.email)
+    end
 
   end
+
+  describe "email/1" do
+
+    test "valid email" do
+      assert Regex.match?(~r/jeremie.ges@[a-z]*.[a-z]*/, Internet.email("Jeremie ges"))
+    end
+
+    test "popular return binary" do
+      assert is_binary(Internet.email(:popular))
+    end
+
+  end
+
+  describe "email/2" do
+
+    test "popular return binary" do
+      assert is_binary(Internet.email(:popular, "jeremie ges"))
+    end
+
+  end
+
+  describe "user_name/0" do
+
+    test "return binary" do
+      assert is_binary(Internet.user_name)
+    end
+
+  end
+
+  describe "user_name/1" do
+
+    test "format correctly" do
+      assert Internet.user_name("Jérémie GEES The awesome GUY!") == "jrmie.gees.the.awesome.guy"
+    end
+
+  end
+
+  describe "url/0" do
+
+    test "valid url" do
+      assert Regex.match?(~r/http:\/\/www.[a-z]*.[a-z]*/, Internet.url)
+    end
+
+  end
+
+  describe "url/1" do
+
+    test "valid safe url" do
+      assert Internet.url(:safe) |> String.slice(0, 8) == "https://"
+    end
+
+  end
+
+  describe "password/1" do
+
+    test "return binary :weak" do
+      assert is_binary(Internet.password(:weak))
+    end
+
+    test "return binary :normal" do
+      assert is_binary(Internet.password(:normal))
+    end
+
+    test "return binary :strong" do
+      assert is_binary(Internet.password(:strong))
+    end
+
+  end
+
 
 
 end

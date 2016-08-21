@@ -16,9 +16,7 @@ defmodule FakerElixir.App do
   ```
   """
   def name do
-    :apps
-      |> fetch
-      |> pick
+    :apps |> fetch |> pick
   end
 
   @doc """
@@ -33,9 +31,9 @@ defmodule FakerElixir.App do
   """
   def version do
     :version_patterns
-      |> fetch
-      |> pick
-      |> numerify
+    |> fetch
+    |> pick
+    |> numerify
   end
 
   @doc """
@@ -50,13 +48,8 @@ defmodule FakerElixir.App do
 
   """
   def author do
-    first_name = :first_names
-      |> fetch
-      |> pick
-
-    last_name = :last_names
-      |> fetch
-      |> pick
+    first_name = :first_names |> fetch |> pick
+    last_name = :last_names |> fetch |> pick
 
     "#{first_name} #{last_name}"
   end

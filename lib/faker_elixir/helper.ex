@@ -114,10 +114,8 @@ defmodule FakerElixir.Helper do
   ```
   """
   def cycle(id, enumerable) do
-
-    Store.has?(id)
-      |> do_cycle(id, enumerable)
-
+    stored = Store.has?(id)
+    do_cycle(stored, id, enumerable)
   end
 
 
