@@ -100,6 +100,11 @@ defmodule FakerElixir.Bank do
   "06/2023"
   ```
 
+  ```
+  iex> FakerElixir.Bank.credit_card_expiration_date(:invalid)
+  "03/2009"
+  ```
+
   """
   def credit_card_expiration_date(:valid) do
 
