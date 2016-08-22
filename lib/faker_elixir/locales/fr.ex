@@ -15,6 +15,8 @@ defmodule FakerElixir.Locales.Fr do
 
   @weak_passwords ["motdepass", "motdepasse", "abcedef", "invite", "administrateur", "azerty", "1234", "0987", "12345", "123456", "monmotdepasse", "lol", "systeme", "facebook", "google", "twitter", "1111", "zzzz", "client", "superadministrateur"]
 
+  @bank_names ["Axa banque", "Allianz banque", "Banque CIC", "BNP Paribas", "Boursorama banque", "Caisse agricole Crédit Mutuel", "Caisse d’Epargne", "Crédit Agricole S.A.", "Crédit du Nord", "Crédit Lyonnais", "Fortis banque France", "Fortuneo banque", "Groupama banque", "HSBC France", "ING Direct", "LCL", "La Banque Postale", "Médiatis", "Monabanq", "Société Générale", "Sofinco"]
+
   def cities, do: @cities
   def first_names, do: @first_names
   def last_names, do: @last_names
@@ -23,5 +25,6 @@ defmodule FakerElixir.Locales.Fr do
   def secondary_addresses, do: @secondary_addresses
   def prefixes, do: @prefixes
   def weak_passwords, do: @weak_passwords
+  def bank_names, do: @bank_names
 
 end

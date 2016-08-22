@@ -63,6 +63,8 @@ defmodule FakerElixir.Locales.En do
     }
   ]
 
+  @bank_names ["J.P.Morgan Chase & Co", "Bank of America", "Wells Fargo", "Citigroup", "Goldman Sachs Group", "Morgan Stanley", "U.S. Bancorp", "	Bank of New York Mellon", "PNC Financial Services", "Capital One", "	HSBC North America Holdings", "	TD Group US Holding", "State Street Corporation", "BB&T Corporation", "SunTrust Banks", "Charles Schwab Corporation", "Atlantic Bank", "Ally Financial", "Fifth Third Bank", "United Services Automobile Assoc.", "Citizens Financial Group", "	RBC USA Holdco Corporation", "Santander Holdings USA", "BMO Financial Corp", "Regions Financial Corporation", "M&T Bank Corporation"]
+
 
   def cities, do: @cities
   def countries, do: @countries
@@ -87,5 +89,6 @@ defmodule FakerElixir.Locales.En do
   def domain_extensions, do: @domain_extensions
   def weak_passwords, do: @weak_passwords
   def credit_cards, do: @credit_cards
+  def bank_names, do: @bank_names
 
 end

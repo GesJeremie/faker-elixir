@@ -61,7 +61,7 @@ defmodule FakerElixir.Bank do
   end
 
   def name do
-
+    :bank_names |> fetch |> pick
   end
 
   defp pick_card do
