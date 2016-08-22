@@ -1,6 +1,6 @@
 defmodule FakerElixir.AvatarTest do
 
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   alias FakerElixir.Avatar
 
 

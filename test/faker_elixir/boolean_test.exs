@@ -1,6 +1,6 @@
 defmodule FakerElixir.BooleanTest do
 
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   alias FakerElixir.Boolean
 
   describe "boolean/0" do

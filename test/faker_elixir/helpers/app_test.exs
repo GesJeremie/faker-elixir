@@ -1,6 +1,6 @@
 defmodule FakerElixir.Helpers.AppTest do
 
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   alias FakerElixir.Helpers.App
 
   describe "rand/0" do

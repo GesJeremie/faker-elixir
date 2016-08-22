@@ -1,6 +1,6 @@
 defmodule FakerElixir.HelperTest do
 
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   alias FakerElixir.Helper
 
   describe "letterify/1" do

@@ -1,7 +1,7 @@
 
 defmodule FakerElixir.LoremTest do
 
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   alias FakerElixir.Lorem
 
   describe "word/0" do

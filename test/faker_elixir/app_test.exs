@@ -1,6 +1,6 @@
 defmodule FakerElixir.AppTest do
 
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   alias FakerElixir.App
 
   test "name/0" do

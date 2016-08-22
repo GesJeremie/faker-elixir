@@ -1,6 +1,6 @@
 defmodule FakerElixir.DateTest do
 
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   alias FakerElixir.Date
 
   test "backward/1" do

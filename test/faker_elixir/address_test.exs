@@ -1,6 +1,6 @@
 defmodule FakerElixir.AddressTest do
 
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   describe "city/0" do
 

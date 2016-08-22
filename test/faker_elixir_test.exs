@@ -1,5 +1,5 @@
 defmodule FakerElixirTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   test "set locale and retrieve it" do
     FakerElixir.set_locale(:en)

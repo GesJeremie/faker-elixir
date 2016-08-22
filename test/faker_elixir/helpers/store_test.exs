@@ -1,6 +1,6 @@
 defmodule FakerElixir.Helpers.StoreTest do
 
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   alias FakerElixir.Helpers.Store
 
 

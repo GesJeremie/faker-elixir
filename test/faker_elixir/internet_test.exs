@@ -1,6 +1,6 @@
 defmodule FakerElixir.InternetTest do
 
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   alias FakerElixir.Internet
 
   describe "email/0" do

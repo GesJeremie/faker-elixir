@@ -1,6 +1,6 @@
 defmodule FakerElixir.CryptoTest do
 
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   alias FakerElixir.Crypto
 
   test "md5/0" do
