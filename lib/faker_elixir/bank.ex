@@ -89,13 +89,18 @@ defmodule FakerElixir.Bank do
   end
 
   @doc """
-  Return a valid credit card expiration date
+  Return a valid or invalid credit card expiration date
 
   ## Examples
 
   ```
   iex> FakerElixir.Bank.credit_card_expiration_date(:valid)
   "06/2023"
+  ```
+
+  ```
+  iex> FakerElixir.Bank.credit_card_expiration_date(:invalid)
+  "12/2011"
   ```
   """
   def credit_card_expiration_date(:valid) do
@@ -106,16 +111,6 @@ defmodule FakerElixir.Bank do
     "#{month}/#{year}"
   end
 
-  @doc """
-  Return an invalid credit card expiration date
-
-  ## Examples
-
-  ```
-  iex> FakerElixir.Bank.credit_card_expiration_date(:invalid)
-  "12/2011"
-  ```
-  """
   def credit_card_expiration_date(:invalid) do
     year = current_year() - (1..12 |> pick)
     month = pick_month()
