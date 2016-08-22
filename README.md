@@ -87,6 +87,7 @@ But I know you, you will forget the syntax to generate a city and so on ... Don'
 - [Faker.Address](#fakerelixiraddress)
 - [Faker.App](#fakerelixirapp)
 - [Faker.Avatar](#fakerelixiravatar)
+- [Faker.Bank](#fakerelixirbank)
 - [Faker.Boolean](#fakerelixirboolean)
 - [Faker.Crypto](#fakerelixircrypto)
 - [Faker.Date](#fakerelixirdate)
@@ -132,6 +133,24 @@ FakerElixir.Avatar.robohash("zombies-forever", "400x400") # "https://robohash.or
 FakerElixir.Avatar.robohash("i-love-a-zombie", "300x300", "jpg") # "https://robohash.org/i-love-a-zombie.jpg?size=300x300"
 FakerElixir.Avatar.robohash("boring-slug", "230x230", "bmp", "set1") # "https://robohash.org/boring-slug.bmp?size=230x230&set=set1"
 FakerElixir.Avatar.robohash("ahahahaha", "198x198", "jpg", "set2", "bg2") # "https://robohash.org/ahahahaha.jpg?size=198x198&set=set2&bgset=bg2"
+```
+
+### FakerElixir.Bank
+---
+```elixir
+FakerElixir.Bank.credit_card_cvv # 914
+
+# Context: 22 august 2016
+FakerElixir.Bank.credit_card_expiration_date # "08/2017"
+FakerElixir.Bank.credit_card_expiration_date(:valid) # "06/2023"
+FakerElixir.Bank.credit_card_expiration_date(:invalid) # "12/2011"
+
+FakerElixir.Bank.credit_card_number # "34521702751096"
+FakerElixir.Bank.credit_card_type # "MasterCard"
+
+FakerElixir.Bank.make_credit_card # %{cvv: "188", expiration_date: "12/2006", name: "LLEWELLYN WEBER", number: "601141761193874", type: "Discover Card"}
+
+FakerElixir.Bank.name # "Goldman Sachs Group"
 ```
 
 ### FakerElixir.Boolean
