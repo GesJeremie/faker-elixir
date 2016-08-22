@@ -51,4 +51,24 @@ defmodule FakerElixir.BankTest do
 
   end
 
+  describe "credit_card_expiration_date/0" do
+
+    test "return binary" do
+      assert is_binary(Bank.credit_card_expiration_date)
+    end
+
+  end
+
+  describe "credit_card_expiration_date/1" do
+
+    test "return binary" do
+      assert is_binary(Bank.credit_card_expiration_date(:valid))
+      assert is_binary(Bank.credit_card_expiration_date(:invalid))
+    end
+
+  end
+
+
+
+
 end

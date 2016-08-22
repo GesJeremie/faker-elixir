@@ -37,7 +37,7 @@ defmodule FakerElixir.Helpers.App do
 
   ```
   iex> FakerElixir.Helpers.App.slug("Jérémie just killed a zombie!!")
-  "jrmie.just.killed.a.zombie"
+  "jeremie.just.killed.a.zombie"
   ```
   """
   def slug(string) do
@@ -51,15 +51,33 @@ defmodule FakerElixir.Helpers.App do
 
   ```
   iex> FakerElixir.Helpers.App.slug("Jérémie just killed a zombie!!", "-")
-  "jrmie-just-killed-a-zombie"
+  "jeremie-just-killed-a-zombie"
   ```
   """
   def slug(string, glue) do
     string
+    |> remove_accents
     |> keep_strict_alpha_numeric
     |> String.trim
     |> String.downcase
     |> String.replace(" ", glue)
+  end
+
+
+  @doc """
+  Remove accents from a string
+
+  ### Examples
+
+  ```
+  FakerElixir.Helpers.App.remove_accents("jérémie")
+  "jeremie"
+  ```
+  """
+  def remove_accents(string) do
+    string
+    |> String.normalize(:nfd)
+    |> String.replace(~r/[^A-z\s]/u, "")
   end
 
 

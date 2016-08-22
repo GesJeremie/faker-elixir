@@ -42,7 +42,7 @@ defmodule FakerElixir.InternetTest do
   describe "user_name/1" do
 
     test "format correctly" do
-      assert Internet.user_name("Jérémie GEES The awesome GUY!") == "jrmie.gees.the.awesome.guy"
+      assert Internet.user_name("Jérémie GEES The awesome GUY!") == "jeremie.gees.the.awesome.guy"
     end
 
   end

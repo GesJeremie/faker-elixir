@@ -1,5 +1,7 @@
 defmodule FakerElixir.Bank do
-
+  @moduledoc """
+  Generate fake date related to the Bank domain
+  """
   import FakerElixir.Helpers.App
 
   @doc """
@@ -17,7 +19,7 @@ defmodule FakerElixir.Bank do
     card_number = card.number_patterns |> pick |> numerify
     first_name = :first_names |> fetch |> pick
     last_name = :last_names |> fetch |> pick
-    name = "#{first_name} #{last_name}" |> String.upcase
+    name = "#{first_name} #{last_name}" |> remove_accents |> String.upcase
 
     %{
       type: card.type,
@@ -98,10 +100,6 @@ defmodule FakerElixir.Bank do
   "06/2023"
   ```
 
-  ```
-  iex> FakerElixir.Bank.credit_card_expiration_date(:invalid)
-  "12/2011"
-  ```
   """
   def credit_card_expiration_date(:valid) do
 

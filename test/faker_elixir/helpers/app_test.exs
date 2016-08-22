@@ -82,7 +82,7 @@ defmodule FakerElixir.Helpers.AppTest do
   describe "slug/1" do
 
     test "format correctly" do
-      assert App.slug("Jérémie ges is awesome dude!") == "jrmie.ges.is.awesome.dude"
+      assert App.slug("Jérémie ges is awesome dude!") == "jeremie.ges.is.awesome.dude"
       assert App.slug(" w ") == "w"
       assert App.slug(" what's up") == "whats.up"
     end
