@@ -2,11 +2,19 @@ defmodule FakerElixir.Bank do
 
   import FakerElixir.Helpers.App
 
-  ##
-  # %{type: visa, number: 424242424242, name: jeremie ges, expiration_date: 03/2016}
-  ##
   def make_credit_card do
+    card = pick_card()
+    card_number = card.number_patterns |> pick |> numerify
+    first_name = :first_names |> fetch |> pick
+    last_name = :last_names |> fetch |> pick
+    name = "#{first_name} #{last_name}" |> String.upcase
 
+    %{
+      type: card.type,
+      number: card_number,
+      name: name,
+      expiration_date: credit_card_expiration_date()
+    }
   end
 
   def credit_card_number do
