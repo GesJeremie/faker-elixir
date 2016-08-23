@@ -89,6 +89,7 @@ But I know you, you will forget the syntax to generate a city and so on ... Don'
 - [Faker.Avatar](#fakerelixiravatar)
 - [Faker.Bank](#fakerelixirbank)
 - [Faker.Boolean](#fakerelixirboolean)
+- [Faker.Color](#fakerelixircolor)
 - [Faker.Crypto](#fakerelixircrypto)
 - [Faker.Date](#fakerelixirdate)
 - [Faker.Helper](#fakerelixirhelper)
@@ -163,6 +164,20 @@ FakerElixir.Boolean.boolean # true
 FakerElixir.Boolean.boolean(1) # true
 FakerElixir.Boolean.boolean(0) # false
 FakerElixir.Boolean.boolean(0.1) # false
+```
+
+### FakerElixir.Color
+---
+```elixir
+FakerElixir.Color.hex # "#1671B0"
+
+FakerElixir.Color.hsl # "hsl(130, 40%, 41%)"
+FakerElixir.Color.make_hsl # [236, "13%", "77%"]
+
+FakerElixir.Color.rgb # "rgb(152, 228, 47)"
+FakerElixir.Color.make_rgb # [65, 137, 5]
+
+FakerElixir.Color.name # "white"
 ```
 
 ### FakerElixir.Crypto
