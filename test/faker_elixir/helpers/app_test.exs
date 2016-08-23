@@ -62,6 +62,14 @@ defmodule FakerElixir.Helpers.AppTest do
       assert App.fetch(:cities) == FakerElixir.Locales.Fr.cities
     end
 
+    test "Fetch data from the right locale (:es)" do
+
+      FakerElixir.set_locale(:es)
+
+      assert App.fetch(:colors) == FakerElixir.Locales.Es.colors
+
+    end
+
     test "Fallback to default locale" do
       FakerElixir.set_locale(:fakelocale)
 
