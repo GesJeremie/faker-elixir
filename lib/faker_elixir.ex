@@ -66,7 +66,7 @@ defmodule FakerElixir do
   @doc """
   The default locale used by FakerElixir is ```:en```.
 
-  Right now only 2 locales are available: ```:fr```, ```:en```.
+  Right now only 3 locales are available: ```:fr```, ```:en```, ```:es```.
 
   If you set a different locale, FakerElixir will just fallback to ```:en``` (If you didn't provide a custom locale)
 
@@ -78,20 +78,13 @@ defmodule FakerElixir do
   iex> FakerElixir.set_locale(:en)
   :ok
   iex> FakerElixir.Address.city
-  Baltimore"
+  "Baltimore"
 
 
   iex> FakerElixir.set_locale(:fr)
   :ok
   iex> FakerElixir.Address.city
   "Issy-les-Moulineaux"
-
-
-  iex> FakerElixir.set_locale(:es)
-  :ok
-  iex> FakerElixir.Address.city
-  Baltimore"
-
   ```
   """
   def set_locale(locale) do
