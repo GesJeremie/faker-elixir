@@ -80,7 +80,7 @@ I guess you have an error similar to  ```something .... Store.has?() ..... somet
 
 ## Cheatsheet
 
-Each functions of FakerElixir are well documented here: [documentation](https://hexdocs.pm/faker_elixir_octopus/0.1.0/FakerElixir.html).
+Each functions of FakerElixir are well documented here: [documentation](https://hexdocs.pm/faker_elixir_octopus/FakerElixir.html).
 
 But I know you, you will forget the syntax to generate a city and so on ... Don't waste your time in the documentation, just use this simple cheatsheet:
 
