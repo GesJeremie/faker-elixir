@@ -279,7 +279,7 @@ FakerElixir.Name.title # "Principal Branding Orchestrator"
 
 ### General
 ---
-The default locale used by FakerElixir is ```:en```. Right now only 3 locales are available: ```:fr```, ```:en```, ```:es```.
+The default locale used by FakerElixir is ```:en```. Right now only 4 locales are available: ```:fr```, ```:en```, ```:es```, ```:it```.
 
 If you set a different locale, FakerElixir will just fallback to ```:en``` (If you didn't provide a custom locale)
 
