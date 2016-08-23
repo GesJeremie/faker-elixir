@@ -17,6 +17,8 @@ defmodule FakerElixir.Locales.Fr do
 
   @bank_names ["Axa banque", "Allianz banque", "Banque CIC", "BNP Paribas", "Boursorama banque", "Caisse agricole Crédit Mutuel", "Caisse d’Epargne", "Crédit Agricole S.A.", "Crédit du Nord", "Crédit Lyonnais", "Fortis banque France", "Fortuneo banque", "Groupama banque", "HSBC France", "ING Direct", "LCL", "La Banque Postale", "Médiatis", "Monabanq", "Société Générale", "Sofinco"]
 
+  @colors ["rouge", "vert", "bleu", "jaune", "violet", "vert menthe", "blanc", "noir", "orange", "rose", "gris", "marron", "violet", "turquoise", "bleu ciel", "saumon", "prune", "olive", "magenta", "citron", "ivoir", "indigo", "or", "cyan", "azur", "lavande", "argent"]
+
   def cities, do: @cities
   def first_names, do: @first_names
   def last_names, do: @last_names
@@ -26,5 +28,6 @@ defmodule FakerElixir.Locales.Fr do
   def prefixes, do: @prefixes
   def weak_passwords, do: @weak_passwords
   def bank_names, do: @bank_names
+  def colors, do: @colors
 
 end

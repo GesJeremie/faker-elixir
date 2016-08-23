@@ -4,11 +4,6 @@ defmodule FakerElixir.Helpers.App do
   @doc """
   Keep only [0-9a-zA-Z] characters and spaces.
 
-  The best would be to translate each accents of the string
-  than remove them completly.
-
-  We could use the Slugger package, but I don't want to add dependencies yet.
-
   ## Examples
 
   ```
