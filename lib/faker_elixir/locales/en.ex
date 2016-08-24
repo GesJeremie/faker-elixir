@@ -67,7 +67,7 @@ defmodule FakerElixir.Locales.En do
 
   @colors ["red", "green", "blue", "yellow", "purple", "mint green", "teal", "white", "black", "orange", "pink", "grey", "maroon", "violet", "turquoise", "tan", "sky blue", "salmon", "plum", "orchid", "olive", "magenta", "lime", "ivory", "indigo", "gold", "fuchsia", "cyan", "azure", "lavender", "silver"]
 
-  @extensions %{
+  @file_extensions %{
    image: ~w(bmp gif jpeg jpg png tiff),
    audio: ~w(flac mp3 wav),
    text: ~w(css csv html js json txt),
@@ -75,16 +75,17 @@ defmodule FakerElixir.Locales.En do
    office: ~w(doc docx xls xlsx ppt pptx odt ods odp pages numbers key pdf)
   }
 
-  @mimes %{
-     application: ~w(application/atom+xml application/ecmascript application/EDI-X12 application/EDIFACT application/json application/javascript application/ogg application/pdf application/postscript application/rdf+xml application/rss+xml application/soap+xml application/font-woff application/xhtml+xml application/xml-dtd application/xop+xml application/zip application/gzip),
-     audio: ~w(audio/basic audio/L24 audio/mp4 audio/mpeg audio/ogg audio/vorbis audio/vnd.rn-realaudio audio/vnd.wave audio/webm),
-     image: ~w(image/gif image/jpeg image/pjpeg image/png image/svg+xml image/tiff image/vnd.microsoft.icon),
-     message: ~w(message/http message/imdn+xml message/partial message/rfc822),
-     model: ~w(model/example model/iges model/mesh model/vrml model/x3d+binary model/x3d+vrml model/x3d+xml),
-     multipart: ~w(multipart/mixed multipart/alternative multipart/related multipart/form-data multipart/signed multipart/encrypted),
-     text: ~w(text/cmd text/css text/csv text/html text/javascript text/plain text/vcard text/xml),
-     video: ~w(video/mpeg video/mp4 video/ogg video/quicktime video/webm video/x-matroska video/x-ms-wmv video/x-flv)
-   }
+  @file_mimes %{
+    application: ~w(application/atom+xml application/ecmascript application/EDI-X12 application/EDIFACT application/json application/javascript application/ogg application/pdf application/postscript application/rdf+xml application/rss+xml application/soap+xml application/font-woff application/xhtml+xml application/xml-dtd application/xop+xml application/zip application/gzip),
+    audio: ~w(audio/basic audio/L24 audio/mp4 audio/mpeg audio/ogg audio/vorbis audio/vnd.rn-realaudio audio/vnd.wave audio/webm),
+    image: ~w(image/gif image/jpeg image/pjpeg image/png image/svg+xml image/tiff image/vnd.microsoft.icon),
+    message: ~w(message/http message/imdn+xml message/partial message/rfc822),
+    model: ~w(model/example model/iges model/mesh model/vrml model/x3d+binary model/x3d+vrml model/x3d+xml),
+    multipart: ~w(multipart/mixed multipart/alternative multipart/related multipart/form-data multipart/signed multipart/encrypted),
+    text: ~w(text/cmd text/css text/csv text/html text/javascript text/plain text/vcard text/xml),
+    video: ~w(video/mpeg video/mp4 video/ogg video/quicktime video/webm video/x-matroska video/x-ms-wmv video/x-flv)
+  }
+
   def cities, do: @cities
   def countries, do: @countries
   def time_zones, do: @time_zones
@@ -110,5 +111,7 @@ defmodule FakerElixir.Locales.En do
   def credit_cards, do: @credit_cards
   def bank_names, do: @bank_names
   def colors, do: @colors
+  def file_mimes, do: @file_mimes
+  def file_extensions, do: @file_extensions
 
 end
