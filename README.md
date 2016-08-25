@@ -92,6 +92,7 @@ But I know you, you will forget the syntax to generate a city and so on ... Don'
 - [Faker.Color](#fakerelixircolor)
 - [Faker.Crypto](#fakerelixircrypto)
 - [Faker.Date](#fakerelixirdate)
+- [Faker.File](#fakerelixirfile)
 - [Faker.Helper](#fakerelixirhelper)
 - [Faker.Internet](#fakerelixirinternet)
 - [Faker.Lorem](#fakerelixirlorem)
@@ -204,6 +205,26 @@ FakerElixir.Date.birthday # "1988-03-07 16:28:37Z"
 
 FakerElixir.Date.forward(1) # "2016-08-20 19:29:28Z"
 FakerElixir.Date.forward(1..2) # "2016-08-20 11:18:18Z"
+```
+
+### FakerElixir.File
+---
+```elixir
+FakerElixir.File.extension # "png"
+
+# Allowed: :image, :audio, :text, :video, :office
+FakerElixir.File.extension(:audio) # "mp3"
+
+FakerElixir.File.mime # "application/javascript"
+
+# Allowed: :application, :audio, :image, :message, :model, :multipart, :text, :video
+FakerElixir.File.mime(:message) # "message/rfc822"
+
+FakerElixir.File.name # "aut.css"
+
+# Allowed: :image, :audio, :text, :video, :office
+FakerElixir.File.name(:video) # "mollitia.avi""
+
 ```
 
 ### FakerElixir.Helper
