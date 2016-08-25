@@ -2,6 +2,16 @@ defmodule FakerElixir.File do
 
   import FakerElixir.Helpers.App
 
+  @doc """
+  Return an extension
+
+  ## Examples
+
+  ```
+  iex> FakerElixir.File.extension
+  "png"
+  ```
+  """
   def extension do
     # Pick randomly a category and execute extension/1
     categories_extensions()
@@ -9,6 +19,18 @@ defmodule FakerElixir.File do
     |> extension
   end
 
+  @doc """
+  Return an extension for the category given
+
+  Allowed categories: ```:image```, ```:audio```, ```:text```, ```:video```, ```:office```
+
+  ## Examples
+
+  ```
+  iex> FakerElixir.File.extension(:audio)
+  "mp3"
+  ```
+  """
   def extension(category) do
     # Check if exists
     category |> for_extension_exists!
@@ -20,6 +42,16 @@ defmodule FakerElixir.File do
     extensions[category] |> pick
   end
 
+  @doc """
+  Return a file name
+
+  ## Examples
+
+  ```
+  iex> FakerElixir.File.name
+  "aut.css"
+  ```
+  """
   def name do
     name = :words |> fetch |> pick |> remove_accents
     extension = extension()
@@ -27,6 +59,18 @@ defmodule FakerElixir.File do
     "#{name}.#{extension}"
   end
 
+  @doc """
+  Return a file name for the category given
+
+  Allowed categories: ```:image```, ```:audio```, ```:text```, ```:video```, ```:office```
+
+  ## Examples
+
+  ```
+  iex> FakerElixir.File.name(:video)
+  mollitia.avi"
+  ```
+  """
   def name(category) do
     name = :words |> fetch |> pick |> remove_accents
     extension = extension(category)
@@ -34,6 +78,16 @@ defmodule FakerElixir.File do
     "#{name}.#{extension}"
   end
 
+  @doc """
+  Return a mime
+
+  ## Examples
+
+  ```
+  iex> FakerElixir.File.mime
+  "application/javascript"
+  ```
+  """
   def mime do
     # Pick randomly a category and execute mime/1
     categories_mimes()
@@ -41,6 +95,19 @@ defmodule FakerElixir.File do
     |> mime
   end
 
+  @doc """
+  Return a mime for the category given
+
+  Allowed categories: ```:application```, ```:audio```, ```:image```,
+  ```:message```, ```:model```, ```:multipart```, ```:text```, ```:video```
+
+  ## Examples
+
+  ```
+  iex> FakerElixir.File.mime(:message)
+  "message/rfc822"
+  ```
+  """
   def mime(category) do
     # Check if exists
     category |> for_mime_exists!
