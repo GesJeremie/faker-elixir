@@ -12,7 +12,7 @@ defmodule FakerElixir.Phone do
 
   ```
   iex> FakerElixir.Phone.home
-
+  "355.369.3998 x19434"
   ```
   """
   def home do
@@ -26,7 +26,7 @@ defmodule FakerElixir.Phone do
 
   ```
   iex> FakerElixir.Phone.cell
-
+  "1-714-443-8836"
   ```
   """
   def cell do
