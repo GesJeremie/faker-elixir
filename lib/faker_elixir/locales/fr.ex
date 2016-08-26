@@ -19,6 +19,9 @@ defmodule FakerElixir.Locales.Fr do
 
   @colors ["rouge", "vert", "bleu", "jaune", "violet", "vert menthe", "blanc", "noir", "orange", "rose", "gris", "marron", "violet", "turquoise", "bleu ciel", "saumon", "prune", "olive", "magenta", "citron", "ivoir", "indigo", "or", "cyan", "azur", "lavande", "argent"]
 
+  @phone_home_patterns ["01########", "02########", "03########", "04########", "05########", "09########", "+33 1########", "+33 2########", "+33 3########", "+33 4########", "+33 5########", "+33 9########", "01 ## ## ## ##", "02 ## ## ## ##", "03 ## ## ## ##", "04 ## ## ## ##", "05 ## ## ## ##", "09 ## ## ## ##", "+33 1 ## ## ## ##", "+33 2 ## ## ## ##", "+33 3 ## ## ## ##", "+33 4 ## ## ## ##", "+33 5 ## ## ## ##", "+33 9 ## ## ## ##"]
+  @phone_cell_patterns ["06########", "07########", "+33 6########", "+33 7########", "06 ## ## ## ##", "07 ## ## ## ##", "+33 6 ## ## ## ##", "+33 7 ## ## ## ##"]
+
   def cities, do: @cities
   def first_names, do: @first_names
   def last_names, do: @last_names
@@ -29,5 +32,8 @@ defmodule FakerElixir.Locales.Fr do
   def weak_passwords, do: @weak_passwords
   def bank_names, do: @bank_names
   def colors, do: @colors
+  def phone_home_patterns, do: @phone_home_patterns
+  def phone_cell_patterns, do: @phone_cell_patterns
+
 
 end
