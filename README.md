@@ -98,6 +98,7 @@ But I know you, you will forget the syntax to generate a city and so on ... Don'
 - [Faker.Lorem](#fakerelixirlorem)
 - [Faker.Name](#fakerelixirname)
 - [Faker.Number](#fakerelixirnumber)
+- [Faker.Phone](#fakerelixirphone)
 
 ### FakerElixir.Address
 ---
@@ -318,6 +319,13 @@ FakerElixir.Number.digits # 452
 
 # 4 digits please!
 FakerElixir.Number.digits(4) # 7025
+```
+
+### FakerElixir.Phone
+---
+```elixir
+FakerElixir.Phone.cell # "1-714-443-8836"
+FakerElixir.Phone.home # "355.369.3998 x19434"
 ```
 
 ## Locales
