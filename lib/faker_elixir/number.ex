@@ -1,6 +1,6 @@
 defmodule FakerElixir.Number do
   @moduledoc """
-  Generate fake data related for the domain Number
+  Generate fake data for the domain Number
   """
 
   import FakerElixir.Helpers.App
