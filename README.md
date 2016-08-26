@@ -97,6 +97,7 @@ But I know you, you will forget the syntax to generate a city and so on ... Don'
 - [Faker.Internet](#fakerelixirinternet)
 - [Faker.Lorem](#fakerelixirlorem)
 - [Faker.Name](#fakerelixirname)
+- [Faker.Number](#fakerelixirnumber)
 
 ### FakerElixir.Address
 ---
@@ -294,6 +295,29 @@ FakerElixir.Name.name_with_middle # "Annalise Francesco Schowalter"
 FakerElixir.Name.prefix # "Mr."
 FakerElixir.Name.suffix # "PhD"
 FakerElixir.Name.title # "Principal Branding Orchestrator"
+```
+
+### FakerElixir.Number
+---
+```elixir
+FakerElixir.Number.between(15..150) # 130
+FakerElixir.Number.between(15, 150) # 18
+FakerElixir.Number.between(11.22, 13.88) # 11.24
+FakerElixir.Number.between(12, 12.35) # 12.11
+
+FakerElixir.Number.decimal # "70.8"
+
+# 3 left digits
+FakerElixir.Number.decimal(3) # "918.43"
+
+# 1 left digit and 3 right digits
+FakerElixir.Number.decimal(1, 3) # "2.298"
+
+FakerElixir.Number.digit # 3
+FakerElixir.Number.digits # 452
+
+# 4 digits please!
+FakerElixir.Number.digits(4) # 7025
 ```
 
 ## Locales

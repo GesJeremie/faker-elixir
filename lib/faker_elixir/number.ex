@@ -40,7 +40,7 @@ defmodule FakerElixir.Number do
 
   ```
   iex> FakerElixir.Number.digits(4)
-  1234523456
+  7025
   ```
   """
   def digits(length) do
