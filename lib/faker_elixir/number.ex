@@ -44,13 +44,21 @@ defmodule FakerElixir.Number do
   ```
   """
   def digits(length) do
-    {digits, _} =
+    digits =
       Stream.repeatedly(&digit/0)
       |> Enum.take(length)
       |> Enum.join
-      |> Integer.parse
 
-    digits
+    digits =
+      if digits |> String.at(0) == "0" do
+        String.replace_leading(digits, "0", "#{(1..9 |> pick)}")
+      else
+        digits
+      end
+
+    {result, _} = digits |> Integer.parse
+
+    result
   end
 
 
