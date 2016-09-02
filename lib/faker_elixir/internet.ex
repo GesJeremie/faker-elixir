@@ -21,15 +21,15 @@ defmodule FakerElixir.Internet do
   ```
   """
   def email do
-    first_name = :first_names |> fetch |> pick |> slug
+    name = build_name_email()
 
-    email(first_name)
+    email(name)
   end
 
   def email(:popular) do
-    first_name = :first_names |> fetch |> pick |> slug
+    name = build_name_email()
 
-    email(:popular, first_name)
+    email(:popular, name)
   end
 
   @doc """
@@ -65,6 +65,36 @@ defmodule FakerElixir.Internet do
     domain_popular = :domain_popular_emails |> fetch |> pick
 
     "#{name}@#{domain_popular}"
+  end
+
+  defp build_name_email do
+    0..3
+    |> pick
+    |> build_name_email
+  end
+
+  defp build_name_email(0) do
+    "#{first_name()} #{last_name()}"
+  end
+
+  defp build_name_email(1) do
+    "#{last_name()} #{first_name()}"
+  end
+
+  defp build_name_email(2) do
+    "#{first_name()}"
+  end
+
+  defp build_name_email(3) do
+    "#{last_name()}"
+  end
+
+  defp first_name do
+    :first_names |> fetch |> pick
+  end
+
+  defp last_name do
+    :last_names |> fetch |> pick
   end
 
   @doc """
