@@ -58,7 +58,7 @@ defmodule FakerElixir.Helper do
   @doc """
   Will iterate through the enumerable as a constant cycle. Really useful when you want to seed your database with a pre-defined cycle
 
-  ```Warning:``` The id (first param given) should be unique for each different cycle
+  **Warning:** The id (first param given) should be unique for each different cycle
 
   ## Examples
 
@@ -160,6 +160,67 @@ defmodule FakerElixir.Helper do
     value
   end
 
+  @doc """
+  Will generate only unique values for the function given. If **unique!/2** can't generate an unique value after X tries it raises an **OverflowError**. 
+
+  **Warning:** The id (first param given) should be unique for each different unique functions
+
+
+  ## Examples
+
+  ### Generate unique emails
+  
+  ```
+  # Create stream to generate unique emails
+  stream = Stream.repeatedly(fn ->
+  
+    FakerElixir.Helper.unique!(:unique_emails, fn -> FakerElixir.Internet.email(:popular) end)
+  
+  end)
+
+  # Grab 400 unique emails
+  emails = 
+    stream |> Enum.take(400)
+  ```
+
+  ### Basic Seed
+
+  In this example you are sure the names and emails generated in the fixture are unique !
+  ```
+  defmodule Seed do
+
+    alias FakerElixir.Helper
+
+    def make do
+      warriors = Stream.repeatedly(fn() -> fixture(:zombie) end)
+        |> Enum.take(50)
+    end
+
+
+    defp fixture(:zombie) do
+      %{
+        name: Helper.unique!(:names, fn -> FakerElixir.Name.name end),
+        email: Helper.unique!(:emails, fn -> FakerElixir.Internet.email(:popular) end)
+      }
+    end
+
+  end
+
+  iex> Seed.make
+  [
+    %{email: "leclerc@gmail.com", name: "Mathilde Rousselle"},
+    %{email: "sarah@gmail.com", name: "Ambre Marie"},
+    %{email: "lola@hotmail.fr", name: "Paul Carton"},
+    %{email: "raffin.louise@gmail.com", name: "Lola Beguin"},
+    %{email: "de.elisa@yahoo.fr", name: "Enzo Perret"},
+    %{email: "clemence.dubos@free.fr", name: "Chloé Devaux"},
+    %{email: "justine@hotmail.fr", name: "Mathilde Pouliquen"},
+    %{email: "rousselle.jeanne@hotmail.fr", name: "Léo Monin"},
+    %{email: "monin.julien@gmail.com", ...},
+    %{email: "metais.celia@yahoo.fr", ...}
+  ]
+  ```
+  """
   def unique!(id, func) do
     # Namespace the id
     id = make_namespace(id, :unique)
@@ -207,7 +268,7 @@ defmodule FakerElixir.Helper do
     end
   end
 
-  defp do_retry_unique!(10000, id, func) do
+  defp do_retry_unique!(10000, _, _) do
     raise OverflowError, "Impossible to generate an unique value"
   end
 
