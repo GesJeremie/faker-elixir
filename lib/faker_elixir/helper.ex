@@ -114,12 +114,15 @@ defmodule FakerElixir.Helper do
   ```
   """
   def cycle(id, enumerable) do
+    id = make_namespace(id, :cycle)
+    
     stored = Store.has?(id)
     do_cycle(stored, id, enumerable)
   end
 
 
   defp do_cycle(false, id, enumerable) do
+
     # Fetch first value
     value = hd(enumerable)
 
@@ -134,6 +137,7 @@ defmodule FakerElixir.Helper do
   end
 
   defp do_cycle(true, id, enumerable) do
+
     # Fetch list stored
     list = Store.get(id)
 
@@ -150,6 +154,10 @@ defmodule FakerElixir.Helper do
 
     # Display value
     value
+  end
+
+  defp make_namespace(id, type) do
+    "#{type}_#{id}"
   end
 
   defp refill_store?(list) do
