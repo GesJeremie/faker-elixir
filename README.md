@@ -234,15 +234,19 @@ FakerElixir.File.name(:video) # "mollitia.avi""
 ```elixir
 # Check out the documentation for this helper:
 # https://hexdocs.pm/faker_elixir_octopus/FakerElixir.Helper.html#cycle/2
-FakerElixir.Helper.cycle(:zombies, ["Peter", "Audrey"]) # Peter
-FakerElixir.Helper.cycle(:zombies, ["Peter", "Audrey"]) # Audrey
-FakerElixir.Helper.cycle(:zombies, ["Peter", "Audrey"]) # Peter
+FakerElixir.Helper.cycle(:zombies, ["Peter", "Audrey"]) # "Peter"
+FakerElixir.Helper.cycle(:zombies, ["Peter", "Audrey"]) # "Audrey"
+FakerElixir.Helper.cycle(:zombies, ["Peter", "Audrey"]) # "Peter"
 
 FakerElixir.Helper.letterify("#.#.#.#") # "k.e.n.u"
 FakerElixir.Helper.numerify("Apt. ###") # "Apt. 902"
 
 FakerElixir.Helper.pick(["paris", "athens", "london"]) # "london"
 FakerElixir.Helper.pick(0..100) # 51
+
+# Check out the documentation for this helper:
+# https://hexdocs.pm/faker_elixir_octopus/FakerElixir.Helper.html#unique!/2
+FakerElixir.Helper.unique!(:emails, fn -> FakerElixir.Internet.email(:popular) end) # "gutkowski@hotmail.com"
 ```
 
 ### FakerElixir.Internet
