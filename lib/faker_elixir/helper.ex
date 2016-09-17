@@ -278,7 +278,6 @@ defmodule FakerElixir.Helper do
     do_unique!(true, id, func)  
   end
 
-
   defp reset_retry(id) do
     id = make_namespace(id, :retry)
 
