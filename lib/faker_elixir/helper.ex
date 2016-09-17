@@ -1,3 +1,7 @@
+defmodule OverflowError do
+  defexception [:message]
+end
+
 defmodule FakerElixir.Helper do
   @moduledoc """
   Provide useful helpers
@@ -156,8 +160,96 @@ defmodule FakerElixir.Helper do
     value
   end
 
+  def unique!(id, func) do
+    # Namespace the id
+    id = make_namespace(id, :unique)
+    
+    stored = Store.has?(id)
+    do_unique!(stored, id, func)
+  end
+
+  defp do_unique!(false, id, func) do
+    # It means it's the first time the helper
+    # is executed for this id
+    value = func.()
+
+    # Let's push the value in the store
+    Store.set(id, [value])
+
+    # Return the value
+    value
+  end
+
+  defp do_unique!(true, id, func) do
+    # It means it's not the first time
+    # the helper is executed for this id
+    value = func.()
+
+    # Let's check if the value exists in the store
+    list = Store.get(id)
+
+    if Enum.member?(list, value) do
+      # It already exists, let's try again
+      do_retry_unique!(count_retry(id), id, func)
+    else
+
+      # Reset flag retry
+      reset_retry(id)
+      
+      # Update the list in the store
+      list = [value | list]
+
+      # Store it 
+      Store.set(id, list)
+
+      # Return value
+      value
+    end
+  end
+
+  defp do_retry_unique!(10000, id, func) do
+    raise OverflowError, "Impossible to generate an unique value"
+  end
+
+  defp do_retry_unique!(_, id, func) do
+    increment_retry(id)
+
+    do_unique!(true, id, func)  
+  end
+
+
+  defp reset_retry(id) do
+    id = make_namespace(id, :retry)
+
+    if Store.has?(id) do
+      Store.drop(id)  
+    end
+  end
+
+  defp count_retry(id) do
+    id = make_namespace(id, :retry)
+
+    count = Store.get(id)
+
+    case count do
+      nil -> 0
+      _ -> count
+    end
+
+  end
+
+  defp increment_retry(id) do
+    current = count_retry(id)
+
+    id = make_namespace(id, :retry)
+    
+    increment = current + 1
+
+    Store.set(id, increment)
+  end
+
   defp make_namespace(id, type) do
-    "#{type}_#{id}"
+    String.to_atom("#{type}_#{id}")
   end
 
   defp refill_store?(list) do
