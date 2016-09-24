@@ -1,8 +1,14 @@
 language: elixir
 elixir:
   - 1.3.0
+  - 1.3.2
+  - 1.3.3
 otp_release:
   - 18.0
+  - 18.1
+  - 18.2
+  - 18.3
+  - 19.0
 sudo: false # to use faster container based build environment
 cache:
   directories:
@@ -11,3 +17,6 @@ cache:
 after_script:
   - mix deps.get
   - mix inch.report
+notifications:
+  recipients:
+    - ges.jeremie@gmail.com

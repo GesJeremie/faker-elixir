@@ -85,8 +85,8 @@ defmodule FakerElixir.Helpers.App do
     0.34560389559786353
   """
   def rand do
-    :random.seed(:os.timestamp())
-    :random.uniform
+    :rand.seed(:exs64, :os.timestamp)
+    :rand.uniform()
   end
 
 
