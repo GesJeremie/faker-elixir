@@ -105,6 +105,16 @@ defmodule FakerElixir.LoremTest do
 
   end
 
+  describe "sentences/0" do
+
+    # Sinces sentences is just an alias of sentences/1
+    # we do a minimal test
+    test "return binary" do
+      assert is_binary(Lorem.sentences)
+    end
+
+  end
+
   defp between?(value, left, right) do
     left <= value and value <= right
   end
