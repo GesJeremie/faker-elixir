@@ -4,10 +4,15 @@ defmodule FakerElixir.Currency do
   Generate fake data for the domain currency
   """
 
-  alias FakerElixir.Helpers.App
+  import FakerElixir.Helpers.App
   
   def code do
-
+    currency =
+      :currencies
+      |> fetch
+      |> pick
+    
+    currency.code
   end
 
   def symbol do
