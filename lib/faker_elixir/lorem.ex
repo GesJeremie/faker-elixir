@@ -187,4 +187,22 @@ defmodule FakerElixir.Lorem do
     |> Enum.join(" ")
   end
 
+
+  @doc """
+  Return some sentences
+
+  ## Examples
+
+  ```
+  iex> FakerElixir.Lorem.sentences
+  "Aspernatur illo dicta quia ut qui nihil distinctio debitis est laudantium ut ipsa facilis dolorum. Sed omnis natus ut officia magnam aut ut vel aperiam."
+  ```
+  """
+  def sentences do
+    # Pick a random number of sentences
+    # and execute
+    2..5
+    |> pick
+    |> sentences
+  end
 end
