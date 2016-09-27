@@ -6,13 +6,8 @@ defmodule FakerElixir.Currency do
 
   import FakerElixir.Helpers.App
   
-  def code do
-    currency =
-      :currencies
-      |> fetch
-      |> pick
-    
-    currency.code
+  def code do    
+   fetch_currency.code
   end
 
   def symbol do
@@ -25,6 +20,12 @@ defmodule FakerElixir.Currency do
 
   def make do
     
+  end
+
+  defp fetch_currency do
+    :currencies
+    |> fetch
+    |> pick
   end
 
 end
