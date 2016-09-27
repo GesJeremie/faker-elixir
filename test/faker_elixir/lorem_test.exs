@@ -44,6 +44,16 @@ defmodule FakerElixir.LoremTest do
 
   end
 
+  describe "characters/0" do
+
+    # Sinces characters/0 is just an alias of characters/1
+    # we do a minimal test
+    test "return binary" do
+      assert is_binary(Lorem.characters)
+    end
+
+  end
+
   describe "characters/1" do
 
     test "return nil for param 0" do
