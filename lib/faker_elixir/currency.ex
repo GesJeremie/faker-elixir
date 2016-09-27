@@ -11,15 +11,15 @@ defmodule FakerElixir.Currency do
   end
 
   def symbol do
-    
+    fetch_currency.symbol
   end
 
   def name do
-    
+    fetch_currency.name
   end
 
   def make do
-    
+    fetch_currency
   end
 
   defp fetch_currency do
