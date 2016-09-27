@@ -189,15 +189,6 @@ FakerElixir.Color.name # "white"
 ### FakerElixir.Crypto
 ---
 ```elixir
-FakerElixir.Currency.code # "ZMK"
-FakerElixir.Currency.make # %{code: "UAH", country: "Ukraine", name: "Ukrainian Hryvnia", symbol: "₴"}
-FakerElixir.Currency.name # "East Caribbean Dollar"
-FakerElixir.Currency.symbol # "€"
-```
-
-### FakerElixir.Currency
----
-```elixir
 FakerElixir.Crypto.md5 # "9FE3CFD7113162785ED3D59C73166766"
 FakerElixir.Crypto.sha1 # "7D6757DDD455FC6AA25C0D78C1CDE73B21028CD7"
 FakerElixir.Crypto.sha224 # "824B34965B6A3E48BE71E09A54F63BC216845D794EB378E756EE759D"
@@ -206,6 +197,14 @@ FakerElixir.Crypto.sha384 # "9C01EBA98F4A52F76948D48A0FB3C63C26DE451667F8957C642
 FakerElixir.Crypto.sha512 # "06C1CC54DC49E53B1274D9A0DD951B76DD45731E0AB319D98575DEA1955F6A0B20D5B70548190119AED52A5254127A60511257673C332F759F9510B8F32AAC26"
 ```
 
+### FakerElixir.Currency
+---
+```elixir
+FakerElixir.Currency.code # "ZMK"
+FakerElixir.Currency.make # %{code: "UAH", country: "Ukraine", name: "Ukrainian Hryvnia", symbol: "₴"}
+FakerElixir.Currency.name # "East Caribbean Dollar"
+FakerElixir.Currency.symbol # "€"
+```
 
 ### FakerElixir.Date
 ---
