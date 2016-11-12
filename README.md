@@ -13,7 +13,7 @@ Can't wait to generate some fake data ? Follow the steps:
 
     ```elixir
     def deps do
-      [{:faker_elixir_octopus, "> 0.0.0", only: :dev}]
+      [{:faker_elixir_octopus, "> 0.0.0",  only: [:dev, :test]}]
     end
     ```
 
