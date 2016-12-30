@@ -2,7 +2,7 @@
 
 FakerElixir is an Elixir package that **generates fake data** for you. Whether you need to **seed** your database, create **factories** for your project, FakerElixir is here for you :punch:.
 
-If you like this library ... you should star it :star2:
+If you like this library ... you could star it :star2:
 
 
 ## Installation
