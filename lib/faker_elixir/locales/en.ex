@@ -329,6 +329,11 @@ defmodule FakerElixir.Locales.En do
     %{country: "Zimbabwe", name: "Zimbabwean Dollar", code: "ZWD", symbol: "Z$"},
   ]
 
+  @coupons %{
+    adjective: ~w(Amazing Awesome Best Cool Good Great Incredible Killer Premium Special Stellar Sweet Welcome),
+    noun: ~w(Code Coupon Deal Discount Price Promo Promotion Sale Savings)
+  }
+
   def cities, do: @cities
   def countries, do: @countries
   def time_zones, do: @time_zones
@@ -359,5 +364,6 @@ defmodule FakerElixir.Locales.En do
   def phone_home_patterns, do: @phone_home_patterns
   def phone_cell_patterns, do: @phone_cell_patterns
   def currencies, do: @currencies
+  def coupons, do: @coupons
 
 end

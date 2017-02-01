@@ -92,6 +92,7 @@ But I know you, you will forget the syntax to generate a city and so on ... Don'
 - [Faker.Bank](#fakerelixirbank)
 - [Faker.Boolean](#fakerelixirboolean)
 - [Faker.Color](#fakerelixircolor)
+- [Faker.Commerce](#fakerelixircommerce)
 - [Faker.Crypto](#fakerelixircrypto)
 - [Faker.Currency](#fakerelixircurrency)
 - [Faker.Date](#fakerelixirdate)
@@ -184,6 +185,13 @@ FakerElixir.Color.rgb # "rgb(152, 228, 47)"
 FakerElixir.Color.make_rgb # [65, 137, 5]
 
 FakerElixir.Color.name # "white"
+```
+
+### FakerElixir.Commerce
+---
+```elixir
+FakerElixir.Commerce.coupon # "AmazingDeal35"
+FakerElixir.Commerce.coupon(5) # "AmazingDeal20250"
 ```
 
 ### FakerElixir.Crypto
