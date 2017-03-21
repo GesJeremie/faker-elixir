@@ -10,26 +10,26 @@ If you like this library ... you could star it :star2:
 Can't wait to generate some fake data ? Follow the steps:
 
   1. Add `faker_elixir_octopus` to your list of dependencies in `mix.exs`:
-
-    ```elixir
-    def deps do
-      [{:faker_elixir_octopus, "> 0.0.0",  only: [:dev, :test]}]
-    end
-    ```
+  
+```elixir
+def deps do
+  [{:faker_elixir_octopus, "> 0.0.0",  only: [:dev, :test]}]
+end
+```
 
   2. Ensure `faker_elixir_octopus` is started before your application:
 
-    ```elixir
-    def application do
-      [applications: [:faker_elixir_octopus]]
-    end
-    ```
+```elixir
+def application do
+  [applications: [:faker_elixir_octopus]]
+end
+```
 
   3. Run in the root of your project:
 
-    ```
-    $ mix deps.get
-    ```
+```
+$ mix deps.get
+```
 
   4. Faker Elixir is now a part of your application and ready to use!
 
