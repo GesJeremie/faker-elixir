@@ -435,7 +435,7 @@ end
 
 #### Edit a locale
 ---
-Let's say you want to update the locale ```:fr``` for the method ```FakerElixir.Address.secondary_address````:
+Let's say you want to update the locale ```:fr``` for the method ```FakerElixir.Address.secondary_address```:
 
 ```elixir
 # locales/faker_elixir/fr.ex
