@@ -71,9 +71,7 @@ defmodule FakerElixir.Bank do
   ```
   """
   def credit_card_cvv do
-    card = pick_card()
-
-    card.cvv_patterns |> pick |> numerify
+   :credit_card_cvv_patterns |> fetch |> pick |> numerify
   end
 
   @doc """
