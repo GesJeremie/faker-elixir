@@ -40,7 +40,7 @@ defmodule FakerElixir.Locales.En do
 
   @weak_passwords ["password", "asdfgh", "guest", "admin", "qwerty", "1234", "0987", "12345", "123456", "default", "mypassword", "lol", "system", "facebook", "google", "twitter", "1111", "zzzz", "customer", "superadmin"]
 
-  @credit_card_vendors ["Visa", "MasterCard"]
+  @credit_card_vendors ["Visa", "MasterCard", "American Express", "Discover Card"]
   @credit_card_cvv_patterns ["###"]
 
   @credit_cards [
@@ -356,6 +356,8 @@ defmodule FakerElixir.Locales.En do
   def domain_popular_emails, do: @domain_popular_emails
   def domain_extensions, do: @domain_extensions
   def weak_passwords, do: @weak_passwords
+  def credit_card_vendors, do: @credit_card_vendors
+  def credit_card_cvv_patterns, do: @credit_card_cvv_patterns
   def credit_cards, do: @credit_cards
   def bank_names, do: @bank_names
   def colors, do: @colors
