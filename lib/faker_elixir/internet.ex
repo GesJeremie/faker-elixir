@@ -225,7 +225,7 @@ defmodule FakerElixir.Internet do
   end
 
   def password(:strong) do
-    do_password_strong
+    do_password_strong()
   end
 
 
@@ -280,7 +280,7 @@ defmodule FakerElixir.Internet do
 
     password = "#{first_name}#{number}"
 
-    if should_complexify? do
+    if should_complexify?() do
       normal_complexifier(password)
     else
       password
@@ -298,7 +298,7 @@ defmodule FakerElixir.Internet do
 
     password = "#{first_name}#{last_name}"
 
-    if should_complexify? do
+    if should_complexify?() do
       normal_complexifier(password)
     else
       password
@@ -388,7 +388,7 @@ defmodule FakerElixir.Internet do
     password
     |> String.split("")
     |> Enum.map_join("", fn(x) ->
-      if should_upcase? do
+      if should_upcase?() do
         String.upcase(x)
       else
         x
@@ -412,11 +412,11 @@ defmodule FakerElixir.Internet do
 
 
   defp should_complexify? do
-    pick_true_or_false
+    pick_true_or_false()
   end
 
   defp should_upcase? do
-    pick_true_or_false
+    pick_true_or_false()
   end
 
   ##

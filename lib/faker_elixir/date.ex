@@ -87,7 +87,7 @@ defmodule FakerElixir.Date do
   end
 
   defp do_create_date(days, type) do
-    now_in_seconds
+    now_in_seconds()
     |> shift(days, type)
     |> convert_seconds_to_date
     |> create_date

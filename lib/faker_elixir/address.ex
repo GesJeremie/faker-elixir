@@ -240,7 +240,7 @@ defmodule FakerElixir.Address do
   ```
   """
   def latitude do
-    ((rand * 180) - 90)
+    ((rand() * 180) - 90)
   end
 
   @doc """
@@ -254,7 +254,7 @@ defmodule FakerElixir.Address do
   ```
   """
   def longitude do
-    ((rand * 360) - 180)
+    ((rand() * 360) - 180)
   end
 
 end
