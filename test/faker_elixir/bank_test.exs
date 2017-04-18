@@ -40,6 +40,14 @@ defmodule FakerElixir.BankTest do
 
   end
 
+  describe "credit_card_vendor" do
+
+    test "return binary" do
+      assert is_binary(Bank.credit_card_vendor)
+    end
+
+  end
+
   describe "credit_card_cvv" do
 
     test "return numeric string" do

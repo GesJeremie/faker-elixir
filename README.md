@@ -146,6 +146,7 @@ FakerElixir.Avatar.robohash("ahahahaha", "198x198", "jpg", "set2", "bg2") # "htt
 ### FakerElixir.Bank
 ---
 ```elixir
+FakerElixir.Bank.credit_card_vendor # "American Express"
 FakerElixir.Bank.credit_card_cvv # 914
 
 # Context: 22 august 2016

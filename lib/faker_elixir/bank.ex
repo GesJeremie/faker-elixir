@@ -60,6 +60,10 @@ defmodule FakerElixir.Bank do
     pick_card().type
   end
 
+  def credit_card_vendor do
+    :credit_card_vendors |> fetch |> pick
+  end
+
   @doc """
   Generate a credit card CVV
 
