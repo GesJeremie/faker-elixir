@@ -13,7 +13,7 @@ Can't wait to generate some fake data ? Follow the steps:
   
 ```elixir
 def deps do
-  [{:faker_elixir_octopus, "> 0.0.0",  only: [:dev, :test]}]
+  [{:faker_elixir_octopus, "~>0.13.1",  only: [:dev, :test]}]
 end
 ```
 
@@ -24,6 +24,8 @@ def application do
   [applications: [:faker_elixir_octopus]]
 end
 ```
+
+  **Note:** This step can be skipped if you are using Elixir 1.4+ (see [CHANGELOG#application-inference](https://github.com/elixir-lang/elixir/blob/v1.4/CHANGELOG.md#application-inference)).
 
   3. Run in the root of your project:
 
