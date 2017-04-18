@@ -21,6 +21,6 @@ defmodule FakerElixir.Locales.It do
   def street_suffixes, do: @street_suffixes
   def zip_code_patterns, do: @zip_code_patterns
   def domain_popular_emails, do: @domain_popular_emails
-
+  def domain_extensions, do: @domain_extentions
 
 end
