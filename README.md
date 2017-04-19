@@ -13,7 +13,7 @@ Can't wait to generate some fake data ? Follow the steps:
   
 ```elixir
 def deps do
-  [{:faker_elixir_octopus, "~>0.13.1",  only: [:dev, :test]}]
+  [{:faker_elixir_octopus, "> 0.0.0",  only: [:dev, :test]}]
 end
 ```
 
@@ -148,7 +148,6 @@ FakerElixir.Avatar.robohash("ahahahaha", "198x198", "jpg", "set2", "bg2") # "htt
 ### FakerElixir.Bank
 ---
 ```elixir
-FakerElixir.Bank.credit_card_vendor # "American Express"
 FakerElixir.Bank.credit_card_cvv # 914
 
 # Context: 22 august 2016

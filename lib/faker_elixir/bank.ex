@@ -60,10 +60,6 @@ defmodule FakerElixir.Bank do
     pick_card().type
   end
 
-  def credit_card_vendor do
-    :credit_card_vendors |> fetch |> pick
-  end
-
   @doc """
   Generate a credit card CVV
 
@@ -75,7 +71,9 @@ defmodule FakerElixir.Bank do
   ```
   """
   def credit_card_cvv do
-   :credit_card_cvv_patterns |> fetch |> pick |> numerify
+    card = pick_card()
+
+    card.cvv_patterns |> pick |> numerify
   end
 
   @doc """
