@@ -25,6 +25,8 @@ def application do
 end
 ```
 
+  **Note:** This step can be skipped if you are using Elixir 1.4+ (see [CHANGELOG#application-inference](https://github.com/elixir-lang/elixir/blob/v1.4/CHANGELOG.md#application-inference)).
+
   3. Run in the root of your project:
 
 ```

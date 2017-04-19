@@ -34,7 +34,7 @@ defmodule FakerElixir.Commerce do
   """
   def coupon(nb_digits) do
     digits = Number.digits(nb_digits)
-    "#{pick_adjective}#{pick_noun}#{digits}"
+    "#{pick_adjective()}#{pick_noun()}#{digits}"
   end
 
   defp fetch_coupons do
@@ -42,11 +42,11 @@ defmodule FakerElixir.Commerce do
   end
 
   defp pick_noun do
-      fetch_coupons |> Map.get(:noun) |> pick
+      fetch_coupons() |> Map.get(:noun) |> pick
   end
 
   defp pick_adjective do
-      fetch_coupons |> Map.get(:adjective) |> pick
+      fetch_coupons() |> Map.get(:adjective) |> pick
   end
 
 end

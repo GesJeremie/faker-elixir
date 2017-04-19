@@ -17,7 +17,7 @@ defmodule FakerElixir.Currency do
   ```
   """
   def code do    
-   fetch_currency.code
+   fetch_currency().code
   end
 
   @doc """
@@ -31,7 +31,7 @@ defmodule FakerElixir.Currency do
   ```
   """
   def symbol do
-    fetch_currency.symbol
+    fetch_currency().symbol
   end
 
   @doc """
@@ -45,7 +45,7 @@ defmodule FakerElixir.Currency do
   ```
   """
   def name do
-    fetch_currency.name
+    fetch_currency().name
   end
 
   @doc """
@@ -59,7 +59,7 @@ defmodule FakerElixir.Currency do
   ```
   """
   def make do
-    fetch_currency
+    fetch_currency()
   end
 
   defp fetch_currency do

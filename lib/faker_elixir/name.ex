@@ -16,7 +16,7 @@ defmodule FakerElixir.Name do
   ```
   """
   def name do
-    "#{first_name} #{last_name}"
+    "#{first_name()} #{last_name()}"
   end
 
   @doc """
@@ -30,7 +30,7 @@ defmodule FakerElixir.Name do
   ```
   """
   def name_with_middle do
-    "#{first_name} #{first_name} #{last_name}"
+    "#{first_name()} #{first_name()} #{last_name()}"
   end
 
   @doc """

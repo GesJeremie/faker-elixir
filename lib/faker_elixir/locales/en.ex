@@ -40,9 +40,6 @@ defmodule FakerElixir.Locales.En do
 
   @weak_passwords ["password", "asdfgh", "guest", "admin", "qwerty", "1234", "0987", "12345", "123456", "default", "mypassword", "lol", "system", "facebook", "google", "twitter", "1111", "zzzz", "customer", "superadmin"]
 
-  @credit_card_vendors ["Visa", "MasterCard"]
-  @credit_card_cvv_patterns ["###"]
-
   @credit_cards [
     %{
       type: "Visa",
