@@ -397,7 +397,7 @@ end
 # Will produce something like: Charlotte / Courbevoie
 ```
 
-### Custom locale
+## Custom locale
 ---
 Since this package is quite new we don't have enough locales out of the box. It could be possible you don't like the data provided too. That's why we let you the possibility to define / update the data !
 
@@ -471,7 +471,7 @@ end
 ---
 The default skeleton for a locale is available here: [Skeleton](https://github.com/GesJeremie/faker-elixir/blob/master/lib/faker_elixir/locales/en.ex)
 
-### Customisation
+## Customisation
 ---
 
 #### :speech_balloon: "Hey dude, your package is "great" but you forgot that, that and ... that, whaddup ? :sunglasses:"
@@ -505,7 +505,7 @@ end
 
 Hope it helps :yum:
 
-### Contributors
+## Contributors
 ---
 [![GesJeremie](https://avatars1.githubusercontent.com/u/1700610?v=3&s=100)](https://github.com/GesJeremie)
 [![Ilyes512](https://avatars0.githubusercontent.com/u/2445415?v=3&s=100)](https://github.com/Ilyes512)
