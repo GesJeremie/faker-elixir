@@ -471,7 +471,7 @@ end
 ---
 The default skeleton for a locale is available here: [Skeleton](https://github.com/GesJeremie/faker-elixir/blob/master/lib/faker_elixir/locales/en.ex)
 
-### Customisation
+#### Customisation
 ---
 
 #### :speech_balloon: "Hey dude, your package is "great" but you forgot that, that and ... that, whaddup ? :sunglasses:"
@@ -504,3 +504,13 @@ end
 ... and just call your module! ```iex> FakerElixir.Custom.pokemon```
 
 Hope it helps :yum:
+
+#### Contributors
+---
+[![GesJeremie](https://avatars1.githubusercontent.com/u/1700610?v=3&s=100)](https://github.com/GesJeremie)
+[![Ilyes512](https://avatars0.githubusercontent.com/u/2445415?v=3&s=100)](https://github.com/Ilyes512)
+[![Igas](https://avatars2.githubusercontent.com/u/175652?v=3&s=100)](https://github.com/igas)
+[![rrrene](https://avatars1.githubusercontent.com/u/311914?v=3&s=100)](https://github.com/rrrene)
+
+We :heart: contributors, send us a pull request and maybe we will ... merge it :beer: !
+
