@@ -1,4 +1,9 @@
-# :octopus: FakerElixir [![Inline docs](http://inch-ci.org/github/GesJeremie/faker-elixir.svg?branch=master)](http://inch-ci.org/github/GesJeremie/faker-elixir) ![Downloads](https://img.shields.io/hexpm/dt/faker_elixir_octopus.svg?style=flat-square)
+# :octopus: FakerElixir
+
+[![Inline docs](http://inch-ci.org/github/GesJeremie/faker-elixir.svg?branch=master&style=flat-square)](http://inch-ci.org/github/GesJeremie/faker-elixir)
+[![Hex.pm](https://img.shields.io/hexpm/v/faker_elixir_octopus.svg?style=flat-square)]()
+![Downloads](https://img.shields.io/hexpm/dt/faker_elixir_octopus.svg?style=flat-square)
+[![Travis](https://img.shields.io/travis/GesJeremie/faker-elixir.svg?style=flat-square)]()
 
 FakerElixir is an Elixir package that **generates fake data** for you. Whether you need to **seed** your database, create **factories** for your project, FakerElixir is here for you :punch:.
 
@@ -13,7 +18,7 @@ Can't wait to generate some fake data ? Follow the steps:
   
 ```elixir
 def deps do
-  [{:faker_elixir_octopus, "> 0.0.0",  only: [:dev, :test]}]
+  [{:faker_elixir_octopus, "~> 0.13.1",  only: [:dev, :test]}]
 end
 ```
 
