@@ -124,7 +124,6 @@ defmodule FakerElixir.Helpers.App do
     |> Enum.map_join(&(replace_hash(&1, :letter)))
   end
 
-
   defp replace_hash("#", :number) do
     pick(0..9)
   end

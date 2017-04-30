@@ -34,19 +34,72 @@ defmodule FakerElixir.Commerce do
   """
   def coupon(nb_digits) do
     digits = Number.digits(nb_digits)
-    "#{pick_adjective()}#{pick_noun()}#{digits}"
+    "#{pick_coupon_adjective()}#{pick_coupon_noun()}#{digits}"
+  end
+
+  @doc """
+  Return product name
+
+
+  ## Example
+
+  ```
+  FakerElixir.Commerce.product
+  "Tasty Fresh Skirt"
+  ```
+  """
+  def product do
+    "#{pick_product_adjective()} #{pick_product_material()} #{pick_product_name()}"
+  end
+
+  @doc """
+  Return a common Stock-keeping unit
+
+
+  ## Example
+
+  ```
+  FakerElixir.Commerce.sku
+  "3YW9Q3S6"
+  ```
+  """
+  def sku do
+    chars = letterify("####")
+    digits = numerify("####")
+    
+    chars <> digits
+    |> String.split("")
+    |> Enum.shuffle
+    |> Enum.join
+    |> String.upcase
   end
 
   defp fetch_coupons do
     :coupons |> fetch
   end
 
-  defp pick_noun do
+  defp pick_coupon_noun do
       fetch_coupons() |> Map.get(:noun) |> pick
   end
 
-  defp pick_adjective do
+  defp pick_coupon_adjective do
       fetch_coupons() |> Map.get(:adjective) |> pick
+  end
+
+  defp fetch_products do
+    :products |> fetch  
+  end
+
+  defp pick_product_adjective do
+    fetch_products() |> Map.get(:adjective) |> pick
+  end
+
+  defp pick_product_material do
+    fetch_products() |> Map.get(:material) |> pick
+  end
+
+  defp pick_product_name do
+    fetch_products() |> Map.get(:name) |> pick
   end
 
 end

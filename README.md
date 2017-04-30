@@ -199,6 +199,9 @@ FakerElixir.Color.name # "white"
 ```elixir
 FakerElixir.Commerce.coupon # "AmazingDeal35"
 FakerElixir.Commerce.coupon(5) # "AmazingDeal20250"
+
+FakerElixir.Commerce.product # "Sleek Frozen Table"
+FakerElixir.Commerce.sku # "4OY026FR"
 ```
 
 ### FakerElixir.Crypto

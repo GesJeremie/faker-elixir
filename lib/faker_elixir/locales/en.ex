@@ -331,6 +331,12 @@ defmodule FakerElixir.Locales.En do
     noun: ~w(Code Coupon Deal Discount Price Promo Promotion Sale Savings)
   }
 
+  @products %{
+    adjective: ~w(Small Ergonomic Rustic Intelligent Gorgeous Incredible Fantastic Pratical Sleek Awesome Generic Handcrafted Handmade Licensed Refined Unbranded Tasty),
+    material: ~w(Steel Wooden Concrete Plastic Cotton Granite Rubber Metal Soft Fresh Frozen),
+    name: ~w(Ashtray Ball Ballon Bacon Chair Cheese Car Computer Keyboard Mouse Bike Gloves Pants Pizza Shirt Skirt Table Shoes Drink Hat Towels Soap)
+  }
+
   def cities, do: @cities
   def countries, do: @countries
   def time_zones, do: @time_zones
@@ -362,5 +368,6 @@ defmodule FakerElixir.Locales.En do
   def phone_cell_patterns, do: @phone_cell_patterns
   def currencies, do: @currencies
   def coupons, do: @coupons
+  def products, do: @products
 
 end
