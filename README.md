@@ -18,7 +18,7 @@ Can't wait to generate some fake data ? Follow the steps:
   
 ```elixir
 def deps do
-  [{:faker_elixir_octopus, "~> 0.13.1",  only: [:dev, :test]}]
+  [{:faker_elixir_octopus, "~> 1.0.0",  only: [:dev, :test]}]
 end
 ```
 
