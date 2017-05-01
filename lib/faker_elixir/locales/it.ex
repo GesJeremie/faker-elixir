@@ -14,13 +14,13 @@ defmodule FakerElixir.Locales.It do
   @domain_popular_emails ["gmail.com", "yahoo.com", "hotmail.com", "email.it", "libero.it", "yahoo.it"]
   @domain_extensions ["com", "net", "org", "it"]
 
-  def first_names, do: @first_names
-  def last_names, do: @last_names
   def bank_names, do: @bank_names
   def colors, do: @colors
+  def domain_extensions, do: @domain_extensions
+  def domain_popular_emails, do: @domain_popular_emails
+  def first_names, do: @first_names
+  def last_names, do: @last_names
   def street_suffixes, do: @street_suffixes
   def zip_code_patterns, do: @zip_code_patterns
-  def domain_popular_emails, do: @domain_popular_emails
-  def domain_extensions, do: @domain_extensions
 
 end
