@@ -288,6 +288,9 @@ FakerElixir.Internet.email("Peter Moleski") # "peter.moleski@ethel.net"
 FakerElixir.Internet.email(:popular) # "candelario@gmail.com"
 FakerElixir.Internet.email(:popular, "Peter Sobieska") # "peter.sobieska@hotmail.com"
 
+FakerElixir.Internet.email(:school) # "trycia@uab.edu"
+FakerElixir.Internet.email(:school, "Harry Potter") "harry.potter@stanford.edu"
+
 FakerElixir.Internet.password(:weak) # "robbie"
 FakerElixir.Internet.password(:normal) # "francesco6"
 FakerElixir.Internet.password(:strong) # "tOu%Mt*B16ueLs!0uA3rDA"

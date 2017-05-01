@@ -15,6 +15,7 @@ defmodule FakerElixir.Internet do
   ```
 
   You can set :popular to generate an email with a popular domain
+  You can set :school to generate an email with an university domain
   ```
   FakerElixir.Internet.email(:popular)
   "candelario@gmail.com"
@@ -30,6 +31,12 @@ defmodule FakerElixir.Internet do
     name = build_name_email()
 
     email(:popular, name)
+  end
+
+  def email(:school) do
+    name = build_name_email()
+
+    email(:school, name)
   end
 
   @doc """
@@ -65,6 +72,23 @@ defmodule FakerElixir.Internet do
     domain_popular = :domain_popular_emails |> fetch |> pick
 
     "#{name}@#{domain_popular}"
+  end
+
+  @doc """
+  Return an email with an university domain for the name given
+
+  ## Examples
+
+  ```
+  iex> FakerElixir.Internet.email(:school, "Harry potter")
+  "harry.potter@pittstate.edu"
+  ```
+  """
+  def email(:school, name) do
+    name = name |> slug
+    domain_school = :domain_school_emails |> fetch |> pick
+
+    "#{name}@#{domain_school}"
   end
 
   defp build_name_email do

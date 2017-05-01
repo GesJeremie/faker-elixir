@@ -21,12 +21,20 @@ defmodule FakerElixir.InternetTest do
       assert is_binary(Internet.email(:popular))
     end
 
+    test "school return binary" do
+      assert is_binary(Internet.email(:school))
+    end
+
   end
 
   describe "email/2" do
 
     test "popular return binary" do
       assert is_binary(Internet.email(:popular, "jeremie ges"))
+    end
+
+    test "school return binary" do
+      assert is_binary(Internet.email(:school, "harry potter"))
     end
 
   end

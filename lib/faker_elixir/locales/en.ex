@@ -36,6 +36,7 @@ defmodule FakerElixir.Locales.En do
   @title_jobs ["Supervisor", "Associate", "Executive", "Liaison", "Officer", "Manager", "Engineer", "Specialist", "Director", "Coordinator", "Administrator", "Architect", "Analyst", "Designer", "Planner", "Orchestrator", "Technician", "Developer", "Producer", "Consultant", "Assistant", "Facilitator", "Agent", "Representative", "Strategist"]
 
   @domain_popular_emails ["gmail.com", "yahoo.com", "hotmail.com", "outlook.com"]
+  @domain_school_emails ["acu.edu", "adelphi.edu", "scottlan.edu", "acofi.edu", "apu.edu", "babson.edu", "bsu.edu", "bucknell.edu", "calcoastuniv.edu", "cwru.edu", "columbia.edu", "daemen.edu", "drexel.edu", "earlham.edu", "emmanuel.edu", "fdu.edu", "fordham.edu", "furman.edu", "gallaudet.edu", "gbc.edu", "gac.edu", "haskell.edu", "harvard.edu", "huntcol.edu", "ici.edu", "jwu.edu", "kent.edu", "liberty.edu", "mcneese.edu", "manc.edu", "ndu.edu", "olivet.edu", "pittstate.edu", "providence.edu", "quinnipiac.edu", "runet.edu", "stcloud.msus.edu", "shsu.edu", "stanford.edu", "tamucc.edu", "usafa.af.mil", "uab.edu", "vcu.edu", "wcupa.edu", "xula.edu", "ycp.edu"]
   @domain_extensions ["com", "biz", "info", "name", "net", "org", "io", "com"]
 
   @weak_passwords ["password", "asdfgh", "guest", "admin", "qwerty", "1234", "0987", "12345", "123456", "default", "mypassword", "lol", "system", "facebook", "google", "twitter", "1111", "zzzz", "customer", "superadmin"]
@@ -357,6 +358,7 @@ defmodule FakerElixir.Locales.En do
   def title_levels, do: @title_levels
   def title_jobs, do: @title_jobs
   def domain_popular_emails, do: @domain_popular_emails
+  def domain_school_emails, do: @domain_school_emails
   def domain_extensions, do: @domain_extensions
   def weak_passwords, do: @weak_passwords
   def credit_cards, do: @credit_cards
