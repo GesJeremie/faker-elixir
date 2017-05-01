@@ -24,18 +24,18 @@ defmodule FakerElixir.Locales.Fr do
 
   @domain_popular_emails ["gmail.com", "yahoo.fr", "hotmail.fr", "free.fr"]
 
+  def bank_names, do: @bank_names
+  def building_patterns, do: @building_patterns
   def cities, do: @cities
+  def colors, do: @colors
+  def domain_popular_emails, do: @domain_popular_emails
   def first_names, do: @first_names
   def last_names, do: @last_names
-  def building_patterns, do: @building_patterns
-  def zip_code_patterns, do: @zip_code_patterns
-  def secondary_addresses, do: @secondary_addresses
-  def prefixes, do: @prefixes
-  def weak_passwords, do: @weak_passwords
-  def bank_names, do: @bank_names
-  def colors, do: @colors
-  def phone_home_patterns, do: @phone_home_patterns
   def phone_cell_patterns, do: @phone_cell_patterns
-  def domain_popular_emails, do: @domain_popular_emails
+  def phone_home_patterns, do: @phone_home_patterns
+  def prefixes, do: @prefixes
+  def secondary_addresses, do: @secondary_addresses
+  def weak_passwords, do: @weak_passwords
+  def zip_code_patterns, do: @zip_code_patterns
 
 end
