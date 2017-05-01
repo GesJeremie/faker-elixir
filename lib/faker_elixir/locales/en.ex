@@ -338,38 +338,38 @@ defmodule FakerElixir.Locales.En do
     name: ~w(Ashtray Ball Ballon Bacon Chair Cheese Car Computer Keyboard Mouse Bike Gloves Pants Pizza Shirt Skirt Table Shoes Drink Hat Towels Soap)
   }
 
-  def cities, do: @cities
-  def countries, do: @countries
-  def time_zones, do: @time_zones
-  def first_names, do: @first_names
-  def last_names, do: @last_names
-  def street_suffixes, do: @street_suffixes
-  def building_patterns, do: @building_patterns
-  def zip_code_patterns, do: @zip_code_patterns
-  def states, do: @states
-  def state_codes, do: @state_codes
-  def secondary_addresses, do: @secondary_addresses
   def apps, do: @apps
-  def version_patterns, do: @version_patterns
-  def words, do: @words
-  def prefixes, do: @prefixes
-  def suffixes, do: @suffixes
-  def title_descriptors, do: @title_descriptors
-  def title_levels, do: @title_levels
-  def title_jobs, do: @title_jobs
+  def bank_names, do: @bank_names
+  def building_patterns, do: @building_patterns
+  def cities, do: @cities
+  def colors, do: @colors
+  def countries, do: @countries
+  def coupons, do: @coupons
+  def credit_cards, do: @credit_cards
+  def currencies, do: @currencies
+  def domain_extensions, do: @domain_extensions
   def domain_popular_emails, do: @domain_popular_emails
   def domain_school_emails, do: @domain_school_emails
-  def domain_extensions, do: @domain_extensions
-  def weak_passwords, do: @weak_passwords
-  def credit_cards, do: @credit_cards
-  def bank_names, do: @bank_names
-  def colors, do: @colors
-  def file_mimes, do: @file_mimes
   def file_extensions, do: @file_extensions
-  def phone_home_patterns, do: @phone_home_patterns
+  def file_mimes, do: @file_mimes
+  def first_names, do: @first_names
+  def last_names, do: @last_names
   def phone_cell_patterns, do: @phone_cell_patterns
-  def currencies, do: @currencies
-  def coupons, do: @coupons
+  def phone_home_patterns, do: @phone_home_patterns
+  def prefixes, do: @prefixes
   def products, do: @products
+  def secondary_addresses, do: @secondary_addresses
+  def state_codes, do: @state_codes
+  def states, do: @states
+  def street_suffixes, do: @street_suffixes
+  def suffixes, do: @suffixes
+  def time_zones, do: @time_zones
+  def title_descriptors, do: @title_descriptors
+  def title_jobs, do: @title_jobs
+  def title_levels, do: @title_levels
+  def version_patterns, do: @version_patterns
+  def weak_passwords, do: @weak_passwords
+  def words, do: @words
+  def zip_code_patterns, do: @zip_code_patterns
 
 end
