@@ -15,12 +15,12 @@ defmodule FakerElixir.Locales.Es do
   @states ["Andalucía", "Aragón", "Principado de Asturias", "Baleares", "Canarias", "Cantabria", "Castilla-La Mancha", "Castilla y León", "Cataluña", "Comunidad Valenciana", "Extremadura", "Galicia", "La Rioja", "Comunidad de Madrid", "Navarra", "País Vasco", "Región de Murcia"]
   @state_codes ["And", "Ara", "Ast", "Bal", "Can", "Cbr", "Man", "Leo", "Cat", "Com", "Ext", "Gal", "Rio", "Mad", "Nav", "Vas", "Mur"]
 
-  @prefixes ["Sr.", " Sra.", " Sta."]
-  @suffixes [" Jr.", " Sr.", " I", " II", " III", " IV", " V", " MD", " DDS", " PhD", " DVM"]
+  @prefixes ["Sr.", "Sra.", "Sta."]
+  @suffixes ["Jr.", "Sr.", "I", "II", "III", "IV", "V", "MD", "DDS", "PhD", "DVM"]
 
-  @title_descriptors ["Jefe", " Senior", " Directo", " Corporativo", " Dinánmico", " Futuro", " Producto", " Nacional", " Regional", " Distrito", " Central", " Global", " Cliente", " Inversor", " International", " Heredado", " Adelante", " Interno", " Humano", " Gerente", " Director"]
-  @title_levels ["Soluciones", " Programa", " Marca", " Seguridada", " Investigación", " Marketing", " Normas", " Implementación", " Integración", " Funcionalidad", " Respuesta", " Paradigma", " Tácticas", " Identidad", " Mercados", " Grupo", " División", " Aplicaciones", " Optimización", " Operaciones", " Infraestructura", " Intranet", " Comunicaciones", " Web", " Calidad", " Seguro", " Mobilidad", " Cuentas", " Datos", " Creativo", " Configuración", " Contabilidad", " Interacciones", " Factores", " Usabilidad", " Métricas"]
-  @title_jobs ["Supervisor", " Asociado", " Ejecutivo", " Relacciones", " Oficial", " Gerente", " Ingeniero", " Especialista", " Director", " Coordinador", " Administrador", " Arquitecto", " Analista", " Diseñador", " Planificador", " Técnico", " Funcionario", " Desarrollador", " Productor", " Consultor", " Asistente", " Facilitador", " Agente", " Representante", " Estratega"]
+  @title_descriptors ["Jefe", "Senior", "Directo", "Corporativo", "Dinánmico", "Futuro", "Producto", "Nacional", "Regional", "Distrito", "Central", "Global", "Cliente", "Inversor", "International", "Heredado", "Adelante", "Interno", "Humano", "Gerente", "Director"]
+  @title_levels ["Soluciones", "Programa", "Marca", "Seguridada", "Investigación", "Marketing", "Normas", "Implementación", "Integración", "Funcionalidad", "Respuesta", "Paradigma", "Tácticas", "Identidad", "Mercados", "Grupo", "División", "Aplicaciones", "Optimización", "Operaciones", "Infraestructura", "Intranet", "Comunicaciones", "Web", "Calidad", "Seguro", "Mobilidad", "Cuentas", "Datos", "Creativo", "Configuración", "Contabilidad", "Interacciones", "Factores", "Usabilidad", "Métricas"]
+  @title_jobs ["Supervisor", "Asociado", "Ejecutivo", "Relacciones", "Oficial", "Gerente", "Ingeniero", "Especialista", "Director", "Coordinador", "Administrador", "Arquitecto", "Analista", "Diseñador", "Planificador", "Técnico", "Funcionario", "Desarrollador", "Productor", "Consultor", "Asistente", "Facilitador", "Agente", "Representante", "Estratega"]
 
   # def apps, do: @apps
   def bank_names, do: @bank_names
