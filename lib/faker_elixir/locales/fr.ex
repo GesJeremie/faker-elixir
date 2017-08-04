@@ -24,13 +24,18 @@ defmodule FakerElixir.Locales.Fr do
 
   @domain_popular_emails ["gmail.com", "yahoo.fr", "hotmail.fr", "free.fr"]
 
+  @coupons %{
+    adjective: ~w(Enorme Super Meilleur Cool Bon Genial Incroyable Premium Special Bienvenue),
+    noun: ~w(Code Coupon Affaire Promotion Prix Promo Promotion Vente)
+  }
+
   #def apps, do: @apps
   def bank_names, do: @bank_names
   def building_patterns, do: @building_patterns
   def cities, do: @cities
   def colors, do: @colors
   #def countries, do: @countries
-  #def coupons, do: @coupons
+  def coupons, do: @coupons
   #def credit_cards, do: @credit_cards
   #def currencies, do: @currencies
   #def domain_extensions, do: @domain_extensions
