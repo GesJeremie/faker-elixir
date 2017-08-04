@@ -114,6 +114,4 @@ defmodule FakerElixir.InternetTest do
 
   end
 
-
-
 end
