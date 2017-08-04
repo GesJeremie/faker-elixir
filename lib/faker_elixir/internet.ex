@@ -1,5 +1,5 @@
 defmodule FakerElixir.Internet do
-  require IEx;
+
   @moduledoc """
   Generate fake data for the domain Internet
   """
