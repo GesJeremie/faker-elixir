@@ -87,6 +87,33 @@ defmodule FakerElixir.InternetTest do
 
   end
 
+  describe "user_agent/0" do
+
+    test "return binary user agent" do
+      assert is_binary(Internet.user_agent)
+    end
+
+  end
+
+  describe "user_agent/1" do
+    
+    test "return binary user agent" do
+      assert is_binary(Internet.user_agent(:chrome))
+    end
+
+    test "raise for invalid type" do
+      assert_raise ArgumentError, fn -> Internet.user_agent(:fake_type) end
+    end
+
+    test "return user agent from right type" do
+      user_agents = FakerElixir.Helpers.App.fetch(:user_agents)
+      user_agent = Internet.user_agent(:safari)
+
+      assert Enum.member?(user_agents[:safari], user_agent)
+    end
+
+  end
+
 
 
 end
