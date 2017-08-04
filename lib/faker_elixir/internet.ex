@@ -455,7 +455,7 @@ defmodule FakerElixir.Internet do
   end
 
   @doc """
-  Return an user agent string
+  Return a user agent string
 
   ## Examples
 
