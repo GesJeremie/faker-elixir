@@ -1,4 +1,5 @@
 defmodule FakerElixir.Internet do
+  require IEx;
   @moduledoc """
   Generate fake data for the domain Internet
   """
@@ -451,6 +452,65 @@ defmodule FakerElixir.Internet do
     name
     |> keep_strict_alpha_numeric
     |> String.downcase
+  end
+
+  @doc """
+  Return an user agent string
+
+  ## Examples
+
+  ```
+  iex> FakerElixir.Internet.user_agent
+  "Mozilla/5.0 (iPad; CPU OS 8_1 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Version/8.0 Mobile/12B411 Safari/600.1.4"
+  ```
+  """
+  def user_agent do
+    {type, _} = user_agents |> pick
+    user_agent(type)
+  end
+
+  @doc """
+  Return a user agent string for the type given
+
+  Allowed types: ```:bot```, ```:browser```, ```:chrome```, ```:desktop```,
+  ```:firefox```, ```:console```, ```:ie```, ```:opera```, ```:phone```,
+  ```:playstation```, ```:safari```, ```:tablet```, ```:wii```, ```:xbox```
+
+  Note:
+  - ```:browser``` randomly picks a user agent from ```:ie```, ```:opera```, ```:firefox```, ```:safari```
+  - ```:console``` randomly picks a user agent from ```:playstation```, ```:xbox```, ```:wii```
+
+  ## Examples
+
+  ```
+  iex> FakerElixir.Internet.user_agent(:chrome)
+  "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.124 Safari/537.36"
+  ```
+  """
+  def user_agent(type) do
+    type |> user_agent_type_exists!
+
+    list = user_agents[type]
+
+    if Enum.at(list, 0) |> is_atom do
+      random_type = list |> pick
+      user_agents[random_type] |> pick
+    else
+      user_agents[type] |> pick
+    end
+  end
+
+  defp user_agent_type_exists!(type) do
+    types = user_agents |> Map.keys
+
+    unless Enum.member?(types, type) do
+      message = "This type doesn't exist, allowed: #{types |> humanize_enumerable}"
+      raise ArgumentError, message: message
+    end
+  end
+
+  defp user_agents do
+    :user_agents |> fetch
   end
 
 end

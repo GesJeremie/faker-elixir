@@ -154,6 +154,21 @@ defmodule FakerElixir.Helpers.App do
   end
 
   @doc """
+  Humanize the enumerable given
+
+  ## Examples
+
+    iex > FakerElixir.Helpers.App.format([:audio, :office])
+
+    :audio, :office"
+  """
+  def humanize_enumerable(enumerable) do
+    enumerable
+    |> Enum.map_join(", ", fn(x) -> ":#{x}" end)
+  end
+
+
+  @doc """
   FakerElixir needs to manage the concept of "locales", `fetch/1` is useful
   to retrieve the data wanted for the current locale. If the locale targeted
   doesn't provide the data wanted, we just fallback to the default locale (en)
