@@ -465,7 +465,7 @@ defmodule FakerElixir.Internet do
   ```
   """
   def user_agent do
-    {type, _} = user_agents |> pick
+    {type, _} = user_agents() |> pick
     user_agent(type)
   end
 
@@ -490,18 +490,18 @@ defmodule FakerElixir.Internet do
   def user_agent(type) do
     type |> user_agent_type_exists!
 
-    list = user_agents[type]
+    list = user_agents()[type]
 
     if Enum.at(list, 0) |> is_atom do
       random_type = list |> pick
-      user_agents[random_type] |> pick
+      user_agents()[random_type] |> pick
     else
-      user_agents[type] |> pick
+      user_agents()[type] |> pick
     end
   end
 
   defp user_agent_type_exists!(type) do
-    types = user_agents |> Map.keys
+    types = user_agents() |> Map.keys
 
     unless Enum.member?(types, type) do
       message = "This type doesn't exist, allowed: #{types |> humanize_enumerable}"
