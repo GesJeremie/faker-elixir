@@ -3,7 +3,7 @@ defmodule FakerElixir.Mixfile do
 
   def project do
     [app: :faker_elixir_octopus,
-     version: "1.0.1",
+     version: "1.0.2",
      elixir: "~> 1.3",
      description: description(),
      package: package(),
