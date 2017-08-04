@@ -338,6 +338,95 @@ defmodule FakerElixir.Locales.En do
     name: ~w(Ashtray Ball Ballon Bacon Chair Cheese Car Computer Keyboard Mouse Bike Gloves Pants Pizza Shirt Skirt Table Shoes Drink Hat Towels Soap)
   }
 
+  @user_agents %{
+    browser: [
+      :firefox,
+      :opera,
+      :chrome,
+      :ie,
+      :safari
+    ],
+    firefox: [
+      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:40.0) Gecko/20100101 Firefox/40.0",
+      "Mozilla/5.0 (Android; Mobile; rv:41.0) Gecko/41.0 Firefox/41.0",
+      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:43.0) Gecko/20100101 Firefox/43.0"
+    ],
+    opera: [
+      # Find better agent strings
+      "Opera/9.00 (Nintendo Wii; U; ; 1309-9; en)",
+      "Opera/9.10 (Nintendo Wii; U; ; 1621; en)",
+      "Opera/9.30 (Nintendo Wii; U; ; 2047-7; en)"
+    ],
+    chrome: [
+      "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36",
+      "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.152 Safari/537.36",
+      "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.124 Safari/537.36"
+    ],
+    ie: [
+      "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; Trident/6.0)",
+      "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; Trident/6.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; InfoPath.2; .NET4.0C)",
+      "Mozilla/5.0 (Windows NT 6.1; Trident/7.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; InfoPath.2; .NET4.0C; rv:11.0) like Gecko"
+    ],
+    safari: [
+      "Mozilla/5.0 (iPad; CPU OS 8_1 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Version/8.0 Mobile/12B411 Safari/600.1.4",
+      "Mozilla/5.0 (iPad; CPU OS 8_1_1 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Version/8.0 Mobile/12B436 Safari/600.1.4",
+      "Mozilla/5.0 (iPhone; CPU iPhone OS 8_4 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Version/8.0 Mobile/12H143 Safari/600.1.4"
+    ],
+
+    console: [
+      :playstation,
+      :xbox,
+      :wii,
+    ],
+    playstation: [
+      "Mozilla/4.0 (PS3 (PlayStation 3); 1.00)",
+      "Mozilla/5.0 (PlayStation Vita 3.50) AppleWebKit/537.73 (KHTML, like Gecko) Silk/3.2",
+      "Mozilla/5.0 (PlayStation Vita 3.36) AppleWebKit/537.73 (KHTML, like Gecko) Silk/3.2",
+      "Mozilla/4.0 (PSP (PlayStation Portable); 2.00)",
+      "Mozilla/5.0 (PLAYSTATION 3; 1.0)",
+      "Mozilla/5.0 (PLAYSTATION 3; 1.5)",
+      "Mozilla/5.0 (PLAYSTATION 3; 1.90)",
+      "Mozilla/5.0 (PlayStation 4 2.02) AppleWebKit/537.73 (KHTML, like Gecko)",
+      "Mozilla/5.0 (PlayStation 4 2.04) AppleWebKit/537.73 (KHTML, like Gecko)",
+      "Mozilla/5.0 (PlayStation 4 2.51) AppleWebKit/537.73 (KHTML, like Gecko)"
+    ],
+    xbox: [
+      "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0; Xbox; Xbox One)"
+    ],
+    wii: [
+      "Opera/9.00 (Nintendo Wii; U; ; 1309-9; en)",
+      "Opera/9.10 (Nintendo Wii; U; ; 1621; en)",
+      "Opera/9.30 (Nintendo Wii; U; ; 2047-7; en)"
+    ],
+
+    bot: [
+      "Googlebot-Image/1.0",
+      "Googlebot/2.1 (+http://www.google.com/bot.html)",
+      "Mozilla/2.0 (compatible; Ask Jeeves/Teoma)",
+      "Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)",
+      "YahooSeeker-Testing/v3.9 (compatible; Mozilla 4.0; MSIE 5.5; http://search.yahoo.com/)",
+      "BaiDuSpider"
+    ],
+    phone: [
+      "Mozilla/5.0 (iPad; CPU OS 8_1 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Version/8.0 Mobile/12B411 Safari/600.1.4",
+      "Mozilla/5.0 (iPad; CPU OS 8_1_1 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Version/8.0 Mobile/12B436 Safari/600.1.4",
+      "Mozilla/5.0 (Mobile; Windows Phone 8.1; Android 4.0; ARM; Trident/7.0; Touch; rv:11.0; IEMobile/11.0; HTC; HTC6690LVW) like iPhone OS 7_0_3 Mac OS X AppleWebKit/537 (KHTML, like Gecko) Mobile Safari/537",
+      "Mozilla/5.0 (Mobile; Windows Phone 8.1; Android 4.0; ARM; Trident/7.0; Touch; rv:11.0; IEMobile/11.0; NOKIA; Lumia 521) like iPhone OS 7_0_3 Mac OS X AppleWebKit/537 (KHTML, like Gecko) Mobile Safari/537"
+    ],
+    tablet: [
+      "Mozilla/5.0 (Android; Mobile; rv:40.0) Gecko/40.0 Firefox/40.0",
+      "Mozilla/5.0 (Android; Mobile; rv:42.0) Gecko/42.0 Firefox/42.0",
+      "Mozilla/5.0 (iPad; CPU OS 8_1 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Version/8.0 Mobile/12B411 Safari/600.1.4",
+      "Mozilla/5.0 (iPad; CPU OS 8_1_1 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Version/8.0 Mobile/12B436 Safari/600.1.4"
+    ],
+    desktop: [
+      "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; Trident/6.0)",
+      "Mozilla/5.0 (Linux; U; X11; en-US; Valve Steam GameOverlay/1424305157; ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.86 Safari/537.36",
+      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.152 Safari/537.36",
+      "Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en-us) AppleWebKit/537+ (KHTML, like Gecko) Version/5.0 Safari/537.6+ Midori/0.4"
+    ]
+  }
+
   def apps, do: @apps
   def bank_names, do: @bank_names
   def building_patterns, do: @building_patterns
@@ -371,5 +460,5 @@ defmodule FakerElixir.Locales.En do
   def weak_passwords, do: @weak_passwords
   def words, do: @words
   def zip_code_patterns, do: @zip_code_patterns
-
+  def user_agents, do: @user_agents
 end

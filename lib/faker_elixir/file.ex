@@ -141,23 +141,9 @@ defmodule FakerElixir.File do
 
   defp do_check_exists!(categories, category) do
     unless Enum.member?(categories, category) do
-      message = "This category doesn't exist, allowed: #{categories |> format}"
+      message = "This category doesn't exist, allowed: #{categories |> humanize_enumerable}"
       raise ArgumentError, message: message
     end
-  end
-
-  ##
-  # Humanize the enumerable given
-  #
-  # Example:
-  #
-  # format([:audio, :office])
-  #
-  # ":audio, :office"
-  ##
-  defp format(allowed) do
-    allowed
-    |> Enum.map_join(", ", fn(x) -> ":#{x}" end)
   end
 
   ##
@@ -175,7 +161,5 @@ defmodule FakerElixir.File do
     mimes = :file_mimes |> fetch
     Map.keys(mimes)
   end
-
-
 
 end

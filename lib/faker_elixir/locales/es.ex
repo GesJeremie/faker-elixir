@@ -60,5 +60,5 @@ defmodule FakerElixir.Locales.Es do
   # def weak_passwords, do: @weak_passwords
   # def words, do: @words
   # def zip_code_patterns, do: @zip_code_patterns
-
+  # def user_agents, do: @user_agents
 end

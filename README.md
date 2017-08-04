@@ -300,6 +300,11 @@ FakerElixir.Internet.url(:safe) # "https://www.stefan-little.org/"
 
 FakerElixir.Internet.user_name # "chadrick"
 FakerElixir.Internet.user_name("Jeremie GES") # "jeremie.ges"
+
+FakerElixir.Internet.user_agent # "Mozilla/5.0 (iPad; CPU OS 8_1 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Version/8.0 Mobile/12B411 Safari/600.1.4"
+
+# Allowed: :bot, :browser, :chrome, :desktop, :firefox, :console, :ie, :opera, :phone, :playstation, :safari, :tablet, :wii, :xbox
+FakerElixir.Internet.user_agent(:safari) # "Mozilla/5.0 (iPad; CPU OS 8_1_1 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Version/8.0 Mobile/12B436 Safari/600.1.4"
 ```
 
 ### FakerElixir.Lorem
