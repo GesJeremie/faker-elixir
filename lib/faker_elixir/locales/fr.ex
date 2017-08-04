@@ -24,18 +24,38 @@ defmodule FakerElixir.Locales.Fr do
 
   @domain_popular_emails ["gmail.com", "yahoo.fr", "hotmail.fr", "free.fr"]
 
+  #def apps, do: @apps
   def bank_names, do: @bank_names
   def building_patterns, do: @building_patterns
   def cities, do: @cities
   def colors, do: @colors
+  #def countries, do: @countries
+  #def coupons, do: @coupons
+  #def credit_cards, do: @credit_cards
+  #def currencies, do: @currencies
+  #def domain_extensions, do: @domain_extensions
   def domain_popular_emails, do: @domain_popular_emails
+  #def domain_school_emails, do: @domain_school_emails
+  #def file_extensions, do: @file_extensions
+  #def file_mimes, do: @file_mimes
   def first_names, do: @first_names
   def last_names, do: @last_names
   def phone_cell_patterns, do: @phone_cell_patterns
   def phone_home_patterns, do: @phone_home_patterns
   def prefixes, do: @prefixes
+  #def products, do: @products
   def secondary_addresses, do: @secondary_addresses
+  #def state_codes, do: @state_codes
+  #def states, do: @states
+  #def street_suffixes, do: @street_suffixes
+  #def suffixes, do: @suffixes
+  #def time_zones, do: @time_zones
+  #def title_descriptors, do: @title_descriptors
+  #def title_jobs, do: @title_jobs
+  #def title_levels, do: @title_levels
+  #def version_patterns, do: @version_patterns
   def weak_passwords, do: @weak_passwords
+  #def words, do: @words
   def zip_code_patterns, do: @zip_code_patterns
-
+  #def user_agents, do: @user_agents
 end

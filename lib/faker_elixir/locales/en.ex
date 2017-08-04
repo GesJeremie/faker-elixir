@@ -461,5 +461,4 @@ defmodule FakerElixir.Locales.En do
   def words, do: @words
   def zip_code_patterns, do: @zip_code_patterns
   def user_agents, do: @user_agents
-
 end
