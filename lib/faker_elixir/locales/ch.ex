@@ -10,6 +10,7 @@ defmodule FakerElixir.Locales.Ch do
   @building_patterns ["#", "##", "###"]
   @zip_code_patterns ["####"]
   @secondary_addresses ["Abteilung ##", "Etage #", "Zimmer ##"]
+  @street_suffixes ["Strasse", "Weg", "Park", "Pass"]
 
   @prefixes ["Herr", "Frau", "Dr.", "Prof"]
 
@@ -46,14 +47,14 @@ defmodule FakerElixir.Locales.Ch do
   def secondary_addresses, do: @secondary_addresses
   #def state_codes, do: @state_codes
   #def states, do: @states
-  #def street_suffixes, do: @street_suffixes
+  def street_suffixes, do: @street_suffixes
   #def suffixes, do: @suffixes
   #def time_zones, do: @time_zones
   #def title_descriptors, do: @title_descriptors
   #def title_jobs, do: @title_jobs
   #def title_levels, do: @title_levels
   #def version_patterns, do: @version_patterns
-  def weak_passwords, do: @weak_passwords
+  #def weak_passwords, do: @weak_passwords
   #def words, do: @words
   def zip_code_patterns, do: @zip_code_patterns
   #def user_agents, do: @user_agents
