@@ -1,3 +1,9 @@
+---
+
+⚠️ This project is unmaintained, you are better off using a well-maintained / battle-tested library such as [Faker](https://github.com/igas/faker).
+
+---
+
 # :octopus: FakerElixir
 
 [![Inline docs](http://inch-ci.org/github/GesJeremie/faker-elixir.svg?branch=master&style=flat-square)](http://inch-ci.org/github/GesJeremie/faker-elixir)
